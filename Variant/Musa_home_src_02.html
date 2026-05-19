@@ -1,0 +1,690 @@
+<html lang="en" class="scroll-smooth bg-black" vid="0"><head vid="1">
+    <meta charset="UTF-8" vid="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    <title vid="4">MUSA | Hollywood-Grade Orchestral Scoring in Prague</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17" vid="5"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" vid="6">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" vid="7">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap" rel="stylesheet" vid="8">
+    <script vid="9">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        musa: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b', 
+                            600: '#d97706', 
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                            950: '#451a03',
+                        },
+                        dark: {
+                            900: '#121212',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=2940&auto=format&fit=crop')",
+                        'studio-pattern': "linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 100%), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2940&auto=format&fit=crop')",
+                        'cta-pattern': "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 100%), url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2940&auto=format&fit=crop')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style vid="10">
+        
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+        
+        
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+    </style>
+</head>
+<body class="bg-black text-zinc-300 antialiased selection:bg-musa-500 selection:text-black" vid="11">
+
+    
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 bg-gradient-to-b from-black/90 to-transparent backdrop-blur-sm border-b border-white/5" vid="12">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between" vid="13">
+            
+            <a href="#" class="flex items-center gap-3 group" vid="14">
+                <div class="w-8 h-8 rounded-full border border-musa-500 flex items-center justify-center group-hover:bg-musa-500 transition-colors duration-300" vid="15">
+                    <svg class="w-4 h-4 text-musa-500 group-hover:text-black transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="16">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" vid="17"></path>
+                    </svg>
+                </div>
+                <span class="font-serif text-2xl font-bold text-white tracking-widest uppercase" vid="18">Musa</span>
+            </a>
+
+            
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide uppercase" vid="19">
+                <a href="#" class="text-zinc-400 hover:text-white transition-colors" vid="20">About</a>
+                <a href="#services" class="text-zinc-400 hover:text-white transition-colors" vid="21">Services</a>
+                <a href="#orchestra" class="text-zinc-400 hover:text-white transition-colors" vid="22">Orchestra</a>
+                <a href="#work" class="text-zinc-400 hover:text-white transition-colors" vid="23">Work</a>
+                <a href="#insights" class="text-zinc-400 hover:text-white transition-colors" vid="24">Insights</a>
+            </nav>
+
+            
+            <div class="hidden md:flex items-center gap-4" vid="25">
+                <a href="#quote" class="px-6 py-3 bg-musa-500 hover:bg-musa-600 text-black text-sm font-semibold tracking-wide uppercase transition-all duration-300 rounded shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)]" vid="26">
+                    Request a Quote
+                </a>
+            </div>
+
+            
+            <button class="lg:hidden text-zinc-300 hover:text-white" vid="27">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="28">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" vid="29"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    
+    <section class="relative min-h-screen flex flex-col justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed pt-24" vid="30">
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 text-center" vid="31">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white leading-[1.1] mb-6 mx-auto max-w-5xl fade-in-up" vid="32">
+                Hollywood-Grade Orchestral Scoring.<br vid="33">
+                <span class="text-musa-500 italic font-light" vid="34">Recorded in Prague.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto mb-12 font-light leading-relaxed fade-in-up delay-100" vid="35">
+                For three decades, composers from Los Angeles to Tokyo have flown into Prague to record their scores with MUSA and the FILMharmonic Orchestra. Today, you don't have to fly anywhere — direct your session live from your studio, or join us in person and meet some of Europe's finest musicians.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 fade-in-up delay-200" vid="36">
+                <a href="#quote" class="w-full sm:w-auto px-8 py-4 bg-musa-500 hover:bg-musa-600 text-black text-sm font-bold tracking-widest uppercase transition-all duration-300 rounded" vid="37">
+                    Request a Quote
+                </a>
+                <a href="#work" class="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/30 hover:border-white text-white text-sm font-bold tracking-widest uppercase transition-all duration-300 rounded flex items-center justify-center gap-3 group" vid="38">
+                    <svg class="w-4 h-4 text-musa-500 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24" vid="39">
+                        <path d="M8 5v14l11-7z" vid="40"></path>
+                    </svg>
+                    Hear Our Orchestra
+                </a>
+            </div>
+        </div>
+
+        
+        <div class="absolute bottom-0 left-0 w-full bg-black/60 backdrop-blur-md border-t border-white/5 py-6 overflow-hidden" vid="41">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8" vid="42">
+                <span class="text-xs font-bold text-zinc-500 uppercase tracking-[0.2em]" vid="43">Featured On</span>
+                <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-zinc-400 font-serif italic tracking-wide" vid="44">
+                    <span vid="45">Red Tails</span>
+                    <span class="text-musa-500/50" vid="46">•</span>
+                    <span vid="47">Halo Wars</span>
+                    <span class="text-musa-500/50" vid="48">•</span>
+                    <span vid="49">Mafia 2</span>
+                    <span class="text-musa-500/50" vid="50">•</span>
+                    <span vid="51">Final Fantasy</span>
+                    <span class="text-musa-500/50" vid="52">•</span>
+                    <span vid="53">Sarah Brightman</span>
+                    <span class="text-musa-500/50" vid="54">•</span>
+                    <span vid="55">Celine Dion</span>
+                    <span class="text-musa-500/50" vid="56">•</span>
+                    <span vid="57">Helloween</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="py-24 bg-dark-900 border-b border-white/5" vid="58">
+        <div class="max-w-7xl mx-auto px-6" vid="59">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12" vid="60">
+                
+                <div class="flex flex-col items-center text-center group" vid="61">
+                    <div class="w-16 h-16 rounded-full bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:border-musa-500 transition-colors duration-500" vid="62">
+                        <svg class="w-6 h-6 text-musa-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="63">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" vid="64"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif text-white mb-4" vid="65">World-Class Players</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed font-light" vid="66">
+                        The FILMharmonic Orchestra — drawn from Prague's top symphonic ensembles, delivering unparalleled emotional depth and precision.
+                    </p>
+                </div>
+                
+                
+                <div class="flex flex-col items-center text-center group" vid="67">
+                    <div class="w-16 h-16 rounded-full bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:border-musa-500 transition-colors duration-500" vid="68">
+                        <svg class="w-6 h-6 text-musa-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="69">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" vid="70"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif text-white mb-4" vid="71">European Roots, Global Service</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed font-light" vid="72">
+                        Hollywood sound, Prague precision, full buyout. No residuals. No hidden complexity. Your music remains entirely yours.
+                    </p>
+                </div>
+
+                
+                <div class="flex flex-col items-center text-center group" vid="73">
+                    <div class="w-16 h-16 rounded-full bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:border-musa-500 transition-colors duration-500" vid="74">
+                        <svg class="w-6 h-6 text-musa-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="75">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" vid="76"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" vid="77"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif text-white mb-4" vid="78">End-to-End Service</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed font-light" vid="79">
+                        Orchestration, engineering, mixing, hotels, transport. We handle absolutely everything except writing the notes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="py-32 relative overflow-hidden bg-black" vid="80">
+        <div class="absolute right-0 top-0 w-1/2 h-full bg-studio-pattern bg-cover bg-center hidden lg:block grayscale opacity-40" vid="81"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10" vid="82">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" vid="83">
+                <div class="max-w-2xl" vid="84">
+                    <div class="flex items-center gap-4 mb-6" vid="85">
+                        <div class="w-12 h-px bg-musa-500" vid="86"></div>
+                        <span class="text-musa-500 text-sm font-bold tracking-[0.2em] uppercase" vid="87">The Producer's Orchestra</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-serif text-white mb-8 leading-tight" vid="88">
+                        MUSA isn't a venue.<br vid="89">
+                        <span class="text-zinc-500 italic" vid="90">We're a scoring partner.</span>
+                    </h2>
+                    <div class="space-y-6 text-zinc-300 font-light leading-relaxed text-lg" vid="91">
+                        <p vid="92">
+                            From the first email to your final stems, you work with one cohesive team: experienced engineers, an Oscar-credited orchestra, and conductors who've worked alongside legends like Desplat and Zimmer.
+                        </p>
+                        <p vid="93">
+                            At the helm is Petr Pycha — a producer who has run hundreds of sessions and seen every logistical, technical, and musical problem you'll ever encounter, long before you do. We clear the path so you can focus entirely on the music.
+                        </p>
+                    </div>
+                    <div class="mt-12" vid="94">
+                        <a href="#" class="inline-flex items-center gap-3 text-white font-semibold tracking-widest uppercase text-sm hover:text-musa-500 transition-colors group" vid="95">
+                            Meet the Team 
+                            <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="96">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" vid="97"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                
+                <div class="lg:hidden h-96 rounded-xl bg-studio-pattern bg-cover bg-center grayscale shadow-2xl relative" vid="98">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent rounded-xl" vid="99"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="services" class="py-32 bg-dark-900 border-y border-white/5 relative" vid="100">
+        <div class="max-w-7xl mx-auto px-6" vid="101">
+            <div class="text-center mb-20" vid="102">
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-4" vid="103">Capabilities</h2>
+                <p class="text-zinc-400 text-lg font-light max-w-2xl mx-auto" vid="104">Tailored symphonic production for every medium in the entertainment industry.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" vid="105">
+                
+                <a href="#" class="group block relative overflow-hidden bg-black border border-white/5 p-10 hover:border-musa-500/50 transition-all duration-500" vid="106">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-600 to-musa-400 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300" vid="107"></div>
+                    <div class="w-12 h-12 rounded bg-dark-800 flex items-center justify-center mb-8 group-hover:bg-musa-500/10 transition-colors" vid="108">
+                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="109">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" vid="110"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif text-white mb-3 group-hover:text-musa-500 transition-colors" vid="111">Film Scoring</h3>
+                    <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6" vid="112">Full orchestral recording for feature films, from intimate indie dramas to massive blockbuster action scores.</p>
+                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-500 flex items-center gap-2" vid="113">
+                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="114"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" vid="115"></path></svg>
+                    </span>
+                </a>
+
+                
+                <a href="#" class="group block relative overflow-hidden bg-black border border-white/5 p-10 hover:border-musa-500/50 transition-all duration-500" vid="116">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-600 to-musa-400 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300" vid="117"></div>
+                    <div class="w-12 h-12 rounded bg-dark-800 flex items-center justify-center mb-8 group-hover:bg-musa-500/10 transition-colors" vid="118">
+                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="119">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" vid="120"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" vid="121"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif text-white mb-3 group-hover:text-musa-500 transition-colors" vid="122">Video Game Scoring</h3>
+                    <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6" vid="123">Dynamic, multi-layered recording sessions designed specifically for interactive media and adaptive game audio engines.</p>
+                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-500 flex items-center gap-2" vid="124">
+                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="125"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" vid="126"></path></svg>
+                    </span>
+                </a>
+
+                
+                <a href="#" class="group block relative overflow-hidden bg-black border border-white/5 p-10 hover:border-musa-500/50 transition-all duration-500" vid="127">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-600 to-musa-400 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300" vid="128"></div>
+                    <div class="w-12 h-12 rounded bg-dark-800 flex items-center justify-center mb-8 group-hover:bg-musa-500/10 transition-colors" vid="129">
+                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="130">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" vid="131"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif text-white mb-3 group-hover:text-musa-500 transition-colors" vid="132">TV &amp; Streaming</h3>
+                    <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6" vid="133">Fast-turnaround episodic scoring with consistent quality across entire seasons, optimized for modern broadcast standards.</p>
+                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-500 flex items-center gap-2" vid="134">
+                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="135"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" vid="136"></path></svg>
+                    </span>
+                </a>
+
+                
+                <a href="#" class="group block relative overflow-hidden bg-black border border-musa-500/30 p-10 hover:border-musa-500 transition-all duration-500 shadow-[0_0_15px_rgba(245,158,11,0.05)]" vid="137">
+                    <div class="absolute top-0 right-0 bg-musa-500 text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest" vid="138">Most Popular</div>
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-600 to-musa-400 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300" vid="139"></div>
+                    <div class="w-12 h-12 rounded bg-musa-500/10 flex items-center justify-center mb-8 group-hover:bg-musa-500/20 transition-colors" vid="140">
+                        <svg class="w-6 h-6 text-musa-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="141">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" vid="142"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif text-white mb-3 group-hover:text-musa-500 transition-colors" vid="143">Remote Sessions ⭐</h3>
+                    <p class="text-zinc-400 text-sm font-light leading-relaxed mb-6" vid="144">Direct the orchestra live from your home studio. High-fidelity audio streaming, multi-camera feeds, and real-time communication.</p>
+                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-500 flex items-center gap-2" vid="145">
+                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="146"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" vid="147"></path></svg>
+                    </span>
+                </a>
+
+                
+                <a href="#" class="group block relative overflow-hidden bg-black border border-white/5 p-10 hover:border-musa-500/50 transition-all duration-500" vid="148">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-600 to-musa-400 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300" vid="149"></div>
+                    <div class="w-12 h-12 rounded bg-dark-800 flex items-center justify-center mb-8 group-hover:bg-musa-500/10 transition-colors" vid="150">
+                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="151">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" vid="152"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif text-white mb-3 group-hover:text-musa-500 transition-colors" vid="153">Trailer &amp; Ads</h3>
+                    <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6" vid="154">Massive brass, soaring strings, and aggressive percussion configurations specifically designed for high-impact commercial campaigns.</p>
+                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-500 flex items-center gap-2" vid="155">
+                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="156"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" vid="157"></path></svg>
+                    </span>
+                </a>
+
+                
+                <a href="#" class="group block relative overflow-hidden bg-black border border-white/5 p-10 hover:border-musa-500/50 transition-all duration-500" vid="158">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-600 to-musa-400 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300" vid="159"></div>
+                    <div class="w-12 h-12 rounded bg-dark-800 flex items-center justify-center mb-8 group-hover:bg-musa-500/10 transition-colors" vid="160">
+                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="161">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" vid="162"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif text-white mb-3 group-hover:text-musa-500 transition-colors" vid="163">Album Productions</h3>
+                    <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6" vid="164">Classical repertoire, crossover projects, and artist albums demanding pristine acoustic environments and virtuoso performances.</p>
+                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-500 flex items-center gap-2" vid="165">
+                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="166"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" vid="167"></path></svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="work" class="py-32 bg-black" vid="168">
+        <div class="max-w-7xl mx-auto px-6 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6" vid="169">
+            <div vid="170">
+                <div class="flex items-center gap-4 mb-4" vid="171">
+                    <div class="w-8 h-px bg-musa-500" vid="172"></div>
+                    <span class="text-musa-500 text-sm font-bold tracking-[0.2em] uppercase" vid="173">Selected Credits</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-serif text-white" vid="174">Featured Work</h2>
+            </div>
+            <a href="#" class="text-sm font-bold tracking-widest uppercase text-white hover:text-musa-500 transition-colors flex items-center gap-2" vid="175">
+                View Full Archive
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="176">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" vid="177"></path>
+                </svg>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 w-full" vid="178">
+            
+            <div class="group relative aspect-[4/3] overflow-hidden bg-dark-900 cursor-pointer" vid="179">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Film Project" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" vid="180">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" vid="181"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-100 scale-90" vid="182">
+                    <div class="w-16 h-16 rounded-full bg-musa-500/90 text-black flex items-center justify-center pl-1 shadow-[0_0_30px_rgba(245,158,11,0.4)] backdrop-blur-sm" vid="183">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" vid="184"><path d="M8 5v14l11-7z" vid="185"></path></svg>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300" vid="186">
+                    <span class="text-musa-500 text-xs font-bold tracking-widest uppercase mb-2 block" vid="187">Feature Film</span>
+                    <h3 class="text-2xl font-serif text-white" vid="188">Red Tails</h3>
+                    <p class="text-zinc-400 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" vid="189">Lucasfilm • Orchestral Score</p>
+                </div>
+            </div>
+
+            
+            <div class="group relative aspect-[4/3] overflow-hidden bg-dark-900 cursor-pointer" vid="190">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Game Project" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" vid="191">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" vid="192"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-100 scale-90" vid="193">
+                    <div class="w-16 h-16 rounded-full bg-musa-500/90 text-black flex items-center justify-center pl-1 shadow-[0_0_30px_rgba(245,158,11,0.4)] backdrop-blur-sm" vid="194">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" vid="195"><path d="M8 5v14l11-7z" vid="196"></path></svg>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300" vid="197">
+                    <span class="text-musa-500 text-xs font-bold tracking-widest uppercase mb-2 block" vid="198">Video Game</span>
+                    <h3 class="text-2xl font-serif text-white" vid="199">Halo Wars</h3>
+                    <p class="text-zinc-400 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" vid="200">Microsoft Studios • Interactive Score</p>
+                </div>
+            </div>
+
+            
+            <div class="group relative aspect-[4/3] overflow-hidden bg-dark-900 cursor-pointer" vid="201">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Album Project" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" vid="202">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" vid="203"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-100 scale-90" vid="204">
+                    <div class="w-16 h-16 rounded-full bg-musa-500/90 text-black flex items-center justify-center pl-1 shadow-[0_0_30px_rgba(245,158,11,0.4)] backdrop-blur-sm" vid="205">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" vid="206"><path d="M8 5v14l11-7z" vid="207"></path></svg>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300" vid="208">
+                    <span class="text-musa-500 text-xs font-bold tracking-widest uppercase mb-2 block" vid="209">Artist Album</span>
+                    <h3 class="text-2xl font-serif text-white" vid="210">Sarah Brightman</h3>
+                    <p class="text-zinc-400 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" vid="211">Studio Album • Full Orchestra</p>
+                </div>
+            </div>
+
+            
+            <div class="group relative aspect-[4/3] overflow-hidden bg-dark-900 cursor-pointer" vid="212">
+                <img src="https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Game Project" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" vid="213">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" vid="214"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-100 scale-90" vid="215">
+                    <div class="w-16 h-16 rounded-full bg-musa-500/90 text-black flex items-center justify-center pl-1 shadow-[0_0_30px_rgba(245,158,11,0.4)] backdrop-blur-sm" vid="216">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" vid="217"><path d="M8 5v14l11-7z" vid="218"></path></svg>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300" vid="219">
+                    <span class="text-musa-500 text-xs font-bold tracking-widest uppercase mb-2 block" vid="220">Video Game</span>
+                    <h3 class="text-2xl font-serif text-white" vid="221">Mafia II</h3>
+                    <p class="text-zinc-400 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" vid="222">2K Games • Original Soundtrack</p>
+                </div>
+            </div>
+
+            
+            <div class="group relative aspect-[4/3] overflow-hidden bg-dark-900 cursor-pointer" vid="223">
+                <img src="https://images.unsplash.com/photo-1516280440503-6c84c16aebf2?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Anime/Game Project" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" vid="224">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" vid="225"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-100 scale-90" vid="226">
+                    <div class="w-16 h-16 rounded-full bg-musa-500/90 text-black flex items-center justify-center pl-1 shadow-[0_0_30px_rgba(245,158,11,0.4)] backdrop-blur-sm" vid="227">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" vid="228"><path d="M8 5v14l11-7z" vid="229"></path></svg>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300" vid="230">
+                    <span class="text-musa-500 text-xs font-bold tracking-widest uppercase mb-2 block" vid="231">Franchise</span>
+                    <h3 class="text-2xl font-serif text-white" vid="232">Final Fantasy</h3>
+                    <p class="text-zinc-400 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" vid="233">Square Enix • Orchestral Recordings</p>
+                </div>
+            </div>
+
+            
+            <div class="group relative aspect-[4/3] overflow-hidden bg-dark-900 cursor-pointer" vid="234">
+                <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Artist Project" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" vid="235">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" vid="236"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-100 scale-90" vid="237">
+                    <div class="w-16 h-16 rounded-full bg-musa-500/90 text-black flex items-center justify-center pl-1 shadow-[0_0_30px_rgba(245,158,11,0.4)] backdrop-blur-sm" vid="238">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" vid="239"><path d="M8 5v14l11-7z" vid="240"></path></svg>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300" vid="241">
+                    <span class="text-musa-500 text-xs font-bold tracking-widest uppercase mb-2 block" vid="242">Artist Album</span>
+                    <h3 class="text-2xl font-serif text-white" vid="243">Celine Dion</h3>
+                    <p class="text-zinc-400 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" vid="244">Studio Album • Strings &amp; Brass</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="py-32 bg-dark-900 border-t border-white/5 relative overflow-hidden" vid="245">
+        
+        <div class="absolute -right-64 -top-64 w-[800px] h-[800px] rounded-full border-[1px] border-white/5 opacity-20 pointer-events-none" vid="246"></div>
+        <div class="absolute -right-32 -top-32 w-[600px] h-[600px] rounded-full border-[1px] border-white/5 opacity-20 pointer-events-none" vid="247"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10" vid="248">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16" vid="249">
+                
+                <div class="lg:col-span-5 flex flex-col justify-center" vid="250">
+                    <div class="flex items-center gap-4 mb-6" vid="251">
+                        <div class="w-12 h-px bg-musa-500" vid="252"></div>
+                        <span class="text-musa-500 text-sm font-bold tracking-[0.2em] uppercase" vid="253">Location Advantage</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight" vid="254">
+                        Prague Sound.<br vid="255">
+                        <span class="text-zinc-500 italic" vid="256">Composer Logic.</span>
+                    </h2>
+                    <p class="text-zinc-400 text-lg font-light leading-relaxed mb-10" vid="257">
+                        Prague has been the secret weapon of film composers since the 1990s. Goldsmith, Legrand, Desplat, Portman, Yared — all chose it.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-3 text-white font-semibold tracking-widest uppercase text-sm hover:text-musa-500 transition-colors group w-max" vid="258">
+                        Read: Prague vs. Budapest vs. Vienna 
+                        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="259">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" vid="260"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                
+                <div class="lg:col-span-7 space-y-12 lg:pl-12" vid="261">
+                    
+                    <div class="flex gap-6 md:gap-8 group" vid="262">
+                        <div class="text-6xl md:text-7xl font-serif text-dark-700 group-hover:text-musa-500 transition-colors duration-500 leading-none" vid="263">01</div>
+                        <div vid="264">
+                            <h3 class="text-2xl font-serif text-white mb-3" vid="265">The Sound</h3>
+                            <p class="text-zinc-400 font-light leading-relaxed" vid="266">
+                                Three decades of recording the world's best film scores have built a uniquely cinematic acoustic culture. The players understand the specific demands, emotional arcs, and tone required for media scoring.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full h-px bg-white/5" vid="267"></div>
+
+                    
+                    <div class="flex gap-6 md:gap-8 group" vid="268">
+                        <div class="text-6xl md:text-7xl font-serif text-dark-700 group-hover:text-musa-500 transition-colors duration-500 leading-none" vid="269">02</div>
+                        <div vid="270">
+                            <h3 class="text-2xl font-serif text-white mb-3" vid="271">The Structure</h3>
+                            <p class="text-zinc-400 font-light leading-relaxed" vid="272">
+                                100% buyout. No residuals. No union complexity. We offer simple, transparent contracts that grant you total Intellectual Property ownership in perpetuity.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-px bg-white/5" vid="273"></div>
+
+                    
+                    <div class="flex gap-6 md:gap-8 group" vid="274">
+                        <div class="text-6xl md:text-7xl font-serif text-dark-700 group-hover:text-musa-500 transition-colors duration-500 leading-none" vid="275">03</div>
+                        <div vid="276">
+                            <h3 class="text-2xl font-serif text-white mb-3" vid="277">The City</h3>
+                            <p class="text-zinc-400 font-light leading-relaxed" vid="278">
+                                Highly accessible with direct flights from 70+ major cities. Beautiful, affordable luxury hotels. If you choose to attend in person, your producer can fly in for the day and be home for dinner.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="py-32 bg-black border-t border-white/5" vid="279">
+        <div class="max-w-7xl mx-auto px-6" vid="280">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" vid="281">
+                
+                <div class="bg-dark-900 border border-white/5 p-10 flex flex-col justify-between" vid="282">
+                    <div vid="283">
+                        <svg class="w-10 h-10 text-musa-500 mb-6 opacity-50" fill="currentColor" viewBox="0 0 24 24" vid="284">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" vid="285"></path>
+                        </svg>
+                        <p class="text-zinc-300 font-serif italic text-lg leading-relaxed mb-8" vid="286">
+                            "The efficiency and musicality of the FILMharmonic is unmatched. Petr's production team made a remote session from LA feel like we were in the control room next door. Flawless execution."
+                        </p>
+                    </div>
+                    <div vid="287">
+                        <p class="text-white font-bold tracking-wide" vid="288">A-List Film Composer</p>
+                        <p class="text-zinc-500 text-sm mt-1" vid="289">Los Angeles, CA</p>
+                    </div>
+                </div>
+
+                
+                <div class="bg-dark-900 border border-white/5 p-10 flex flex-col justify-between" vid="290">
+                    <div vid="291">
+                        <svg class="w-10 h-10 text-musa-500 mb-6 opacity-50" fill="currentColor" viewBox="0 0 24 24" vid="292">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" vid="293"></path>
+                        </svg>
+                        <p class="text-zinc-300 font-serif italic text-lg leading-relaxed mb-8" vid="294">
+                            "When scoring for a franchise like this, there is no margin for error. MUSA delivered not just the notes, but the precise tone and aggression we needed. The buyout structure made the business side completely painless."
+                        </p>
+                    </div>
+                    <div vid="295">
+                        <p class="text-white font-bold tracking-wide" vid="296">Lead Audio Director</p>
+                        <p class="text-zinc-500 text-sm mt-1" vid="297">AAA Game Studio</p>
+                    </div>
+                </div>
+
+                
+                <div class="bg-dark-900 border border-white/5 p-10 flex flex-col justify-between" vid="298">
+                    <div vid="299">
+                        <svg class="w-10 h-10 text-musa-500 mb-6 opacity-50" fill="currentColor" viewBox="0 0 24 24" vid="300">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" vid="301"></path>
+                        </svg>
+                        <p class="text-zinc-300 font-serif italic text-lg leading-relaxed mb-8" vid="302">
+                            "Coming to Prague to record with MUSA is an experience every composer should have. The players are incredibly responsive, and Petr handles the logistics so smoothly you forget you're halfway across the world."
+                        </p>
+                    </div>
+                    <div vid="303">
+                        <p class="text-white font-bold tracking-wide" vid="304">Independent Composer</p>
+                        <p class="text-zinc-500 text-sm mt-1" vid="305">London, UK</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="quote" class="relative py-40 flex items-center justify-center bg-cta-pattern bg-cover bg-center bg-fixed" vid="306">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" vid="307"></div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center" vid="308">
+            <h2 class="text-5xl md:text-7xl font-serif text-white mb-6" vid="309">Ready When You Are.</h2>
+            <p class="text-xl text-zinc-300 font-light mb-12 max-w-2xl mx-auto" vid="310">
+                Whether you're scoring your first indie film or your hundredth Hollywood feature, we'd love to hear about your project.
+            </p>
+            <a href="#" class="inline-block px-10 py-5 bg-musa-500 hover:bg-musa-600 text-black text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 rounded shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] transform hover:-translate-y-1" vid="311">
+                Start Your Project
+            </a>
+        </div>
+    </section>
+
+    
+    <footer class="bg-black pt-20 pb-10 border-t border-white/10" vid="312">
+        <div class="max-w-7xl mx-auto px-6" vid="313">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16" vid="314">
+                
+                <div class="lg:col-span-2" vid="315">
+                    <a href="#" class="flex items-center gap-3 mb-6" vid="316">
+                        <div class="w-8 h-8 rounded-full border border-musa-500 flex items-center justify-center" vid="317">
+                            <svg class="w-4 h-4 text-musa-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" vid="318">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" vid="319"></path>
+                            </svg>
+                        </div>
+                        <span class="font-serif text-2xl font-bold text-white tracking-widest uppercase" vid="320">Musa</span>
+                    </a>
+                    <p class="text-zinc-500 text-sm font-light leading-relaxed max-w-sm mb-6" vid="321">
+                        Hollywood-grade orchestral scoring, recorded in Prague. Serving the global film, game, and television industries for over thirty years.
+                    </p>
+                    <a href="mailto:booking@musa.cz" class="text-musa-500 font-bold tracking-widest uppercase text-sm hover:text-white transition-colors" vid="322">
+                        booking@musa.cz
+                    </a>
+                </div>
+
+                
+                <div vid="323">
+                    <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6" vid="324">Company</h4>
+                    <ul class="space-y-4" vid="325">
+                        <li vid="326"><a href="#" class="text-zinc-500 hover:text-musa-500 text-sm transition-colors" vid="327">Our Story</a></li>
+                        <li vid="328"><a href="#" class="text-zinc-500 hover:text-musa-500 text-sm transition-colors" vid="329">The Team</a></li>
+                        <li vid="330"><a href="#" class="text-zinc-500 hover:text-musa-500 text-sm transition-colors" vid="331">Orchestra &amp; Venues</a></li>
+                        <li vid="332"><a href="#" class="text-zinc-500 hover:text-musa-500 text-sm transition-colors" vid="333">Awards &amp; Press</a></li>
+                    </ul>
+                </div>
+
+                
+                <div vid="334">
+                    <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6" vid="335">Services</h4>
+                    <ul class="space-y-4" vid="336">
+                        <li vid="337"><a href="#" class="text-zinc-500 hover:text-musa-500 text-sm transition-colors" vid="338">Live Recording</a></li>
+                        <li vid="339"><a href="#" class="text-zinc-500 hover:text-musa-500 text-sm transition-colors" vid="340">Remote Sessions</a></li>
+                        <li vid="341"><a href="#" class="text-zinc-500 hover:text-musa-500 text-sm transition-colors" vid="342">Choir &amp; Vocal</a></li>
+                        <li vid="343"><a href="#" class="text-zinc-500 hover:text-musa-500 text-sm transition-colors" vid="344">Orchestration</a></li>
+                        <li vid="345"><a href="#" class="text-zinc-500 hover:text-musa-500 text-sm transition-colors" vid="346">Mixing &amp; Mastering</a></li>
+                    </ul>
+                </div>
+
+                
+                <div vid="347">
+                    <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6" vid="348">Resources</h4>
+                    <ul class="space-y-4" vid="349">
+                        <li vid="350"><a href="#" class="text-zinc-500 hover:text-musa-500 text-sm transition-colors" vid="351">Case Studies</a></li>
+                        <li vid="352"><a href="#" class="text-zinc-500 hover:text-musa-500 text-sm transition-colors" vid="353">Composer Insights</a></li>
+                        <li vid="354"><a href="#" class="text-zinc-500 hover:text-musa-500 text-sm transition-colors" vid="355">Tech Specs</a></li>
+                        <li vid="356"><a href="#" class="text-zinc-500 hover:text-musa-500 text-sm transition-colors" vid="357">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4" vid="358">
+                <p class="text-zinc-600 text-xs tracking-wide" vid="359">
+                    © 2024 MUSA - Prague. All rights reserved.
+                </p>
+                <div class="flex items-center gap-6" vid="360">
+                    <a href="#" class="text-zinc-600 hover:text-musa-500 transition-colors text-xs tracking-wide uppercase" vid="361">Privacy Policy</a>
+                    <a href="#" class="text-zinc-600 hover:text-musa-500 transition-colors text-xs tracking-wide uppercase" vid="362">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body></html>
