@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MUSA Prague — Orchestra Recording, Film Scoring & Remote Sessions</title>
-    <meta name="description" content="Record Hollywood-grade orchestra in Prague with MUSA & the FILMharmonic Orchestra. Full-service scoring, three decades of credits. Request a quote.">
+    <meta name="description"
+        content="Record Hollywood-grade orchestra in Prague with MUSA & the FILMharmonic Orchestra. Full-service scoring, three decades of credits. Request a quote.">
     <meta property="og:title" content="MUSA Prague — Orchestra Recording, Film Scoring & Remote Sessions">
-    <meta property="og:description" content="Record Hollywood-grade orchestra in Prague with MUSA & the FILMharmonic Orchestra. Full-service scoring, three decades of credits.">
+    <meta property="og:description"
+        content="Record Hollywood-grade orchestra in Prague with MUSA & the FILMharmonic Orchestra. Full-service scoring, three decades of credits.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://musa.cz">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MUSA Prague — Orchestra Recording, Film Scoring & Remote Sessions">
-    <meta name="twitter:description" content="Record Hollywood-grade orchestra in Prague with MUSA & the FILMharmonic Orchestra. Full-service scoring, three decades of credits.">
+    <meta name="twitter:description"
+        content="Record Hollywood-grade orchestra in Prague with MUSA & the FILMharmonic Orchestra. Full-service scoring, three decades of credits.">
     <link rel="canonical" href="https://musa.cz">
 
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+        rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -55,38 +61,90 @@
     </script>
 
     <style>
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0E0E10; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #B8895A; }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0E0E10;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B8895A;
+        }
 
         .fade-in-up {
             animation: fadeInUp 1s ease-out forwards;
             opacity: 0;
             transform: translateY(20px);
         }
-        @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
-        .delay-400 { animation-delay: 400ms; }
-        .delay-500 { animation-delay: 500ms; }
 
-        #credits-carousel::-webkit-scrollbar { display: none; }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-100 {
+            animation-delay: 100ms;
+        }
+
+        .delay-200 {
+            animation-delay: 200ms;
+        }
+
+        .delay-300 {
+            animation-delay: 300ms;
+        }
+
+        .delay-400 {
+            animation-delay: 400ms;
+        }
+
+        .delay-500 {
+            animation-delay: 500ms;
+        }
+
+        #credits-carousel::-webkit-scrollbar {
+            display: none;
+        }
 
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease, padding 0.3s ease;
         }
+
         .faq-item.active .faq-answer {
             max-height: 200px;
             padding-top: 1rem;
         }
+
         .faq-item.active .faq-icon {
             transform: rotate(45deg);
+        }
+
+        .ticker-track {
+            display: flex;
+            align-items: center;
+            animation: ticker-scroll 75s linear infinite;
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transform: translate3d(0, 0, 0);
+        }
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes ticker-scroll {
+            from { transform: translate3d(0, 0, 0); }
+            to   { transform: translate3d(-50%, 0, 0); }
         }
     </style>
 </head>
@@ -94,11 +152,13 @@
 <body class="bg-dark-900 text-musa-text-light antialiased selection:bg-musa-gold selection:text-black">
 
     <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
-    <header class="fixed w-full top-0 z-50 transition-all duration-300 bg-gradient-to-b from-dark-900/90 to-transparent backdrop-blur-sm border-b border-white/5">
+    <header
+        class="fixed w-full top-0 z-50 transition-all duration-300 bg-gradient-to-b from-dark-900/90 to-transparent backdrop-blur-sm border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
 
             <a href="/" class="flex items-center group">
-                <img src="assets/logos/logo_Musa.png" alt="MUSA" class="h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                <img src="assets/logos/logo_Musa.png" alt="MUSA"
+                    class="h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300">
             </a>
 
             <nav class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
@@ -111,14 +171,16 @@
             </nav>
 
             <div class="hidden md:flex items-center gap-4">
-                <a href="quote.html" class="px-6 py-3 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-semibold tracking-wide uppercase transition-all duration-300 rounded shadow-[0_0_20px_rgba(184,137,90,0.3)] hover:shadow-[0_0_30px_rgba(184,137,90,0.5)]">
+                <a href="quote.html"
+                    class="px-6 py-3 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-semibold tracking-wide uppercase transition-all duration-300 rounded shadow-[0_0_20px_rgba(184,137,90,0.3)] hover:shadow-[0_0_30px_rgba(184,137,90,0.5)]">
                     Request a Quote
                 </a>
             </div>
 
             <button id="mobile-menu-btn" class="lg:hidden text-zinc-300 hover:text-white">
                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
         </div>
@@ -132,7 +194,9 @@
                 <a href="#work" class="text-zinc-400 hover:text-white transition-colors">Work</a>
                 <a href="#insights" class="text-zinc-400 hover:text-white transition-colors">Insights</a>
                 <a href="composers.html" class="text-zinc-400 hover:text-white transition-colors">For Composers</a>
-                <a href="quote.html" class="mt-2 px-6 py-3 bg-musa-gold text-black text-sm font-semibold tracking-wide uppercase text-center rounded">Request a Quote</a>
+                <a href="quote.html"
+                    class="mt-2 px-6 py-3 bg-musa-gold text-black text-sm font-semibold tracking-wide uppercase text-center rounded">Request
+                    a Quote</a>
             </nav>
         </div>
     </header>
@@ -145,46 +209,160 @@
         <div class="absolute inset-0 bg-gradient-to-b from-dark-900/40 via-dark-900/60 to-dark-900/90"></div>
 
         <div class="max-w-7xl mx-auto px-6 w-full relative z-10 text-center">
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white leading-[1.1] mb-6 mx-auto max-w-5xl fade-in-up">
+            <h1
+                class="text-5xl md:text-7xl lg:text-8xl font-serif text-white leading-[1.1] mb-6 mx-auto max-w-5xl fade-in-up">
                 Hollywood-Grade Orchestral Scoring.<br>
                 <span class="text-musa-gold italic font-light">Recorded in Prague.</span>
             </h1>
 
-            <p class="text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto mb-12 font-light leading-relaxed fade-in-up delay-100">
-                For three decades, composers from Los Angeles to Tokyo have flown into Prague to record their scores with MUSA and the FILMharmonic Orchestra. Today, you don't have to fly anywhere — direct your session live from your studio, or join us in person and meet some of Europe's finest musicians.
+            <p
+                class="text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto mb-12 font-light leading-relaxed fade-in-up delay-100">
+                For three decades, composers from around the world have flown into Prague to record their scores
+                with MUSA and the FILMharmonic Orchestra. Today, you don't have to fly anywhere — direct your session
+                live from your studio, or join us in person and meet some of Europe's finest musicians.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6 fade-in-up delay-200">
-                <a href="quote.html" class="w-full sm:w-auto px-8 py-4 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-widest uppercase transition-all duration-300 rounded">
+                <a href="quote.html"
+                    class="w-full sm:w-auto px-8 py-4 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-widest uppercase transition-all duration-300 rounded">
                     Request a Quote
                 </a>
-                <a href="#work" class="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/30 hover:border-white text-white text-sm font-bold tracking-widest uppercase transition-all duration-300 rounded flex items-center justify-center gap-3 group">
-                    <svg class="w-4 h-4 text-musa-gold group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
+                <a href="#work"
+                    class="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/30 hover:border-white text-white text-sm font-bold tracking-widest uppercase transition-all duration-300 rounded flex items-center justify-center gap-3 group">
+                    <svg class="w-4 h-4 text-musa-gold group-hover:text-white transition-colors" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
                     </svg>
                     Hear Our Orchestra
                 </a>
             </div>
         </div>
 
-        <!-- Trust strip -->
-        <div class="absolute bottom-0 left-0 w-full bg-dark-900/60 backdrop-blur-md border-t border-white/5 py-6 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-                <span class="text-xs font-bold text-zinc-500 uppercase tracking-[0.2em]">Featured On</span>
-                <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-zinc-400 font-serif italic tracking-wide">
-                    <span>Red Tails</span>
-                    <span class="text-musa-gold/50">•</span>
-                    <span>Halo Wars</span>
-                    <span class="text-musa-gold/50">•</span>
-                    <span>Mafia 2</span>
-                    <span class="text-musa-gold/50">•</span>
-                    <span>Final Fantasy</span>
-                    <span class="text-musa-gold/50">•</span>
-                    <span>Sarah Brightman</span>
-                    <span class="text-musa-gold/50">•</span>
-                    <span>Celine Dion</span>
-                    <span class="text-musa-gold/50">•</span>
-                    <span>Helloween</span>
+        <!-- Trust strip ticker -->
+        <div class="absolute bottom-0 left-0 w-full bg-dark-900/60 backdrop-blur-md border-t border-white/5 py-5 overflow-hidden">
+            <div class="flex items-center">
+                <!-- Fixed label -->
+                <div class="flex-shrink-0 pl-6 pr-6 border-r border-white/10">
+                    <span class="text-xs font-bold text-zinc-500 uppercase tracking-[0.2em] whitespace-nowrap">Featured On</span>
+                </div>
+                <!-- Scrolling track -->
+                <div class="relative flex-1 overflow-hidden">
+                    <div class="absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-dark-900/70 to-transparent z-10 pointer-events-none"></div>
+                    <div class="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-dark-900/70 to-transparent z-10 pointer-events-none"></div>
+                    <div class="ticker-track">
+                        <!-- Set 1 -->
+                        <div class="flex items-center flex-shrink-0">
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Life</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Fargo</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Vinland Saga</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Violet Evergarden: The Movie</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Civilization V</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Made in Heaven</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Civilization VI</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Kingdom</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">S.T.A.L.K.E.R.: Shadow of Chernobyl</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Warrior</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Miracle in Cell No. 7</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Guns &amp; Gulaabs</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Merlin</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Age of Empires III</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Mafia II</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Tokyo Revengers</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Alice in Borderland</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Painted Veil</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Even Mice Belong in Heaven</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Jane Goodall: Reasons for Hope</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Halo Wars</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Flying Monsters 3D</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Northern Limit Line</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Firebird</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Tin Man</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Wildest Dream</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Apple Tree Yard</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Valhalla: The Legend of Thor</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">EverQuest II</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Paris 36</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">In the Shadow</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Star Trek: Prodigy</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Elder Scrolls Online</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Lost City of Z</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Skater Girl</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Conspirator</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Beaver</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Immigrant</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">When Animals Dream</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Red Tails</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Bad Lieutenant</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Factory</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Words</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Dissidia Final Fantasy</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Sarah Brightman — Harem</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Helloween</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Hostel</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Joss Stone</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Celine Dion</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Tunnel</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Freaks</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Last Chance Harvey</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Enough Said</span><span class="text-musa-gold/40">•</span>
+                        </div>
+                        <!-- Set 2 — duplicate for seamless loop -->
+                        <div class="flex items-center flex-shrink-0" aria-hidden="true">
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Life</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Fargo</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Vinland Saga</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Violet Evergarden: The Movie</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Civilization V</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Made in Heaven</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Civilization VI</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Kingdom</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">S.T.A.L.K.E.R.: Shadow of Chernobyl</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Warrior</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Miracle in Cell No. 7</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Guns &amp; Gulaabs</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Merlin</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Age of Empires III</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Mafia II</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Tokyo Revengers</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Alice in Borderland</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Painted Veil</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Even Mice Belong in Heaven</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Jane Goodall: Reasons for Hope</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Halo Wars</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Flying Monsters 3D</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Northern Limit Line</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Firebird</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Tin Man</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Wildest Dream</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Apple Tree Yard</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Valhalla: The Legend of Thor</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">EverQuest II</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Paris 36</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">In the Shadow</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Star Trek: Prodigy</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Elder Scrolls Online</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Lost City of Z</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Skater Girl</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Conspirator</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Beaver</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Immigrant</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">When Animals Dream</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Red Tails</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Bad Lieutenant</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Factory</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">The Words</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Dissidia Final Fantasy</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Sarah Brightman — Harem</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Helloween</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Hostel</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Joss Stone</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Celine Dion</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Tunnel</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Freaks</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Last Chance Harvey</span><span class="text-musa-gold/40">•</span>
+                            <span class="text-sm text-zinc-400 font-serif italic tracking-wide whitespace-nowrap px-5">Enough Said</span><span class="text-musa-gold/40">•</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -196,9 +374,11 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
 
                 <div class="flex flex-col items-center text-center group">
-                    <div class="w-16 h-16 rounded-full bg-dark-900 border border-white/10 flex items-center justify-center mb-6 group-hover:border-musa-gold transition-colors duration-500">
+                    <div
+                        class="w-16 h-16 rounded-full bg-dark-900 border border-white/10 flex items-center justify-center mb-6 group-hover:border-musa-gold transition-colors duration-500">
                         <svg class="w-6 h-6 text-musa-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                         </svg>
                     </div>
                     <h3 class="text-xl font-serif text-white mb-4">World-Class Players</h3>
@@ -208,9 +388,11 @@
                 </div>
 
                 <div class="flex flex-col items-center text-center group">
-                    <div class="w-16 h-16 rounded-full bg-dark-900 border border-white/10 flex items-center justify-center mb-6 group-hover:border-musa-gold transition-colors duration-500">
+                    <div
+                        class="w-16 h-16 rounded-full bg-dark-900 border border-white/10 flex items-center justify-center mb-6 group-hover:border-musa-gold transition-colors duration-500">
                         <svg class="w-6 h-6 text-musa-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
                     <h3 class="text-xl font-serif text-white mb-4">European Roots, Global Service</h3>
@@ -220,15 +402,19 @@
                 </div>
 
                 <div class="flex flex-col items-center text-center group">
-                    <div class="w-16 h-16 rounded-full bg-dark-900 border border-white/10 flex items-center justify-center mb-6 group-hover:border-musa-gold transition-colors duration-500">
+                    <div
+                        class="w-16 h-16 rounded-full bg-dark-900 border border-white/10 flex items-center justify-center mb-6 group-hover:border-musa-gold transition-colors duration-500">
                         <svg class="w-6 h-6 text-musa-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </div>
                     <h3 class="text-xl font-serif text-white mb-4">End-to-End Service</h3>
                     <p class="text-zinc-400 text-sm leading-relaxed font-light">
-                        Orchestration, engineering, mixing, hotels, transport. We handle everything except writing the notes.
+                        Orchestration, engineering, mixing, hotels, transport. We handle everything except writing the
+                        notes.
                     </p>
                 </div>
 
@@ -238,13 +424,13 @@
 
     <!-- ═══════════════════════════════ VALUE PROPOSITION ═══════════════════════════════ -->
     <section class="py-32 relative overflow-hidden bg-dark-900">
-        <div class="absolute right-0 top-0 w-1/2 h-full bg-studio-pattern bg-cover bg-center hidden lg:block grayscale opacity-40"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="max-w-2xl">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-12 h-px bg-musa-gold"></div>
-                        <span class="text-musa-gold text-sm font-bold tracking-[0.2em] uppercase">The Producer's Orchestra</span>
+                        <span class="text-musa-gold text-sm font-bold tracking-[0.2em] uppercase">The Producer's
+                            Orchestra</span>
                     </div>
                     <h2 class="text-4xl md:text-5xl font-serif text-white mb-8 leading-tight">
                         MUSA isn't a venue.<br>
@@ -252,22 +438,27 @@
                     </h2>
                     <div class="space-y-6 text-zinc-300 font-light leading-relaxed text-lg">
                         <p>
-                            From the first email to your final stems, you work with one team: experienced engineers, an Oscar-credited orchestra, conductors who've worked with Desplat and Zimmer, and a producer (Petr Pycha) who has run hundreds of sessions and seen every problem you'll ever encounter — before you do.
+                            From the first email to your final stems, you work with one team: experienced engineers, an
+                            Oscar-credited orchestra, conductors who've worked with Desplat and Zimmer, and a producer
+                            (Petr Pycha) who has run hundreds of sessions and seen every problem you'll ever encounter —
+                            before you do.
                         </p>
-                    </div>
-                    <div class="mt-12">
-                        <a href="about.html" class="inline-flex items-center gap-3 text-white font-semibold tracking-widest uppercase text-sm hover:text-musa-gold transition-colors group">
-                            Meet the Team
-                            <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                            </svg>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Mobile studio image -->
-                <div class="lg:hidden h-96 rounded-xl bg-studio-pattern bg-cover bg-center grayscale shadow-2xl relative">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent rounded-xl"></div>
+                <!-- Petr Pycha portrait -->
+                <div class="relative">
+                    <div class="relative overflow-hidden rounded-xl shadow-2xl shadow-black/60">
+                        <img src="assets/images/Petr_Pycha Ai.webp" alt="Petr Pycha — Producer, MUSA"
+                            class="w-full h-[560px] object-cover object-top grayscale hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-dark-900/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-8">
+                            <p class="text-white font-serif text-xl mb-1">Petr Pycha</p>
+                            <p class="text-musa-gold text-sm font-bold tracking-[0.2em] uppercase">Producer &amp; Founder</p>
+                        </div>
+                    </div>
+                    <!-- Decorative border accent -->
+                    <div class="absolute -bottom-3 -right-3 w-full h-full border border-musa-gold/20 rounded-xl pointer-events-none"></div>
                 </div>
             </div>
         </div>
@@ -278,100 +469,103 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20">
                 <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">Capabilities</h2>
-                <p class="text-zinc-400 text-lg font-light max-w-2xl mx-auto">Tailored symphonic production for every medium in the entertainment industry.</p>
+                <p class="text-zinc-400 text-lg font-light max-w-2xl mx-auto">Tailored symphonic production for every
+                    medium in the entertainment industry.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                <!-- Film Scoring -->
-                <a href="services-film.html" class="group block relative overflow-hidden bg-dark-900 border border-white/5 p-10 hover:border-musa-gold/50 transition-all duration-500">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-gold-dark to-musa-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                    <div class="w-12 h-12 rounded bg-dark-700 flex items-center justify-center mb-8 group-hover:bg-musa-gold/10 transition-colors">
-                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/>
+                <!-- Film & Game Scoring -->
+                <a href="services-film-game.html"
+                    class="group flex flex-col relative overflow-hidden bg-dark-900 border border-white/5 p-8 hover:border-musa-gold/50 transition-all duration-500">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-gold-dark to-musa-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    </div>
+                    <div
+                        class="w-12 h-12 rounded bg-dark-700 flex items-center justify-center mb-8 group-hover:bg-musa-gold/10 transition-colors">
+                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-gold transition-colors" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-serif text-white mb-3 group-hover:text-musa-gold transition-colors">Film Scoring</h3>
-                    <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6">Full orchestral recording for feature films, from intimate indie dramas to massive blockbuster action scores.</p>
-                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-gold flex items-center gap-2">
-                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    <h3 class="text-lg font-serif text-white mb-3 group-hover:text-musa-gold transition-colors">Film &amp; Game Scoring</h3>
+                    <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6 flex-1">Full orchestral recording for feature films and game soundtracks — indie to major studio, any configuration.</p>
+                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-gold flex items-center gap-2 mt-auto">
+                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
                     </span>
                 </a>
 
-                <!-- Video Game Scoring -->
-                <a href="services-games.html" class="group block relative overflow-hidden bg-dark-900 border border-white/5 p-10 hover:border-musa-gold/50 transition-all duration-500">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-gold-dark to-musa-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                    <div class="w-12 h-12 rounded bg-dark-700 flex items-center justify-center mb-8 group-hover:bg-musa-gold/10 transition-colors">
-                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
+                <!-- Remote Scoring Sessions — highlighted -->
+                <a href="services-remote.html"
+                    class="group flex flex-col relative overflow-hidden bg-dark-900 border border-musa-gold/30 p-8 hover:border-musa-gold transition-all duration-500 shadow-[0_0_15px_rgba(184,137,90,0.05)]">
+                    <div
+                        class="absolute top-0 right-0 bg-musa-gold text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
+                        Most Popular</div>
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-gold-dark to-musa-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     </div>
-                    <h3 class="text-xl font-serif text-white mb-3 group-hover:text-musa-gold transition-colors">Video Game Scoring</h3>
-                    <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6">Dynamic, multi-layered recording sessions designed for interactive media and adaptive game audio engines.</p>
-                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-gold flex items-center gap-2">
-                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                    </span>
-                </a>
-
-                <!-- TV & Streaming -->
-                <a href="services-tv.html" class="group block relative overflow-hidden bg-dark-900 border border-white/5 p-10 hover:border-musa-gold/50 transition-all duration-500">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-gold-dark to-musa-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                    <div class="w-12 h-12 rounded bg-dark-700 flex items-center justify-center mb-8 group-hover:bg-musa-gold/10 transition-colors">
-                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-serif text-white mb-3 group-hover:text-musa-gold transition-colors">TV & Streaming</h3>
-                    <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6">Fast-turnaround episodic scoring with consistent quality across entire seasons, optimized for modern broadcast standards.</p>
-                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-gold flex items-center gap-2">
-                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                    </span>
-                </a>
-
-                <!-- Remote Sessions — highlighted -->
-                <a href="services-remote.html" class="group block relative overflow-hidden bg-dark-900 border border-musa-gold/30 p-10 hover:border-musa-gold transition-all duration-500 shadow-[0_0_15px_rgba(184,137,90,0.05)]">
-                    <div class="absolute top-0 right-0 bg-musa-gold text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Most Popular</div>
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-gold-dark to-musa-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                    <div class="w-12 h-12 rounded bg-musa-gold/10 flex items-center justify-center mb-8 group-hover:bg-musa-gold/20 transition-colors">
+                    <div
+                        class="w-12 h-12 rounded bg-musa-gold/10 flex items-center justify-center mb-8 group-hover:bg-musa-gold/20 transition-colors">
                         <svg class="w-6 h-6 text-musa-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-serif text-white mb-3 group-hover:text-musa-gold transition-colors">Remote Sessions</h3>
-                    <p class="text-zinc-400 text-sm font-light leading-relaxed mb-6">Direct the orchestra live from your home studio. High-fidelity audio streaming, multi-camera feeds, and real-time communication.</p>
-                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-gold flex items-center gap-2">
-                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    <h3 class="text-lg font-serif text-white mb-3 group-hover:text-musa-gold transition-colors whitespace-nowrap">Remote Scoring Sessions</h3>
+                    <p class="text-zinc-400 text-sm font-light leading-relaxed mb-6 flex-1">Direct the orchestra live from your home studio. High-fidelity audio streaming, multi-camera feeds, and real-time communication.</p>
+                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-gold flex items-center gap-2 mt-auto">
+                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
                     </span>
                 </a>
 
-                <!-- Trailer & Ads -->
-                <a href="services-trailer.html" class="group block relative overflow-hidden bg-dark-900 border border-white/5 p-10 hover:border-musa-gold/50 transition-all duration-500">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-gold-dark to-musa-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                    <div class="w-12 h-12 rounded bg-dark-700 flex items-center justify-center mb-8 group-hover:bg-musa-gold/10 transition-colors">
-                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
+                <!-- Album Production -->
+                <a href="services-albums.html"
+                    class="group flex flex-col relative overflow-hidden bg-dark-900 border border-white/5 p-8 hover:border-musa-gold/50 transition-all duration-500">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-gold-dark to-musa-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    </div>
+                    <div
+                        class="w-12 h-12 rounded bg-dark-700 flex items-center justify-center mb-8 group-hover:bg-musa-gold/10 transition-colors">
+                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-gold transition-colors" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-serif text-white mb-3 group-hover:text-musa-gold transition-colors">Trailer & Ads</h3>
-                    <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6">Massive brass, soaring strings, and aggressive percussion designed for high-impact commercial campaigns.</p>
-                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-gold flex items-center gap-2">
-                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    <h3 class="text-lg font-serif text-white mb-3 group-hover:text-musa-gold transition-colors">Album Production</h3>
+                    <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6 flex-1">Classical repertoire, crossover projects, and artist albums demanding pristine acoustic environments and virtuoso performances.</p>
+                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-gold flex items-center gap-2 mt-auto">
+                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
                     </span>
                 </a>
 
-                <!-- Album Productions -->
-                <a href="services-albums.html" class="group block relative overflow-hidden bg-dark-900 border border-white/5 p-10 hover:border-musa-gold/50 transition-all duration-500">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-gold-dark to-musa-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                    <div class="w-12 h-12 rounded bg-dark-700 flex items-center justify-center mb-8 group-hover:bg-musa-gold/10 transition-colors">
-                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+                <!-- Production Concierge -->
+                <a href="services-concierge.html"
+                    class="group flex flex-col relative overflow-hidden bg-dark-900 border border-white/5 p-8 hover:border-musa-gold/50 transition-all duration-500">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-gold-dark to-musa-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    </div>
+                    <div
+                        class="w-12 h-12 rounded bg-dark-700 flex items-center justify-center mb-8 group-hover:bg-musa-gold/10 transition-colors">
+                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-gold transition-colors" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-serif text-white mb-3 group-hover:text-musa-gold transition-colors">Album Productions</h3>
-                    <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6">Classical repertoire, crossover projects, and artist albums demanding pristine acoustic environments and virtuoso performances.</p>
-                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-gold flex items-center gap-2">
-                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    <h3 class="text-lg font-serif text-white mb-3 group-hover:text-musa-gold transition-colors">Production Concierge</h3>
+                    <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6 flex-1">End-to-end logistics: orchestration, music prep, accommodation, transport, and hospitality — so you focus on the music.</p>
+                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-gold flex items-center gap-2 mt-auto">
+                        Explore <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
                     </span>
                 </a>
 
@@ -390,134 +584,187 @@
                 <h2 class="text-4xl md:text-5xl font-serif text-white">Featured Work</h2>
             </div>
             <div class="flex items-center gap-4">
-                <button id="carousel-prev" class="w-12 h-12 rounded-full border border-white/20 hover:border-musa-gold flex items-center justify-center text-zinc-400 hover:text-musa-gold transition-all duration-300">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                <button id="carousel-prev"
+                    class="w-12 h-12 rounded-full border border-white/20 hover:border-musa-gold flex items-center justify-center text-zinc-400 hover:text-musa-gold transition-all duration-300">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
                 </button>
-                <button id="carousel-next" class="w-12 h-12 rounded-full border border-white/20 hover:border-musa-gold flex items-center justify-center text-zinc-400 hover:text-musa-gold transition-all duration-300">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                <button id="carousel-next"
+                    class="w-12 h-12 rounded-full border border-white/20 hover:border-musa-gold flex items-center justify-center text-zinc-400 hover:text-musa-gold transition-all duration-300">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
                 </button>
             </div>
         </div>
 
-        <div id="credits-carousel" class="flex gap-6 overflow-x-auto scroll-smooth px-6 lg:px-[calc((100vw-80rem)/2+1.5rem)] pb-4" style="scrollbar-width: none; -ms-overflow-style: none;">
+        <div id="credits-carousel"
+            class="flex gap-6 overflow-x-auto scroll-smooth px-6 lg:px-[calc((100vw-80rem)/2+1.5rem)] pb-4"
+            style="scrollbar-width: none; -ms-overflow-style: none;">
 
-            <a href="https://www.imdb.com/title/tt0485985/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/title/tt0485985/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/01_red-tails.jpg" alt="Red Tails" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/01_red-tails.jpg" alt="Red Tails"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Red Tails</h3>
+                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Red Tails
+                </h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Feature Film</p>
             </a>
 
-            <a href="https://www.imdb.com/title/tt1095217/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/title/tt1095217/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/02_bad-lieutenant.jpg" alt="Bad Lieutenant" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/02_bad-lieutenant.jpg" alt="Bad Lieutenant"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Bad Lieutenant</h3>
+                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Bad
+                    Lieutenant</h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Feature Film</p>
             </a>
 
-            <a href="https://www.imdb.com/title/tt1321860/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/title/tt1321860/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/03_the-beaver.jpg" alt="The Beaver" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/03_the-beaver.jpg" alt="The Beaver"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">The Beaver</h3>
+                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">The Beaver
+                </h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Feature Film</p>
             </a>
 
-            <a href="https://www.imdb.com/title/tt1132285/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/title/tt1132285/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/04_the-factory.jpg" alt="The Factory" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/04_the-factory.jpg" alt="The Factory"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">The Factory</h3>
+                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">The Factory
+                </h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Feature Film</p>
             </a>
 
-            <a href="https://www.imdb.com/title/tt1840417/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/title/tt1840417/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/05_the-words.jpg" alt="The Words" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/05_the-words.jpg" alt="The Words"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">The Words</h3>
+                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">The Words
+                </h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Feature Film</p>
             </a>
 
-            <a href="https://www.imdb.com/title/tt0968264/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/title/tt0968264/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/06_the-conspirator.jpg" alt="The Conspirator" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/06_the-conspirator.jpg" alt="The Conspirator"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">The Conspirator</h3>
+                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">The
+                    Conspirator</h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Feature Film</p>
             </a>
 
-            <a href="https://www.imdb.com/title/tt1270017/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/title/tt1270017/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/07_dissidia.jpg" alt="Dissidia Final Fantasy" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/07_dissidia.jpg" alt="Dissidia Final Fantasy"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Dissidia Final Fantasy</h3>
+                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Dissidia
+                    Final Fantasy</h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Video Game</p>
             </a>
 
-            <a href="https://www.imdb.com/title/tt1075094/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/title/tt1075094/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/08_halo-wars.jpg" alt="Halo Wars" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/08_halo-wars.jpg" alt="Halo Wars"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Halo Wars</h3>
+                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Halo Wars
+                </h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Video Game</p>
             </a>
 
-            <a href="https://www.imdb.com/name/nm0109382/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/name/nm0109382/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/09_sarah-brightman-harem.jpg" alt="Sarah Brightman — Harem" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/09_sarah-brightman-harem.jpg"
+                        alt="Sarah Brightman — Harem"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Sarah Brightman — Harem</h3>
+                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Sarah
+                    Brightman — Harem</h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Artist Album</p>
             </a>
 
-            <a href="https://www.imdb.com/name/nm3102297/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/name/nm3102297/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/10_helloween.jpg" alt="Helloween" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/10_helloween.jpg" alt="Helloween"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Helloween</h3>
+                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Helloween
+                </h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Artist Album</p>
             </a>
 
-            <a href="https://www.imdb.com/title/tt0450278/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/title/tt0450278/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/11_hostel.jpg" alt="Hostel" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/11_hostel.jpg" alt="Hostel"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Hostel</h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Feature Film</p>
             </a>
 
-            <a href="https://www.imdb.com/name/nm1783498/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/name/nm1783498/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/12_joss-stone.jpg" alt="Joss Stone" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/12_joss-stone.jpg" alt="Joss Stone"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Joss Stone</h3>
+                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Joss Stone
+                </h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Artist Album</p>
             </a>
 
-            <a href="https://www.imdb.com/title/tt1572014/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/title/tt1572014/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/13_mafia-2.jpg" alt="Mafia II" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/13_mafia-2.jpg" alt="Mafia II"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Mafia II</h3>
+                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Mafia II
+                </h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Video Game</p>
             </a>
 
-            <a href="https://www.imdb.com/title/tt0446755/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/title/tt0446755/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/14_the-painted-veil.jpg" alt="The Painted Veil" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/14_the-painted-veil.jpg" alt="The Painted Veil"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">The Painted Veil</h3>
+                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">The Painted
+                    Veil</h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Feature Film</p>
             </a>
 
-            <a href="https://www.imdb.com/name/nm0001143/" target="_blank" rel="noopener" class="group flex-shrink-0 block">
+            <a href="https://www.imdb.com/name/nm0001143/" target="_blank" rel="noopener"
+                class="group flex-shrink-0 block">
                 <div class="overflow-hidden rounded-lg shadow-lg shadow-black/40">
-                    <img src="assets/images/musa credits_homepage/15_celine-dion.jpg" alt="Celine Dion" class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                    <img src="assets/images/musa credits_homepage/15_celine-dion.jpg" alt="Celine Dion"
+                        class="h-[360px] w-auto object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Celine Dion</h3>
+                <h3 class="text-white font-serif text-lg mt-4 group-hover:text-musa-gold transition-colors">Celine Dion
+                </h3>
                 <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1">Artist Album</p>
             </a>
 
@@ -526,8 +773,12 @@
 
     <!-- ═══════════════════════════════ WHY PRAGUE ═══════════════════════════════ -->
     <section class="py-32 bg-dark-800 border-t border-white/5 relative overflow-hidden">
-        <div class="absolute -right-64 -top-64 w-[800px] h-[800px] rounded-full border-[1px] border-white/5 opacity-20 pointer-events-none"></div>
-        <div class="absolute -right-32 -top-32 w-[600px] h-[600px] rounded-full border-[1px] border-white/5 opacity-20 pointer-events-none"></div>
+        <div
+            class="absolute -right-64 -top-64 w-[800px] h-[800px] rounded-full border-[1px] border-white/5 opacity-20 pointer-events-none">
+        </div>
+        <div
+            class="absolute -right-32 -top-32 w-[600px] h-[600px] rounded-full border-[1px] border-white/5 opacity-20 pointer-events-none">
+        </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
@@ -535,19 +786,24 @@
                 <div class="lg:col-span-5 flex flex-col justify-center">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-12 h-px bg-musa-gold"></div>
-                        <span class="text-musa-gold text-sm font-bold tracking-[0.2em] uppercase">Location Advantage</span>
+                        <span class="text-musa-gold text-sm font-bold tracking-[0.2em] uppercase">Location
+                            Advantage</span>
                     </div>
                     <h2 class="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
                         Prague Sound.<br>
                         <span class="text-musa-grey italic">Composer Logic.</span>
                     </h2>
                     <p class="text-zinc-400 text-lg font-light leading-relaxed mb-10">
-                        Prague has been the secret weapon of film composers since the 1990s. Goldsmith, Legrand, Desplat, Portman, Yared — all chose it.
+                        Prague has been the secret weapon of film composers since the 1990s. Goldsmith, Legrand,
+                        Desplat, Portman, Yared — all chose it.
                     </p>
-                    <a href="insights-prague-comparison.html" class="inline-flex items-center gap-3 text-white font-semibold tracking-widest uppercase text-sm hover:text-musa-gold transition-colors group w-max">
+                    <a href="insights-prague-comparison.html"
+                        class="inline-flex items-center gap-3 text-white font-semibold tracking-widest uppercase text-sm hover:text-musa-gold transition-colors group w-max">
                         Read: Prague vs. Budapest vs. Vienna
-                        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </a>
                 </div>
@@ -555,11 +811,15 @@
                 <div class="lg:col-span-7 space-y-12 lg:pl-12">
 
                     <div class="flex gap-6 md:gap-8 group">
-                        <div class="text-6xl md:text-7xl font-serif text-dark-600 group-hover:text-musa-gold transition-colors duration-500 leading-none">01</div>
+                        <div
+                            class="text-6xl md:text-7xl font-serif text-dark-600 group-hover:text-musa-gold transition-colors duration-500 leading-none">
+                            01</div>
                         <div>
                             <h3 class="text-2xl font-serif text-white mb-3">The Sound</h3>
                             <p class="text-zinc-400 font-light leading-relaxed">
-                                Three decades of recording the world's best film scores have built a uniquely cinematic acoustic culture. The players understand the specific demands, emotional arcs, and tone required for media scoring.
+                                Three decades of recording the world's best film scores have built a uniquely cinematic
+                                acoustic culture. The players understand the specific demands, emotional arcs, and tone
+                                required for media scoring.
                             </p>
                         </div>
                     </div>
@@ -567,11 +827,14 @@
                     <div class="w-full h-px bg-white/5"></div>
 
                     <div class="flex gap-6 md:gap-8 group">
-                        <div class="text-6xl md:text-7xl font-serif text-dark-600 group-hover:text-musa-gold transition-colors duration-500 leading-none">02</div>
+                        <div
+                            class="text-6xl md:text-7xl font-serif text-dark-600 group-hover:text-musa-gold transition-colors duration-500 leading-none">
+                            02</div>
                         <div>
                             <h3 class="text-2xl font-serif text-white mb-3">The Structure</h3>
                             <p class="text-zinc-400 font-light leading-relaxed">
-                                100% buyout. No residuals. No union complexity. Simple contracts, total IP ownership in perpetuity.
+                                100% buyout. No residuals. No union complexity. Simple contracts, total IP ownership in
+                                perpetuity.
                             </p>
                         </div>
                     </div>
@@ -579,11 +842,14 @@
                     <div class="w-full h-px bg-white/5"></div>
 
                     <div class="flex gap-6 md:gap-8 group">
-                        <div class="text-6xl md:text-7xl font-serif text-dark-600 group-hover:text-musa-gold transition-colors duration-500 leading-none">03</div>
+                        <div
+                            class="text-6xl md:text-7xl font-serif text-dark-600 group-hover:text-musa-gold transition-colors duration-500 leading-none">
+                            03</div>
                         <div>
                             <h3 class="text-2xl font-serif text-white mb-3">The City</h3>
                             <p class="text-zinc-400 font-light leading-relaxed">
-                                Direct flights from 70+ cities. Beautiful hotels. Your producer can fly in for the day and be home for dinner.
+                                Direct flights from 70+ cities. Beautiful hotels. Your producer can fly in for the day
+                                and be home for dinner.
                             </p>
                         </div>
                     </div>
@@ -601,10 +867,13 @@
                 <div class="bg-dark-800 border border-white/5 p-10 flex flex-col justify-between">
                     <div>
                         <svg class="w-10 h-10 text-musa-gold mb-6 opacity-50" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                            <path
+                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                         </svg>
                         <p class="text-zinc-300 font-serif italic text-lg leading-relaxed mb-8">
-                            "The efficiency and musicality of the FILMharmonic is unmatched. Petr's production team made a remote session from LA feel like we were in the control room next door. Flawless execution."
+                            "The efficiency and musicality of the FILMharmonic is unmatched. Petr's production team made
+                            a remote session from LA feel like we were in the control room next door. Flawless
+                            execution."
                         </p>
                     </div>
                     <div>
@@ -616,10 +885,13 @@
                 <div class="bg-dark-800 border border-white/5 p-10 flex flex-col justify-between">
                     <div>
                         <svg class="w-10 h-10 text-musa-gold mb-6 opacity-50" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                            <path
+                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                         </svg>
                         <p class="text-zinc-300 font-serif italic text-lg leading-relaxed mb-8">
-                            "When scoring for a franchise like this, there is no margin for error. MUSA delivered not just the notes, but the precise tone and aggression we needed. The buyout structure made the business side completely painless."
+                            "When scoring for a franchise like this, there is no margin for error. MUSA delivered not
+                            just the notes, but the precise tone and aggression we needed. The buyout structure made the
+                            business side completely painless."
                         </p>
                     </div>
                     <div>
@@ -631,10 +903,13 @@
                 <div class="bg-dark-800 border border-white/5 p-10 flex flex-col justify-between">
                     <div>
                         <svg class="w-10 h-10 text-musa-gold mb-6 opacity-50" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                            <path
+                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                         </svg>
                         <p class="text-zinc-300 font-serif italic text-lg leading-relaxed mb-8">
-                            "Coming to Prague to record with MUSA is an experience every composer should have. The players are incredibly responsive, and Petr handles the logistics so smoothly you forget you're halfway across the world."
+                            "Coming to Prague to record with MUSA is an experience every composer should have. The
+                            players are incredibly responsive, and Petr handles the logistics so smoothly you forget
+                            you're halfway across the world."
                         </p>
                     </div>
                     <div>
@@ -655,53 +930,68 @@
             </div>
 
             <div class="space-y-4">
-                <div class="faq-item border border-white/5 bg-dark-900 cursor-pointer" onclick="this.classList.toggle('active')">
+                <div class="faq-item border border-white/5 bg-dark-900 cursor-pointer"
+                    onclick="this.classList.toggle('active')">
                     <div class="flex items-center justify-between p-6">
                         <h3 class="text-white font-medium">Where do you record?</h3>
                         <span class="faq-icon text-musa-gold text-2xl transition-transform duration-300">+</span>
                     </div>
                     <div class="faq-answer px-6 pb-6">
-                        <p class="text-zinc-400 font-light leading-relaxed">We work with Prague's finest scoring stages including Smecky Music Studios, CNSO Studios, Rudolfinum / Dvorak Hall, and Czech Television Music Studios. We recommend the best room for your project's size and acoustic needs.</p>
+                        <p class="text-zinc-400 font-light leading-relaxed">We work with Prague's finest scoring stages
+                            including Smecky Music Studios, CNSO Studios, Rudolfinum / Dvorak Hall, and Czech Television
+                            Music Studios. We recommend the best room for your project's size and acoustic needs.</p>
                     </div>
                 </div>
 
-                <div class="faq-item border border-white/5 bg-dark-900 cursor-pointer" onclick="this.classList.toggle('active')">
+                <div class="faq-item border border-white/5 bg-dark-900 cursor-pointer"
+                    onclick="this.classList.toggle('active')">
                     <div class="flex items-center justify-between p-6">
                         <h3 class="text-white font-medium">Can I direct the session remotely?</h3>
                         <span class="faq-icon text-musa-gold text-2xl transition-transform duration-300">+</span>
                     </div>
                     <div class="faq-answer px-6 pb-6">
-                        <p class="text-zinc-400 font-light leading-relaxed">Absolutely. Our remote scoring setup includes Source-Connect Pro, ListenTo, secure 4K multi-camera video, and real-time talkback. Composers direct sessions daily from LA, London, Tokyo, and beyond.</p>
+                        <p class="text-zinc-400 font-light leading-relaxed">Absolutely. Our remote scoring setup
+                            includes Source-Connect Pro, ListenTo, secure 4K multi-camera video, and real-time talkback.
+                            Composers direct sessions daily from LA, London, Tokyo, and beyond.</p>
                     </div>
                 </div>
 
-                <div class="faq-item border border-white/5 bg-dark-900 cursor-pointer" onclick="this.classList.toggle('active')">
+                <div class="faq-item border border-white/5 bg-dark-900 cursor-pointer"
+                    onclick="this.classList.toggle('active')">
                     <div class="flex items-center justify-between p-6">
                         <h3 class="text-white font-medium">What's included in a typical project?</h3>
                         <span class="faq-icon text-musa-gold text-2xl transition-transform duration-300">+</span>
                     </div>
                     <div class="faq-answer px-6 pb-6">
-                        <p class="text-zinc-400 font-light leading-relaxed">MUSA is full-service: orchestra contracting, conductor, engineers, studio booking, music preparation, session recording, mixing, and stem delivery. We also handle accommodation, transport, and hospitality if you visit Prague.</p>
+                        <p class="text-zinc-400 font-light leading-relaxed">MUSA is full-service: orchestra contracting,
+                            conductor, engineers, studio booking, music preparation, session recording, mixing, and stem
+                            delivery. We also handle accommodation, transport, and hospitality if you visit Prague.</p>
                     </div>
                 </div>
 
-                <div class="faq-item border border-white/5 bg-dark-900 cursor-pointer" onclick="this.classList.toggle('active')">
+                <div class="faq-item border border-white/5 bg-dark-900 cursor-pointer"
+                    onclick="this.classList.toggle('active')">
                     <div class="flex items-center justify-between p-6">
                         <h3 class="text-white font-medium">How far in advance do I need to book?</h3>
                         <span class="faq-icon text-musa-gold text-2xl transition-transform duration-300">+</span>
                     </div>
                     <div class="faq-answer px-6 pb-6">
-                        <p class="text-zinc-400 font-light leading-relaxed">Typical lead time is 2-6 weeks, though we've accommodated rush projects in under two weeks. The earlier you reach out, the more flexibility we have with scheduling and venue selection.</p>
+                        <p class="text-zinc-400 font-light leading-relaxed">Typical lead time is 2-6 weeks, though we've
+                            accommodated rush projects in under two weeks. The earlier you reach out, the more
+                            flexibility we have with scheduling and venue selection.</p>
                     </div>
                 </div>
 
-                <div class="faq-item border border-white/5 bg-dark-900 cursor-pointer" onclick="this.classList.toggle('active')">
+                <div class="faq-item border border-white/5 bg-dark-900 cursor-pointer"
+                    onclick="this.classList.toggle('active')">
                     <div class="flex items-center justify-between p-6">
                         <h3 class="text-white font-medium">How do you handle IP and buyout?</h3>
                         <span class="faq-icon text-musa-gold text-2xl transition-transform duration-300">+</span>
                     </div>
                     <div class="faq-answer px-6 pb-6">
-                        <p class="text-zinc-400 font-light leading-relaxed">All MUSA recordings are 100% buyout. No residuals, no union complexity, no ongoing fees. You receive total intellectual property ownership in perpetuity. Simple contracts, complete clarity.</p>
+                        <p class="text-zinc-400 font-light leading-relaxed">All MUSA recordings are 100% buyout. No
+                            residuals, no union complexity, no ongoing fees. You receive total intellectual property
+                            ownership in perpetuity. Simple contracts, complete clarity.</p>
                     </div>
                 </div>
             </div>
@@ -709,14 +999,17 @@
     </section>
 
     <!-- ═══════════════════════════════ FINAL CTA ═══════════════════════════════ -->
-    <section id="quote" class="relative py-40 flex items-center justify-center bg-cta-pattern bg-cover bg-center bg-fixed">
+    <section id="quote"
+        class="relative py-40 flex items-center justify-center bg-cta-pattern bg-cover bg-center bg-fixed">
         <div class="absolute inset-0 bg-dark-900/80 backdrop-blur-sm"></div>
         <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
             <h2 class="text-5xl md:text-7xl font-serif text-white mb-6">Ready When You Are.</h2>
             <p class="text-xl text-zinc-300 font-light mb-12 max-w-2xl mx-auto">
-                Whether you're scoring your first indie film or your hundredth Hollywood feature, we'd love to hear about your project.
+                Whether you're scoring your first indie film or your hundredth Hollywood feature, we'd love to hear
+                about your project.
             </p>
-            <a href="quote.html" class="inline-block px-10 py-5 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 rounded shadow-[0_0_30px_rgba(184,137,90,0.3)] hover:shadow-[0_0_50px_rgba(184,137,90,0.6)] transform hover:-translate-y-1">
+            <a href="quote.html"
+                class="inline-block px-10 py-5 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 rounded shadow-[0_0_30px_rgba(184,137,90,0.3)] hover:shadow-[0_0_50px_rgba(184,137,90,0.6)] transform hover:-translate-y-1">
                 Start Your Project
             </a>
         </div>
@@ -729,15 +1022,18 @@
 
                 <div class="lg:col-span-2">
                     <a href="/" class="flex items-center mb-6">
-                        <img src="assets/logos/logo_Musa.png" alt="MUSA" class="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300">
+                        <img src="assets/logos/logo_Musa.png" alt="MUSA"
+                            class="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300">
                     </a>
                     <p class="text-zinc-500 text-sm font-light leading-relaxed max-w-sm mb-6">
-                        Hollywood-grade orchestral scoring, recorded in Prague. Serving the global film, game, and television industries for over thirty years.
+                        Hollywood-grade orchestral scoring, recorded in Prague. Serving the global film, game, and
+                        television industries for over thirty years.
                     </p>
                     <p class="text-zinc-500 text-sm font-light mb-2">
                         MUSA, Ltd. • Skroupovo namesti 4 • 130 00, Prague 3 • Czech Republic
                     </p>
-                    <a href="mailto:info@musa.cz" class="text-musa-gold font-bold tracking-widest uppercase text-sm hover:text-white transition-colors">
+                    <a href="mailto:info@musa.cz"
+                        class="text-musa-gold font-bold tracking-widest uppercase text-sm hover:text-white transition-colors">
                         info@musa.cz
                     </a>
                     <p class="text-zinc-500 text-sm mt-1">+420 724 029 525</p>
@@ -746,48 +1042,78 @@
                 <div>
                     <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Company</h4>
                     <ul class="space-y-4">
-                        <li><a href="about.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Our Story</a></li>
-                        <li><a href="team.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">The Team</a></li>
-                        <li><a href="orchestra.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Orchestra & Venues</a></li>
-                        <li><a href="press.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Awards & Press</a></li>
-                        <li><a href="contact.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Contact</a></li>
+                        <li><a href="about.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Our Story</a></li>
+                        <li><a href="team.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">The
+                                Team</a></li>
+                        <li><a href="orchestra.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Orchestra &
+                                Venues</a></li>
+                        <li><a href="press.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Awards & Press</a>
+                        </li>
+                        <li><a href="contact.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Services</h4>
                     <ul class="space-y-4">
-                        <li><a href="services-orchestra.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Live Recording</a></li>
-                        <li><a href="services-remote.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Remote Sessions</a></li>
-                        <li><a href="services-choir.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Choir & Vocal</a></li>
-                        <li><a href="services-orchestration.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Orchestration</a></li>
-                        <li><a href="services-mixing.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Mixing & Mastering</a></li>
-                        <li><a href="services-concierge.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Production Concierge</a></li>
+                        <li><a href="services-orchestra.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Live Recording</a>
+                        </li>
+                        <li><a href="services-remote.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Remote Sessions</a>
+                        </li>
+                        <li><a href="services-choir.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Choir & Vocal</a>
+                        </li>
+                        <li><a href="services-orchestration.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Orchestration</a>
+                        </li>
+                        <li><a href="services-mixing.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Mixing &
+                                Mastering</a></li>
+                        <li><a href="services-concierge.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Production
+                                Concierge</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Resources</h4>
                     <ul class="space-y-4">
-                        <li><a href="case-studies.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Case Studies</a></li>
-                        <li><a href="insights.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Composer Insights</a></li>
-                        <li><a href="tech-specs.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Tech Specs</a></li>
-                        <li><a href="faq.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">FAQ</a></li>
-                        <li><a href="composers.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">For Composers</a></li>
+                        <li><a href="case-studies.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Case Studies</a>
+                        </li>
+                        <li><a href="insights.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Composer
+                                Insights</a></li>
+                        <li><a href="tech-specs.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Tech Specs</a></li>
+                        <li><a href="faq.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">FAQ</a></li>
+                        <li><a href="composers.html"
+                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">For Composers</a>
+                        </li>
                     </ul>
                 </div>
 
             </div>
 
             <!-- Newsletter -->
-            <div class="border-t border-white/5 pt-10 pb-10 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div
+                class="border-t border-white/5 pt-10 pb-10 flex flex-col md:flex-row items-center justify-between gap-8">
                 <div>
                     <h4 class="text-white font-serif text-lg mb-1">The Score</h4>
                     <p class="text-zinc-500 text-sm font-light">Monthly insight from a Prague scoring stage.</p>
                 </div>
                 <form class="flex gap-3 w-full md:w-auto">
-                    <input type="email" placeholder="Your email" class="bg-dark-700 border border-white/10 text-white text-sm px-5 py-3 rounded focus:outline-none focus:border-musa-gold transition-colors w-full md:w-72">
-                    <button type="submit" class="px-6 py-3 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-wide uppercase rounded transition-colors whitespace-nowrap">Subscribe</button>
+                    <input type="email" placeholder="Your email"
+                        class="bg-dark-700 border border-white/10 text-white text-sm px-5 py-3 rounded focus:outline-none focus:border-musa-gold transition-colors w-full md:w-72">
+                    <button type="submit"
+                        class="px-6 py-3 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-wide uppercase rounded transition-colors whitespace-nowrap">Subscribe</button>
                 </form>
             </div>
 
@@ -797,19 +1123,35 @@
                     &copy; 2026 MUSA, Ltd. — Prague. All rights reserved.
                 </p>
                 <div class="flex items-center gap-6">
-                    <a href="privacy.html" class="text-zinc-600 hover:text-musa-gold transition-colors text-xs tracking-wide uppercase">Privacy Policy</a>
-                    <a href="terms.html" class="text-zinc-600 hover:text-musa-gold transition-colors text-xs tracking-wide uppercase">Terms of Service</a>
+                    <a href="privacy.html"
+                        class="text-zinc-600 hover:text-musa-gold transition-colors text-xs tracking-wide uppercase">Privacy
+                        Policy</a>
+                    <a href="terms.html"
+                        class="text-zinc-600 hover:text-musa-gold transition-colors text-xs tracking-wide uppercase">Terms
+                        of Service</a>
                     <a href="#" class="text-zinc-600 hover:text-musa-gold transition-colors" aria-label="LinkedIn">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
                     </a>
                     <a href="#" class="text-zinc-600 hover:text-musa-gold transition-colors" aria-label="YouTube">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
                     </a>
                     <a href="#" class="text-zinc-600 hover:text-musa-gold transition-colors" aria-label="Instagram">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
                     </a>
                     <a href="#" class="text-zinc-600 hover:text-musa-gold transition-colors" aria-label="IMDb">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.31 9.588v.005c-.077-.048-.227-.07-.42-.07v4.815c.27 0 .44-.06.5-.165.062-.105.093-.39.093-.855v-2.98c0-.36-.012-.596-.037-.706-.025-.11-.072-.18-.136-.044zM22.416 0H1.62C.742.06.06.744 0 1.596V22.38c.06.876.744 1.56 1.596 1.62H22.38c.876-.06 1.56-.744 1.62-1.596V1.62C23.94.744 23.256.06 22.416 0zM4.14 17.82H2.04V6.18h2.1v11.64zM11.34 17.82H9.48v-7.44c-.18.66-.36 1.32-.54 1.98l-1.08 3.54H6.66l-1.62-5.34c-.06-.18-.12-.36-.18-.54-.12-.42-.18-.66-.18-.66v8.46H3.24V6.18H5.4l1.44 5.1c.18.6.3 1.08.36 1.44.06-.36.18-.84.36-1.44L9.12 6.18h2.1l.12 11.64zM16.62 16.266c0 .528-.063.924-.192 1.188-.126.264-.348.444-.66.54-.192.06-.42.096-.684.096H13.14V6.18h2.1c.56 0 .966.036 1.2.108.234.072.414.204.54.396.126.192.192.432.216.72.024.288.036.756.036 1.404v6.054c.384 0 .384.672.39 1.404zM21.96 13.164c0 .96-.024 1.632-.072 2.016-.048.384-.156.696-.324.936-.168.24-.396.396-.684.468-.168.048-.372.072-.612.072-.24 0-.456-.024-.636-.072-.264-.072-.468-.24-.612-.504-.084-.144-.144-.324-.18-.54-.036-.216-.06-.54-.06-.972v-.648h2.04v-.528c0-.504-.024-.828-.072-.972-.048-.144-.156-.216-.324-.216-.192 0-.312.084-.36.252-.048.168-.072.492-.072.972v3.408c0 .48.024.804.072.972.048.168.168.252.36.252.192 0 .312-.084.36-.252.048-.168.072-.504.072-1.008v-1.008h-1.08v-1.56h3.18v5.724h-1.32l-.18-.756c-.192.336-.396.576-.612.72-.216.144-.468.216-.756.216-.36 0-.66-.084-.9-.252-.24-.168-.42-.384-.54-.648-.12-.264-.192-.54-.216-.828-.024-.288-.036-.744-.036-1.368V11.22c0-.72.012-1.224.036-1.512.024-.288.096-.552.216-.792.12-.24.3-.432.54-.576.24-.144.528-.216.864-.216.384 0 .708.084.972.252.264.168.456.396.576.684.072.168.12.36.144.576.024.216.036.576.036 1.08v2.448z"/></svg>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M14.31 9.588v.005c-.077-.048-.227-.07-.42-.07v4.815c.27 0 .44-.06.5-.165.062-.105.093-.39.093-.855v-2.98c0-.36-.012-.596-.037-.706-.025-.11-.072-.18-.136-.044zM22.416 0H1.62C.742.06.06.744 0 1.596V22.38c.06.876.744 1.56 1.596 1.62H22.38c.876-.06 1.56-.744 1.62-1.596V1.62C23.94.744 23.256.06 22.416 0zM4.14 17.82H2.04V6.18h2.1v11.64zM11.34 17.82H9.48v-7.44c-.18.66-.36 1.32-.54 1.98l-1.08 3.54H6.66l-1.62-5.34c-.06-.18-.12-.36-.18-.54-.12-.42-.18-.66-.18-.66v8.46H3.24V6.18H5.4l1.44 5.1c.18.6.3 1.08.36 1.44.06-.36.18-.84.36-1.44L9.12 6.18h2.1l.12 11.64zM16.62 16.266c0 .528-.063.924-.192 1.188-.126.264-.348.444-.66.54-.192.06-.42.096-.684.096H13.14V6.18h2.1c.56 0 .966.036 1.2.108.234.072.414.204.54.396.126.192.192.432.216.72.024.288.036.756.036 1.404v6.054c.384 0 .384.672.39 1.404zM21.96 13.164c0 .96-.024 1.632-.072 2.016-.048.384-.156.696-.324.936-.168.24-.396.396-.684.468-.168.048-.372.072-.612.072-.24 0-.456-.024-.636-.072-.264-.072-.468-.24-.612-.504-.084-.144-.144-.324-.18-.54-.036-.216-.06-.54-.06-.972v-.648h2.04v-.528c0-.504-.024-.828-.072-.972-.048-.144-.156-.216-.324-.216-.192 0-.312.084-.36.252-.048.168-.072.492-.072.972v3.408c0 .48.024.804.072.972.048.168.168.252.36.252.192 0 .312-.084.36-.252.048-.168.072-.504.072-1.008v-1.008h-1.08v-1.56h3.18v5.724h-1.32l-.18-.756c-.192.336-.396.576-.612.72-.216.144-.468.216-.756.216-.36 0-.66-.084-.9-.252-.24-.168-.42-.384-.54-.648-.12-.264-.192-.54-.216-.828-.024-.288-.036-.744-.036-1.368V11.22c0-.72.012-1.224.036-1.512.024-.288.096-.552.216-.792.12-.24.3-.432.54-.576.24-.144.528-.216.864-.216.384 0 .708.084.972.252.264.168.456.396.576.684.072.168.12.36.144.576.024.216.036.576.036 1.08v2.448z" />
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -817,26 +1159,29 @@
     </footer>
 
     <!-- Mobile sticky CTA -->
-    <div class="fixed bottom-0 left-0 w-full md:hidden bg-dark-900/95 backdrop-blur-md border-t border-white/10 p-4 z-50">
-        <a href="quote.html" class="block w-full py-4 bg-musa-gold text-black text-sm font-bold tracking-widest uppercase text-center rounded shadow-[0_0_20px_rgba(184,137,90,0.3)]">
+    <div
+        class="fixed bottom-0 left-0 w-full md:hidden bg-dark-900/95 backdrop-blur-md border-t border-white/10 p-4 z-50">
+        <a href="quote.html"
+            class="block w-full py-4 bg-musa-gold text-black text-sm font-bold tracking-widest uppercase text-center rounded shadow-[0_0_20px_rgba(184,137,90,0.3)]">
             Request a Quote
         </a>
     </div>
 
     <script>
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        (function() {
+        (function () {
             var carousel = document.getElementById('credits-carousel');
             var prev = document.getElementById('carousel-prev');
             var next = document.getElementById('carousel-next');
             var scrollAmount = 400;
-            prev.addEventListener('click', function() { carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); });
-            next.addEventListener('click', function() { carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' }); });
+            prev.addEventListener('click', function () { carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); });
+            next.addEventListener('click', function () { carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' }); });
         })();
     </script>
 
 </body>
+
 </html>
