@@ -133,18 +133,19 @@
         .ticker-track {
             display: flex;
             align-items: center;
-            animation: ticker-scroll 75s linear infinite;
+            animation: ticker-scroll 30s linear infinite;
             will-change: transform;
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
             transform: translate3d(0, 0, 0);
+            -webkit-font-smoothing: antialiased;
         }
         .ticker-track:hover {
             animation-play-state: paused;
         }
         @keyframes ticker-scroll {
-            from { transform: translate3d(0, 0, 0); }
-            to   { transform: translate3d(-50%, 0, 0); }
+            0%   { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
         }
 
         .reveal {
@@ -176,12 +177,12 @@
             </a>
 
             <nav class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
-                <a href="about.html" class="text-zinc-400 hover:text-white transition-colors">About</a>
-                <a href="#services" class="text-zinc-400 hover:text-white transition-colors">Services</a>
-                <a href="#orchestra" class="text-zinc-400 hover:text-white transition-colors">Orchestra</a>
-                <a href="#work" class="text-zinc-400 hover:text-white transition-colors">Work</a>
-                <a href="#insights" class="text-zinc-400 hover:text-white transition-colors">Insights</a>
-                <a href="composers.html" class="text-zinc-400 hover:text-white transition-colors">For Composers</a>
+                <a href="about.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">About</a>
+                <a href="#services" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Services</a>
+                <a href="#orchestra" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Orchestra</a>
+                <a href="#work" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Work</a>
+                <a href="#insights" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Insights</a>
+                <a href="composers.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">For Composers</a>
             </nav>
 
             <div class="hidden md:flex items-center gap-4">
@@ -202,12 +203,12 @@
         <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-dark-900/95 backdrop-blur-md border-t border-white/5">
             <nav class="max-w-7xl mx-auto px-6 py-8 flex flex-col gap-6 text-sm font-medium tracking-wide uppercase">
-                <a href="about.html" class="text-zinc-400 hover:text-white transition-colors">About</a>
-                <a href="#services" class="text-zinc-400 hover:text-white transition-colors">Services</a>
-                <a href="#orchestra" class="text-zinc-400 hover:text-white transition-colors">Orchestra</a>
-                <a href="#work" class="text-zinc-400 hover:text-white transition-colors">Work</a>
-                <a href="#insights" class="text-zinc-400 hover:text-white transition-colors">Insights</a>
-                <a href="composers.html" class="text-zinc-400 hover:text-white transition-colors">For Composers</a>
+                <a href="about.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">About</a>
+                <a href="#services" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Services</a>
+                <a href="#orchestra" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Orchestra</a>
+                <a href="#work" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Work</a>
+                <a href="#insights" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Insights</a>
+                <a href="composers.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">For Composers</a>
                 <a href="quote.html"
                     class="mt-2 px-6 py-3 bg-musa-gold text-black text-sm font-semibold tracking-wide uppercase text-center rounded">Request
                     a Quote</a>
@@ -216,9 +217,12 @@
     </header>
 
     <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
-    <section class="relative min-h-screen flex flex-col justify-center bg-dark-900 pt-24">
-        <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
+    <section class="relative min-h-screen flex flex-col justify-center bg-dark-900 pt-24 pb-24 md:pb-0">
+        <video class="absolute inset-0 w-full h-full object-cover hidden md:block" autoplay muted loop playsinline>
             <source src="assets/videos/Musa_Webloop_01_4K_ProRess_16_9_VP9_1080_1920.webm" type="video/webm">
+        </video>
+        <video class="absolute inset-0 w-full h-full object-cover md:hidden" autoplay muted loop playsinline>
+            <source src="assets/videos/Musa_Web_loop1_HD_9_16_ProRess_VP9_1080_1920.webm" type="video/webm">
         </video>
         <div class="absolute inset-0 bg-gradient-to-b from-dark-900/40 via-dark-900/60 to-dark-900/90"></div>
 
