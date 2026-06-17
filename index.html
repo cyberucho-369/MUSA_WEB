@@ -114,6 +114,21 @@
         #credits-carousel::-webkit-scrollbar {
             display: none;
         }
+        @media (max-width: 767px) {
+            #credits-carousel {
+                scroll-snap-type: x mandatory;
+                scroll-padding: 0 calc(50vw - 120px);
+                padding-left: calc(50vw - 120px);
+                padding-right: calc(50vw - 120px);
+                gap: 0;
+            }
+            #credits-carousel > a {
+                scroll-snap-align: center;
+                min-width: 240px;
+                max-width: 240px;
+                margin: 0 8px;
+            }
+        }
 
         .faq-answer {
             max-height: 0;
@@ -1060,60 +1075,28 @@
                 <div>
                     <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Company</h4>
                     <ul class="space-y-4">
-                        <li><a href="about.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Our Story</a></li>
-                        <li><a href="team.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">The
-                                Team</a></li>
-                        <li><a href="orchestra.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Orchestra &
-                                Venues</a></li>
-                        <li><a href="press.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Awards & Press</a>
-                        </li>
-                        <li><a href="contact.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Contact</a></li>
+                        <li><a href="about.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Our Story</a></li>
+                        <li><a href="orchestra.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Orchestra &amp; Venues</a></li>
+                        <li><a href="contact.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Services</h4>
                     <ul class="space-y-4">
-                        <li><a href="services-orchestra.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Live Recording</a>
-                        </li>
-                        <li><a href="services-remote.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Remote Sessions</a>
-                        </li>
-                        <li><a href="services-choir.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Choir & Vocal</a>
-                        </li>
-                        <li><a href="services-orchestration.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Orchestration</a>
-                        </li>
-                        <li><a href="services-mixing.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Mixing &
-                                Mastering</a></li>
-                        <li><a href="services-concierge.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Production
-                                Concierge</a></li>
+                        <li><a href="services-film-game.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Film &amp; Game Scoring</a></li>
+                        <li><a href="services-remote.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Remote Scoring Sessions</a></li>
+                        <li><a href="services-album.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Album Production</a></li>
+                        <li><a href="services-concierge.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Production Concierge</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Resources</h4>
                     <ul class="space-y-4">
-                        <li><a href="case-studies.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Case Studies</a>
-                        </li>
-                        <li><a href="insights.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Composer
-                                Insights</a></li>
-                        <li><a href="tech-specs.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Tech Specs</a></li>
-                        <li><a href="faq.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">FAQ</a></li>
-                        <li><a href="composers.html"
-                                class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">For Composers</a>
+                        <li><a href="case-studies.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Case Studies</a></li>
+                        <li><a href="faq.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Frequently Asked Questions</a></li>
+                        <li><a href="composers.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">For Composers</a>
                         </li>
                     </ul>
                 </div>
@@ -1179,9 +1162,14 @@
             var carousel = document.getElementById('credits-carousel');
             var prev = document.getElementById('carousel-prev');
             var next = document.getElementById('carousel-next');
-            var scrollAmount = 400;
-            prev.addEventListener('click', function () { carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); });
-            next.addEventListener('click', function () { carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' }); });
+            function getScrollAmount() {
+                if (window.innerWidth < 768) {
+                    return 256;
+                }
+                return 400;
+            }
+            prev.addEventListener('click', function () { carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' }); });
+            next.addEventListener('click', function () { carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' }); });
         })();
 
         (function () {
