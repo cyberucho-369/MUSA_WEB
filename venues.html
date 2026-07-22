@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orchestral Recording Venues Prague — Smecky, Rudolfinum &amp; Czech TV Studios</title>
+    <meta name="description"
+        content="Three of Prague's finest recording spaces — Smecky Music Studios, Rudolfinum Dvořák Hall, and Czech Television Music Studios — available through MUSA for orchestral recording sessions.">
+    <meta property="og:title" content="Orchestral Recording Venues Prague — Smecky, Rudolfinum &amp; Czech TV Studios">
+    <meta property="og:description"
+        content="Three of Prague's finest recording spaces — Smecky Music Studios, Rudolfinum Dvořák Hall, and Czech Television Music Studios — available through MUSA for orchestral recording sessions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://musa.cz/venues.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orchestral Recording Venues Prague — Smecky, Rudolfinum &amp; Czech TV Studios">
+    <meta name="twitter:description"
+        content="Three of Prague's finest recording spaces — Smecky Music Studios, Rudolfinum Dvořák Hall, and Czech Television Music Studios — available through MUSA for orchestral recording sessions.">
+    <link rel="canonical" href="https://musa.cz/venues.html">
+
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        musa: {
+                            gold: '#B8895A',
+                            'gold-light': '#D4A96A',
+                            'gold-dark': '#96703F',
+                            parchment: '#F5EFE6',
+                            charcoal: '#0E0E10',
+                            grey: '#7A7B7E',
+                            'text-light': '#EDE9E2',
+                            'text-dark': '#1A1A1C',
+                        },
+                        dark: {
+                            900: '#0E0E10',
+                            800: '#161618',
+                            700: '#222226',
+                            600: '#2E2E33',
+                        }
+                    },
+                    backgroundImage: {
+                        'studio-pattern': "linear-gradient(to right, rgba(14,14,16,0.95) 0%, rgba(14,14,16,0.3) 100%), url('assets/images/studio-control-room.jpg')",
+                        'cta-pattern': "linear-gradient(to top, rgba(14,14,16,1) 0%, rgba(14,14,16,0.3) 100%), url('assets/images/orchestra-wide.jpg')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0E0E10; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #B8895A; }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 220px;
+            padding-top: 1rem;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 100ms; }
+        .reveal-delay-2 { transition-delay: 200ms; }
+        .reveal-delay-3 { transition-delay: 300ms; }
+        .reveal-delay-4 { transition-delay: 400ms; }
+
+        .venue-gallery::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+
+<body class="bg-dark-900 text-musa-text-light antialiased selection:bg-musa-gold selection:text-black">
+
+    <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+    <header
+        class="fixed w-full top-0 z-50 transition-all duration-300 bg-gradient-to-b from-dark-900/90 to-transparent backdrop-blur-sm border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+
+            <a href="index.html" class="flex items-center group">
+                <img src="assets/logos/logo_Musa.png" alt="MUSA"
+                    class="h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
+                <a href="about.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">About</a>
+                <a href="index.html#services" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Services</a>
+                <a href="orchestra.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Orchestra</a>
+                <a href="venues.html" class="text-musa-gold">Venues</a>
+                <a href="index.html#work" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Work</a>
+                <a href="index.html#blog" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Blog</a>
+                <a href="composers.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">For Composers</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="quote.html"
+                    class="px-6 py-3 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-semibold tracking-wide uppercase transition-all duration-300 rounded shadow-[0_0_20px_rgba(184,137,90,0.3)] hover:shadow-[0_0_30px_rgba(184,137,90,0.5)]">
+                    Request a Quote
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-zinc-300 hover:text-white transition-transform duration-300">
+                <svg class="w-6 h-6 block" id="menu-icon-open" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg class="w-6 h-6 hidden" id="menu-icon-close" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-dark-900/30 backdrop-blur-xl border-t border-musa-gold/20 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+            <nav class="max-w-7xl mx-auto px-6 py-8 flex flex-col gap-6 text-sm font-medium tracking-wide uppercase">
+                <a href="about.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">About</a>
+                <a href="index.html#services" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Services</a>
+                <a href="orchestra.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Orchestra</a>
+                <a href="venues.html" class="text-musa-gold">Venues</a>
+                <a href="index.html#work" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Work</a>
+                <a href="index.html#blog" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Blog</a>
+                <a href="composers.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">For Composers</a>
+                <a href="quote.html"
+                    class="mt-2 px-6 py-3 bg-musa-gold text-black text-sm font-semibold tracking-wide uppercase text-center rounded">Request
+                    a Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════ PAGE HERO ═══════════════════════════════ -->
+    <section class="relative min-h-[75vh] flex flex-col justify-center bg-dark-900 pt-24 pb-52 md:pb-28 overflow-hidden">
+        <img src="assets/images/Prague_Vnues.webp" alt="Prague recording venues" class="absolute inset-0 w-full h-full object-cover opacity-45">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-900/80 via-dark-900/50 to-dark-900"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+
+            <!-- Breadcrumb -->
+            <nav class="flex items-center gap-2 text-xs font-medium tracking-widest uppercase text-zinc-600 mb-10 fade-in-up">
+                <a href="index.html" class="hover:text-musa-gold transition-colors">Home</a>
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                <span class="text-musa-gold">Venues</span>
+            </nav>
+
+            <div class="max-w-4xl">
+                <div class="flex items-center gap-4 mb-6 fade-in-up delay-100">
+                    <div class="w-12 h-px bg-musa-gold"></div>
+                    <span class="text-musa-gold text-sm font-bold tracking-[0.2em] uppercase">Recording Spaces</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-[1.08] mb-8 fade-in-up delay-100">
+                    Three of Prague's Finest<br>
+                    <span class="text-musa-gold italic font-light">Recording Spaces.</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-zinc-300 max-w-3xl font-light leading-relaxed mb-12 fade-in-up delay-200">
+                    Each venue offers distinct acoustic characteristics suited to different production requirements.
+                    All three are available through a single booking process managed by MUSA.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 fade-in-up delay-300">
+                    <a href="quote.html"
+                        class="px-8 py-4 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-widest uppercase transition-all duration-300 rounded shadow-[0_0_20px_rgba(184,137,90,0.3)] hover:shadow-[0_0_40px_rgba(184,137,90,0.5)] transform hover:-translate-y-0.5">
+                        Request a Quote
+                    </a>
+                    <a href="mailto:info@musa.cz"
+                        class="px-8 py-4 bg-transparent border border-white/25 hover:border-white text-white text-sm font-bold tracking-widest uppercase transition-all duration-300 rounded flex items-center gap-3 group">
+                        Talk to Our Team
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stat strip -->
+        <div class="absolute bottom-0 left-0 w-full border-t border-white/5 bg-dark-900/60 backdrop-blur-md py-5">
+            <div class="hidden md:flex max-w-7xl mx-auto px-6 items-center justify-start gap-x-10">
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl font-serif text-musa-gold">3</span>
+                    <span class="text-xs font-bold tracking-[0.15em] uppercase text-zinc-500">World-Class Venues</span>
+                </div>
+                <div class="w-px h-6 bg-white/10"></div>
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl font-serif text-musa-gold">250+</span>
+                    <span class="text-xs font-bold tracking-[0.15em] uppercase text-zinc-500">Productions Recorded</span>
+                </div>
+                <div class="w-px h-6 bg-white/10"></div>
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl font-serif text-musa-gold">1</span>
+                    <span class="text-xs font-bold tracking-[0.15em] uppercase text-zinc-500">Booking Process</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 md:hidden max-w-7xl mx-auto px-6">
+                <span class="text-3xl font-serif text-musa-gold">3</span>
+                <span class="text-xs font-bold tracking-[0.15em] uppercase text-zinc-500 self-center text-right">World-Class Venues</span>
+                <span class="text-3xl font-serif text-musa-gold">250+</span>
+                <span class="text-xs font-bold tracking-[0.15em] uppercase text-zinc-500 self-center text-right">Productions Recorded</span>
+                <span class="text-3xl font-serif text-musa-gold">1</span>
+                <span class="text-xs font-bold tracking-[0.15em] uppercase text-zinc-500 self-center text-right">Booking Process</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ VENUE CARDS ═══════════════════════════════ -->
+    <section class="py-32 bg-dark-800 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="reveal text-center mb-20">
+                <div class="flex items-center justify-center gap-4 mb-5">
+                    <div class="w-8 h-px bg-musa-gold"></div>
+                    <span class="text-musa-gold text-sm font-bold tracking-[0.2em] uppercase">Choose Your Space</span>
+                    <div class="w-8 h-px bg-musa-gold"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-serif text-white">Our Venues</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Smecky Card -->
+                <a href="#smecky"
+                    class="reveal group flex flex-col relative overflow-hidden bg-dark-900 border border-musa-gold/30 p-8 hover:border-musa-gold transition-all duration-500 shadow-[0_0_15px_rgba(184,137,90,0.05)]">
+                    <div class="absolute top-0 right-0 bg-musa-gold text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
+                        Primary</div>
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-gold-dark to-musa-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                    <div class="w-12 h-12 rounded bg-musa-gold/10 flex items-center justify-center mb-8 group-hover:bg-musa-gold/20 transition-colors">
+                        <svg class="w-6 h-6 text-musa-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-serif text-white mb-3 group-hover:text-musa-gold transition-colors">Smecky Music Studios</h3>
+                    <p class="text-zinc-400 text-sm font-light leading-relaxed mb-6 flex-1">Up to 80 musicians. Full symphony orchestra configurations with dedicated control room.</p>
+                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-gold flex items-center gap-2 mt-auto">
+                        View Details <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Rudolfinum Card -->
+                <a href="#rudolfinum"
+                    class="reveal reveal-delay-1 group flex flex-col relative overflow-hidden bg-dark-900 border border-white/5 p-8 hover:border-musa-gold/50 transition-all duration-500">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-gold-dark to-musa-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                    <div class="w-12 h-12 rounded bg-dark-700 flex items-center justify-center mb-8 group-hover:bg-musa-gold/10 transition-colors">
+                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-serif text-white mb-3 group-hover:text-musa-gold transition-colors">Rudolfinum — Dvořák Hall</h3>
+                    <p class="text-zinc-400 text-sm font-light leading-relaxed mb-6 flex-1">Up to 120 musicians. Large-scale symphonic works in one of Europe's finest concert halls.</p>
+                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-gold flex items-center gap-2 mt-auto">
+                        View Details <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Czech TV Card -->
+                <a href="#czechtv"
+                    class="reveal reveal-delay-2 group flex flex-col relative overflow-hidden bg-dark-900 border border-white/5 p-8 hover:border-musa-gold/50 transition-all duration-500">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-musa-gold-dark to-musa-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                    <div class="w-12 h-12 rounded bg-dark-700 flex items-center justify-center mb-8 group-hover:bg-musa-gold/10 transition-colors">
+                        <svg class="w-6 h-6 text-zinc-400 group-hover:text-musa-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-serif text-white mb-3 group-hover:text-musa-gold transition-colors">Czech TV Music Studios</h3>
+                    <p class="text-zinc-400 text-sm font-light leading-relaxed mb-6 flex-1">Up to 40 musicians. Chamber ensembles, string overdubs, and smaller orchestral configurations.</p>
+                    <span class="text-xs font-bold tracking-widest uppercase text-white group-hover:text-musa-gold flex items-center gap-2 mt-auto">
+                        View Details <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ SMECKY MUSIC STUDIOS ═══════════════════════════════ -->
+    <section id="smecky" class="py-32 bg-dark-900 border-b border-white/5 scroll-mt-28">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="reveal flex items-center gap-4 mb-4">
+                <div class="w-12 h-px bg-musa-gold"></div>
+                <span class="text-musa-gold text-sm font-bold tracking-[0.2em] uppercase">Venue 01</span>
+            </div>
+            <h2 class="reveal reveal-delay-1 text-4xl md:text-5xl font-serif text-white mb-4 leading-tight">
+                Smecky Music Studios
+            </h2>
+            <p class="reveal reveal-delay-2 text-zinc-400 text-lg font-light mb-16 max-w-3xl">
+                A Central European scoring institution with more than eight decades of continuous operation.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+
+                <!-- Photo gallery — left -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="reveal aspect-video bg-dark-800 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                        <p class="text-zinc-600 text-sm font-light italic">Smecky Music Studios — Main Hall</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="reveal reveal-delay-1 aspect-[4/3] bg-dark-800 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-sm font-light italic">Control Room</p>
+                        </div>
+                        <div class="reveal reveal-delay-2 aspect-[4/3] bg-dark-800 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-sm font-light italic">Recording Floor</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="reveal reveal-delay-1 aspect-square bg-dark-800 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-xs font-light italic">Detail</p>
+                        </div>
+                        <div class="reveal reveal-delay-2 aspect-square bg-dark-800 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-xs font-light italic">Detail</p>
+                        </div>
+                        <div class="reveal reveal-delay-3 aspect-square bg-dark-800 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-xs font-light italic">Detail</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copy + equipment — right -->
+                <div class="reveal lg:col-span-5">
+                    <p class="text-zinc-300 text-lg font-light leading-relaxed mb-8">
+                        Smecky Music Studios is one of Central Europe's most established and respected scoring stages,
+                        with a long-standing reputation across the international recording industry. The main hall
+                        offers a warm, balanced acoustic well suited to a wide range of orchestral configurations —
+                        from focused chamber sessions to larger ensemble recordings.
+                    </p>
+                    <p class="text-zinc-400 font-light leading-relaxed mb-10">
+                        Professional-grade control room and an engineering team experienced in international
+                        productions. For the majority of MUSA sessions, Smecky serves as the primary recording base.
+                    </p>
+
+                    <div class="border-t border-white/5 pt-8">
+                        <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Equipment &amp; Specs</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Pro Tools HDX recording system</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Neve / SSL console (analogue signal path)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Neumann, Schoeps, DPA microphone collection</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Source-Connect Pro &amp; ListenTo (remote-ready)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Multi-camera 4K video for remote sessions</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">5.1 / 7.1 surround monitoring</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="quote.html"
+                        class="inline-block mt-10 px-8 py-4 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-widest uppercase transition-all duration-300 rounded shadow-[0_0_20px_rgba(184,137,90,0.3)] hover:shadow-[0_0_40px_rgba(184,137,90,0.5)] transform hover:-translate-y-0.5">
+                        Request a Session at Smecky
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ RUDOLFINUM ═══════════════════════════════ -->
+    <section id="rudolfinum" class="py-32 bg-dark-800 border-b border-white/5 scroll-mt-28">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="reveal flex items-center gap-4 mb-4">
+                <div class="w-12 h-px bg-musa-gold"></div>
+                <span class="text-musa-gold text-sm font-bold tracking-[0.2em] uppercase">Venue 02</span>
+            </div>
+            <h2 class="reveal reveal-delay-1 text-4xl md:text-5xl font-serif text-white mb-4 leading-tight">
+                Rudolfinum — Dvořák Hall
+            </h2>
+            <p class="reveal reveal-delay-2 text-zinc-400 text-lg font-light mb-16 max-w-3xl">
+                One of Europe's most acoustically distinguished concert halls and the permanent home of the Czech Philharmonic Orchestra.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+
+                <!-- Photo gallery — left -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="reveal aspect-video bg-dark-700 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                        <p class="text-zinc-600 text-sm font-light italic">Dvořák Hall — Main Stage</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="reveal reveal-delay-1 aspect-[4/3] bg-dark-700 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-sm font-light italic">Orchestra Seating</p>
+                        </div>
+                        <div class="reveal reveal-delay-2 aspect-[4/3] bg-dark-700 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-sm font-light italic">Hall Interior</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="reveal reveal-delay-1 aspect-square bg-dark-700 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-xs font-light italic">Detail</p>
+                        </div>
+                        <div class="reveal reveal-delay-2 aspect-square bg-dark-700 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-xs font-light italic">Detail</p>
+                        </div>
+                        <div class="reveal reveal-delay-3 aspect-square bg-dark-700 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-xs font-light italic">Detail</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copy + equipment — right -->
+                <div class="reveal lg:col-span-5">
+                    <p class="text-zinc-300 text-lg font-light leading-relaxed mb-8">
+                        The Dvořák Hall at the Rudolfinum is among Europe's most acoustically distinguished concert
+                        halls and the permanent home of the Czech Philharmonic Orchestra. Its natural reverberation
+                        and spatial depth make it the preferred choice for large-scale symphonic works, classical
+                        albums, and productions where acoustic authenticity is central to the brief.
+                    </p>
+                    <p class="text-zinc-400 font-light leading-relaxed mb-10">
+                        Sessions are arranged through MUSA and coordinated around the hall's performance schedule.
+                    </p>
+
+                    <div class="border-t border-white/5 pt-8">
+                        <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Equipment &amp; Specs</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Natural concert-hall acoustics (2.0s RT60)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">MUSA mobile recording rig (Pro Tools HDX)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Neumann, Schoeps, DPA microphone collection</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Source-Connect Pro &amp; ListenTo (remote-ready)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Multi-camera 4K video for remote sessions</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Steinway concert grand piano available</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="quote.html"
+                        class="inline-block mt-10 px-8 py-4 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-widest uppercase transition-all duration-300 rounded shadow-[0_0_20px_rgba(184,137,90,0.3)] hover:shadow-[0_0_40px_rgba(184,137,90,0.5)] transform hover:-translate-y-0.5">
+                        Request a Session at Rudolfinum
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ CZECH TV STUDIOS ═══════════════════════════════ -->
+    <section id="czechtv" class="py-32 bg-dark-900 border-b border-white/5 scroll-mt-28">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="reveal flex items-center gap-4 mb-4">
+                <div class="w-12 h-px bg-musa-gold"></div>
+                <span class="text-musa-gold text-sm font-bold tracking-[0.2em] uppercase">Venue 03</span>
+            </div>
+            <h2 class="reveal reveal-delay-1 text-4xl md:text-5xl font-serif text-white mb-4 leading-tight">
+                Czech Television Music Studios
+            </h2>
+            <p class="reveal reveal-delay-2 text-zinc-400 text-lg font-light mb-16 max-w-3xl">
+                A broadcast-grade facility well suited to chamber recordings, string overdubs, and smaller orchestral configurations.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+
+                <!-- Photo gallery — left -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="reveal aspect-video bg-dark-800 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                        <p class="text-zinc-600 text-sm font-light italic">Czech TV Music Studios — Recording Space</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="reveal reveal-delay-1 aspect-[4/3] bg-dark-800 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-sm font-light italic">Control Room</p>
+                        </div>
+                        <div class="reveal reveal-delay-2 aspect-[4/3] bg-dark-800 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-sm font-light italic">Studio Floor</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="reveal reveal-delay-1 aspect-square bg-dark-800 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-xs font-light italic">Detail</p>
+                        </div>
+                        <div class="reveal reveal-delay-2 aspect-square bg-dark-800 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-xs font-light italic">Detail</p>
+                        </div>
+                        <div class="reveal reveal-delay-3 aspect-square bg-dark-800 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <p class="text-zinc-600 text-xs font-light italic">Detail</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copy + equipment — right -->
+                <div class="reveal lg:col-span-5">
+                    <p class="text-zinc-300 text-lg font-light leading-relaxed mb-8">
+                        The Music Studios of Czech Television provide a broadcast-grade recording environment suited
+                        to chamber ensembles, string overdubs, and smaller orchestral configurations. The controlled
+                        acoustic and full technical support make it a reliable choice for focused, smaller-scale
+                        sessions.
+                    </p>
+                    <p class="text-zinc-400 font-light leading-relaxed mb-10">
+                        Available through MUSA as part of a broader production booking.
+                    </p>
+
+                    <div class="border-t border-white/5 pt-8">
+                        <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Equipment &amp; Specs</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Pro Tools HDX recording system</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Broadcast-grade monitoring environment</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Neumann &amp; DPA microphone selection</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Source-Connect Pro &amp; ListenTo (remote-ready)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-musa-gold mt-1 flex-shrink-0">—</span>
+                                <span class="text-zinc-400 text-sm font-light">Multi-camera video for remote sessions</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="quote.html"
+                        class="inline-block mt-10 px-8 py-4 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-widest uppercase transition-all duration-300 rounded shadow-[0_0_20px_rgba(184,137,90,0.3)] hover:shadow-[0_0_40px_rgba(184,137,90,0.5)] transform hover:-translate-y-0.5">
+                        Request a Session at Czech TV Studios
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ FAQ ═══════════════════════════════ -->
+    <section class="py-24 bg-dark-800 border-b border-white/5">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="reveal text-center mb-16">
+                <div class="flex items-center justify-center gap-4 mb-5">
+                    <div class="w-8 h-px bg-musa-gold"></div>
+                    <span class="text-musa-gold text-sm font-bold tracking-[0.2em] uppercase">Common Questions</span>
+                    <div class="w-8 h-px bg-musa-gold"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-serif text-white">Venue FAQ</h2>
+            </div>
+
+            <div class="space-y-4">
+
+                <div class="reveal faq-item border border-white/5 bg-dark-900 cursor-pointer hover:border-white/10 transition-colors duration-300"
+                    onclick="this.classList.toggle('active')">
+                    <div class="flex items-center justify-between p-6">
+                        <h3 class="text-white font-medium pr-8">How do I choose the right venue for my production?</h3>
+                        <span class="faq-icon text-musa-gold text-2xl transition-transform duration-300 flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-zinc-400 font-light leading-relaxed">
+                            MUSA recommends the best venue based on your ensemble size, acoustic goals, and budget.
+                            Smecky is ideal for most sessions, Rudolfinum for large-scale symphonic works requiring
+                            concert-hall acoustics, and Czech TV Studios for focused chamber and overdub sessions.
+                            We'll guide you through the options during the quote process.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-1 faq-item border border-white/5 bg-dark-900 cursor-pointer hover:border-white/10 transition-colors duration-300"
+                    onclick="this.classList.toggle('active')">
+                    <div class="flex items-center justify-between p-6">
+                        <h3 class="text-white font-medium pr-8">Can MUSA coordinate sessions across more than one venue?</h3>
+                        <span class="faq-icon text-musa-gold text-2xl transition-transform duration-300 flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-zinc-400 font-light leading-relaxed">
+                            Yes. Some productions benefit from splitting sessions across venues — for example,
+                            recording the full orchestra at Smecky and smaller overdub sessions at Czech TV Studios.
+                            We handle all logistics, scheduling, and equipment coordination across locations.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-2 faq-item border border-white/5 bg-dark-900 cursor-pointer hover:border-white/10 transition-colors duration-300"
+                    onclick="this.classList.toggle('active')">
+                    <div class="flex items-center justify-between p-6">
+                        <h3 class="text-white font-medium pr-8">Are all three venues available for remote recording sessions?</h3>
+                        <span class="faq-icon text-musa-gold text-2xl transition-transform duration-300 flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-zinc-400 font-light leading-relaxed">
+                            Yes. All three venues are fully equipped for remote direction via Source-Connect Pro,
+                            ListenTo, multi-camera video feeds, and real-time talkback. Composers direct sessions
+                            daily from Los Angeles, London, Tokyo, and beyond — regardless of venue.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-3 faq-item border border-white/5 bg-dark-900 cursor-pointer hover:border-white/10 transition-colors duration-300"
+                    onclick="this.classList.toggle('active')">
+                    <div class="flex items-center justify-between p-6">
+                        <h3 class="text-white font-medium pr-8">What technical equipment is available at each location?</h3>
+                        <span class="faq-icon text-musa-gold text-2xl transition-transform duration-300 flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-zinc-400 font-light leading-relaxed">
+                            Each venue is equipped with professional recording systems, premium microphone collections,
+                            and remote session infrastructure. Detailed technical specification sheets are available on
+                            request — contact us during the quote process and we'll provide full equipment lists for
+                            your chosen venue.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-4 faq-item border border-white/5 bg-dark-900 cursor-pointer hover:border-white/10 transition-colors duration-300"
+                    onclick="this.classList.toggle('active')">
+                    <div class="flex items-center justify-between p-6">
+                        <h3 class="text-white font-medium pr-8">How far in advance do venues need to be booked?</h3>
+                        <span class="faq-icon text-musa-gold text-2xl transition-transform duration-300 flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-zinc-400 font-light leading-relaxed">
+                            Typical lead time is 2–6 weeks. Smecky and Czech TV Studios offer more scheduling
+                            flexibility, while the Rudolfinum requires coordination around the Czech Philharmonic's
+                            performance calendar. The earlier you reach out, the more options we can offer. We've
+                            accommodated rush bookings in under two weeks when schedules align.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ FINAL CTA ═══════════════════════════════ -->
+    <section class="relative py-40 flex items-center justify-center bg-cta-pattern bg-cover bg-center bg-fixed">
+        <div class="absolute inset-0 bg-dark-900/80 backdrop-blur-sm"></div>
+        <div class="reveal max-w-4xl mx-auto px-6 relative z-10 text-center">
+            <div class="flex items-center justify-center gap-4 mb-8">
+                <div class="w-8 h-px bg-musa-gold"></div>
+                <span class="text-musa-gold text-sm font-bold tracking-[0.2em] uppercase">Book Your Venue</span>
+                <div class="w-8 h-px bg-musa-gold"></div>
+            </div>
+            <h2 class="text-5xl md:text-6xl font-serif text-white mb-6">Ready When You Are.</h2>
+            <p class="text-xl text-zinc-300 font-light mb-12 max-w-2xl mx-auto">
+                Tell us about your project and we'll recommend the right venue, ensemble, and timeline —
+                usually within 24 hours.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="quote.html"
+                    class="w-full sm:w-auto px-10 py-5 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 rounded shadow-[0_0_30px_rgba(184,137,90,0.3)] hover:shadow-[0_0_50px_rgba(184,137,90,0.6)] transform hover:-translate-y-1">
+                    Request a Quote
+                </a>
+                <a href="mailto:info@musa.cz"
+                    class="w-full sm:w-auto px-10 py-5 border border-white/30 hover:border-white text-white text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 rounded flex items-center justify-center gap-3 group hover:-translate-y-1 transform">
+                    Talk to Our Team
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+    <footer class="bg-dark-900 pt-20 pb-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="flex items-center mb-6">
+                        <img src="assets/logos/logo_Musa.png" alt="MUSA"
+                            class="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300">
+                    </a>
+                    <p class="text-zinc-500 text-sm font-light leading-relaxed max-w-sm mb-6">
+                        Hollywood-grade orchestral scoring, recorded in Prague. Serving the global film, game, and
+                        television industries for over twenty-five years.
+                    </p>
+                    <p class="text-zinc-500 text-sm font-light mb-2">
+                        MUSA, Ltd. &bull; Skroupovo namesti 4 &bull; 130 00, Prague 3 &bull; Czech Republic
+                    </p>
+                    <a href="mailto:info@musa.cz"
+                        class="text-musa-gold font-bold tracking-widest uppercase text-sm hover:text-white transition-colors">
+                        info@musa.cz
+                    </a>
+                    <p class="text-zinc-500 text-sm mt-1">+420 724 029 525</p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Company</h4>
+                    <ul class="space-y-4">
+                        <li><a href="about.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Our Story</a></li>
+                        <li><a href="orchestra.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Orchestra &amp; Venues</a></li>
+                        <li><a href="contact.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Services</h4>
+                    <ul class="space-y-4">
+                        <li><a href="services-film-game.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Film &amp; Game Scoring</a></li>
+                        <li><a href="services-remote.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Remote Scoring Sessions</a></li>
+                        <li><a href="services-album.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Album Production</a></li>
+                        <li><a href="services-concierge.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Production Concierge</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Resources</h4>
+                    <ul class="space-y-4">
+                        <li><a href="case-studies.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Case Studies</a></li>
+                        <li><a href="faq.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Frequently Asked Questions</a></li>
+                        <li><a href="composers.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">For Composers</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-zinc-600 text-xs tracking-wide">
+                    &copy; 2026 MUSA, Ltd. — Prague. All rights reserved.
+                </p>
+                <div class="flex items-center gap-6">
+                    <a href="privacy.html" class="text-zinc-600 hover:text-musa-gold transition-colors text-xs tracking-wide uppercase">Privacy Policy</a>
+                    <a href="terms.html" class="text-zinc-600 hover:text-musa-gold transition-colors text-xs tracking-wide uppercase">Terms of Service</a>
+                    <a href="#" class="text-zinc-600 hover:text-musa-gold transition-colors" aria-label="LinkedIn">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-zinc-600 hover:text-musa-gold transition-colors" aria-label="YouTube">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-zinc-600 hover:text-musa-gold transition-colors" aria-label="Instagram">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-zinc-600 hover:text-musa-gold transition-colors" aria-label="IMDb">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.31 9.588v.005c-.077-.048-.227-.07-.42-.07v4.815c.27 0 .44-.06.5-.165.062-.105.093-.39.093-.855v-2.98c0-.36-.012-.596-.037-.706-.025-.11-.072-.18-.136-.044zM22.416 0H1.62C.742.06.06.744 0 1.596V22.38c.06.876.744 1.56 1.596 1.62H22.38c.876-.06 1.56-.744 1.62-1.596V1.62C23.94.744 23.256.06 22.416 0zM4.14 17.82H2.04V6.18h2.1v11.64zM11.34 17.82H9.48v-7.44c-.18.66-.36 1.32-.54 1.98l-1.08 3.54H6.66l-1.62-5.34c-.06-.18-.12-.36-.18-.54-.12-.42-.18-.66-.18-.66v8.46H3.24V6.18H5.4l1.44 5.1c.18.6.3 1.08.36 1.44.06-.36.18-.84.36-1.44L9.12 6.18h2.1l.12 11.64zM16.62 16.266c0 .528-.063.924-.192 1.188-.126.264-.348.444-.66.54-.192.06-.42.096-.684.096H13.14V6.18h2.1c.56 0 .966.036 1.2.108.234.072.414.204.54.396.126.192.192.432.216.72.024.288.036.756.036 1.404v6.054c.384 0 .384.672.39 1.404zM21.96 13.164c0 .96-.024 1.632-.072 2.016-.048.384-.156.696-.324.936-.168.24-.396.396-.684.468-.168.048-.372.072-.612.072-.24 0-.456-.024-.636-.072-.264-.072-.468-.24-.612-.504-.084-.144-.144-.324-.18-.54-.036-.216-.06-.54-.06-.972v-.648h2.04v-.528c0-.504-.024-.828-.072-.972-.048-.144-.156-.216-.324-.216-.192 0-.312.084-.36.252-.048.168-.072.492-.072.972v3.408c0 .48.024.804.072.972.048.168.168.252.36.252.192 0 .312-.084.36-.252.048-.168.072-.504.072-1.008v-1.008h-1.08v-1.56h3.18v5.724h-1.32l-.18-.756c-.192.336-.396.576-.612.72-.216.144-.468.216-.756.216-.36 0-.66-.084-.9-.252-.24-.168-.42-.384-.54-.648-.12-.264-.192-.54-.216-.828-.024-.288-.036-.744-.036-1.368V11.22c0-.72.012-1.224.036-1.512.024-.288.096-.552.216-.792.12-.24.3-.432.54-.576.24-.144.528-.216.864-.216.384 0 .708.084.972.252.264.168.456.396.576.684.072.168.12.36.144.576.024.216.036.576.036 1.08v2.448z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile sticky CTA -->
+    <div class="fixed bottom-0 left-0 w-full md:hidden bg-dark-900/95 backdrop-blur-md border-t border-white/10 p-4 z-50">
+        <a href="quote.html"
+            class="block w-full py-4 bg-musa-gold text-black text-sm font-bold tracking-widest uppercase text-center rounded shadow-[0_0_20px_rgba(184,137,90,0.3)]">
+            Request a Quote
+        </a>
+    </div>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+            document.getElementById('menu-icon-open').classList.toggle('hidden');
+            document.getElementById('menu-icon-open').classList.toggle('block');
+            document.getElementById('menu-icon-close').classList.toggle('hidden');
+            document.getElementById('menu-icon-close').classList.toggle('block');
+        });
+
+        (function () {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
+        })();
+    </script>
+
+</body>
+
+</html>
