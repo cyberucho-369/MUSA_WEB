@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSA — Work Page Content Manager</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        musa: {
+                            gold: '#B8895A',
+                            'gold-light': '#D4A96A',
+                            'gold-dark': '#96703F',
+                            parchment: '#F5EFE6',
+                            charcoal: '#0E0E10',
+                            grey: '#7A7B7E',
+                            'text-light': '#EDE9E2',
+                            'text-dark': '#1A1A1C',
+                        },
+                        dark: {
+                            900: '#0E0E10',
+                            800: '#161618',
+                            700: '#222226',
+                            600: '#2E2E33',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0E0E10; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #B8895A; }
+
+        .drop-zone.dragover {
+            border-color: #B8895A;
+            background-color: rgba(184, 137, 90, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-dark-900 text-musa-text-light antialiased selection:bg-musa-gold selection:text-black min-h-screen">
+
+    <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+    <header class="bg-dark-800 border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="flex items-center">
+                    <img src="assets/logos/logo_Musa.png" alt="MUSA" class="h-8 w-auto opacity-90">
+                </a>
+                <div class="w-px h-8 bg-white/10"></div>
+                <span class="text-zinc-400 text-sm font-medium tracking-wide uppercase">Content Manager</span>
+            </div>
+            <a href="work.html" class="text-musa-gold text-sm font-medium hover:text-white transition-colors">
+                View Work Page &rarr;
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-10">
+
+        <!-- ═══════════════════════════════ INTRO ═══════════════════════════════ -->
+        <div class="mb-10">
+            <h1 class="text-3xl font-serif text-white mb-3">Work Page — Content Manager</h1>
+            <p class="text-zinc-400 font-light max-w-2xl">
+                Use this page to add new titles to the MUSA Work page. Fill in the form below, then download the updated files and upload them to your server.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+
+            <!-- ═══════════════════════════════ FORM ═══════════════════════════════ -->
+            <div class="lg:col-span-2">
+                <div class="bg-dark-800 border border-white/10 rounded-xl p-6 sticky top-6">
+                    <h2 class="text-xl font-serif text-white mb-6 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-musa-gold/20 text-musa-gold flex items-center justify-center text-sm font-bold">+</span>
+                        Add New Title
+                    </h2>
+
+                    <form id="add-form" class="space-y-5">
+
+                        <!-- Title -->
+                        <div>
+                            <label for="field-title" class="block text-sm font-medium text-zinc-300 mb-2">Title <span class="text-red-400">*</span></label>
+                            <input type="text" id="field-title" placeholder="e.g. The Dark Knight"
+                                class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                        </div>
+
+                        <!-- Year -->
+                        <div>
+                            <label for="field-year" class="block text-sm font-medium text-zinc-300 mb-2">Year <span class="text-red-400">*</span></label>
+                            <select id="field-year"
+                                class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                                <option value="">Select year...</option>
+                            </select>
+                        </div>
+
+                        <!-- Category -->
+                        <div>
+                            <label for="field-category" class="block text-sm font-medium text-zinc-300 mb-2">Category <span class="text-red-400">*</span></label>
+                            <select id="field-category"
+                                class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                                <option value="film">Film</option>
+                                <option value="game">Game</option>
+                                <option value="tv">TV Series</option>
+                                <option value="music">Music</option>
+                            </select>
+                        </div>
+
+                        <!-- IMDb URL -->
+                        <div>
+                            <label for="field-imdb" class="block text-sm font-medium text-zinc-300 mb-2">IMDb Link <span class="text-red-400">*</span></label>
+                            <input type="url" id="field-imdb" placeholder="https://www.imdb.com/title/tt0468569/"
+                                class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                            <div id="imdb-status" class="mt-2 text-xs hidden"></div>
+                        </div>
+
+                        <!-- Image Drop Zone -->
+                        <div>
+                            <label class="block text-sm font-medium text-zinc-300 mb-2">Poster Image</label>
+                            <div id="drop-zone" class="drop-zone relative border-2 border-dashed border-white/20 rounded-lg p-6 text-center cursor-pointer hover:border-musa-gold/40 transition-colors">
+                                <div id="drop-placeholder">
+                                    <svg class="w-10 h-10 text-zinc-600 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    <p class="text-zinc-500 text-sm mb-1">Drag & drop poster image here</p>
+                                    <p class="text-zinc-600 text-xs">or click to browse (.webp, .jpg, .png)</p>
+                                </div>
+                                <div id="drop-preview" class="hidden">
+                                    <img id="preview-img" class="max-h-48 mx-auto rounded-lg shadow-lg" alt="Preview">
+                                    <p id="preview-name" class="text-musa-gold text-xs mt-3 truncate"></p>
+                                    <button type="button" id="remove-img" class="mt-2 text-red-400 text-xs hover:text-red-300 transition-colors">Remove image</button>
+                                </div>
+                                <input type="file" id="file-input" accept=".webp,.jpg,.jpeg,.png,.webp" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                            </div>
+                        </div>
+
+                        <!-- Error message -->
+                        <div id="form-error" class="hidden text-red-400 text-sm bg-red-400/10 border border-red-400/20 rounded-lg p-3"></div>
+
+                        <!-- Generate Button -->
+                        <button type="submit" id="generate-btn"
+                            class="w-full py-4 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-wide uppercase rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(184,137,90,0.3)] hover:shadow-[0_0_30px_rgba(184,137,90,0.5)]">
+                            Generate Updated Files
+                        </button>
+                    </form>
+
+                    <!-- ═══════════════════════════════ OUTPUT ═══════════════════════════════ -->
+                    <div id="output-section" class="hidden mt-8 pt-8 border-t border-white/10">
+                        <h3 class="text-lg font-serif text-white mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            Title Added Successfully
+                        </h3>
+
+                        <p class="text-zinc-400 text-sm mb-6">Follow these steps to update the live Work page:</p>
+
+                        <div class="space-y-4">
+                            <!-- Step 1 -->
+                            <div class="bg-dark-700 rounded-lg p-4">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="w-6 h-6 rounded-full bg-musa-gold text-black flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
+                                    <span class="text-white text-sm font-medium">Download the updated data file</span>
+                                </div>
+                                <button id="download-json-btn"
+                                    class="w-full py-3 bg-dark-600 hover:bg-dark-800 border border-musa-gold/30 text-musa-gold text-sm font-medium rounded-lg transition-colors flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                    Download works.json
+                                </button>
+                                <p class="text-zinc-500 text-xs mt-2">Replace the existing <code class="text-musa-gold/70">works.json</code> in your website root folder</p>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div id="step-image" class="bg-dark-700 rounded-lg p-4">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="w-6 h-6 rounded-full bg-musa-gold text-black flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
+                                    <span class="text-white text-sm font-medium">Download the poster image</span>
+                                </div>
+                                <button id="download-img-btn"
+                                    class="w-full py-3 bg-dark-600 hover:bg-dark-800 border border-musa-gold/30 text-musa-gold text-sm font-medium rounded-lg transition-colors flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                    Download Poster Image
+                                </button>
+                                <p id="image-dest" class="text-zinc-500 text-xs mt-2"></p>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="bg-dark-700 rounded-lg p-4">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="w-6 h-6 rounded-full bg-musa-gold text-black flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
+                                    <span class="text-white text-sm font-medium">Upload to your server</span>
+                                </div>
+                                <ul class="text-zinc-400 text-sm space-y-2 ml-9">
+                                    <li>Upload <code class="text-musa-gold/70">works.json</code> to your website root folder</li>
+                                    <li>Upload the poster image to <code id="folder-dest" class="text-musa-gold/70"></code></li>
+                                    <li>The Work page will update automatically</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <button type="button" id="add-another-btn"
+                            class="w-full mt-6 py-3 border border-white/10 text-zinc-400 text-sm font-medium rounded-lg hover:border-musa-gold/40 hover:text-musa-gold transition-all">
+                            + Add Another Title
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════ EXISTING TITLES TABLE ═══════════════════════════════ -->
+            <div class="lg:col-span-3">
+                <div class="bg-dark-800 border border-white/10 rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-serif text-white">Existing Titles</h2>
+                        <span id="table-count" class="text-zinc-500 text-sm"></span>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="mb-4">
+                        <input type="text" id="table-search" placeholder="Search titles..."
+                            class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                    </div>
+
+                    <!-- Table -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="text-zinc-500 text-xs uppercase tracking-widest border-b border-white/10">
+                                    <th class="text-left py-3 px-2">Poster</th>
+                                    <th class="text-left py-3 px-2 cursor-pointer hover:text-musa-gold transition-colors" id="sort-title">Title</th>
+                                    <th class="text-left py-3 px-2 cursor-pointer hover:text-musa-gold transition-colors" id="sort-year">Year</th>
+                                    <th class="text-left py-3 px-2">Cat.</th>
+                                    <th class="text-left py-3 px-2">IMDb</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body" class="divide-y divide-white/5">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="table-empty" class="hidden text-center py-10">
+                        <p class="text-zinc-500">No titles found</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+    (function() {
+        var worksData = [];
+        var imageFile = null;
+        var imageDataUrl = null;
+
+        // Populate year dropdown
+        var yearSelect = document.getElementById('field-year');
+        var currentYear = new Date().getFullYear();
+        for (var y = currentYear + 4; y >= 2004; y--) {
+            var opt = document.createElement('option');
+            opt.value = y;
+            opt.textContent = y;
+            yearSelect.appendChild(opt);
+        }
+        var unknownOpt = document.createElement('option');
+        unknownOpt.value = 'unknown';
+        unknownOpt.textContent = 'Unknown';
+        yearSelect.appendChild(unknownOpt);
+
+        // IMDb URL auto-detection
+        var imdbInput = document.getElementById('field-imdb');
+        var imdbStatus = document.getElementById('imdb-status');
+
+        imdbInput.addEventListener('input', function() {
+            var val = this.value.trim();
+            var match = val.match(/tt\d+/);
+            if (match) {
+                imdbStatus.textContent = 'IMDb ID detected: ' + match[0];
+                imdbStatus.className = 'mt-2 text-xs text-green-400';
+                imdbStatus.classList.remove('hidden');
+            } else if (val.length > 5) {
+                imdbStatus.textContent = 'No valid IMDb ID found. URL should contain tt followed by numbers.';
+                imdbStatus.className = 'mt-2 text-xs text-yellow-400';
+                imdbStatus.classList.remove('hidden');
+            } else {
+                imdbStatus.classList.add('hidden');
+            }
+        });
+
+        // Image drag & drop
+        var dropZone = document.getElementById('drop-zone');
+        var fileInput = document.getElementById('file-input');
+        var dropPlaceholder = document.getElementById('drop-placeholder');
+        var dropPreview = document.getElementById('drop-preview');
+        var previewImg = document.getElementById('preview-img');
+        var previewName = document.getElementById('preview-name');
+        var removeBtn = document.getElementById('remove-img');
+
+        function handleFile(file) {
+            if (!file) return;
+            var validTypes = ['image/webp', 'image/jpeg', 'image/png'];
+            if (validTypes.indexOf(file.type) === -1) {
+                alert('Please use a .webp, .jpg, or .png image.');
+                return;
+            }
+            imageFile = file;
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                imageDataUrl = e.target.result;
+                previewImg.src = imageDataUrl;
+                previewName.textContent = file.name;
+                dropPlaceholder.classList.add('hidden');
+                dropPreview.classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        dropZone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.classList.add('dragover');
+        });
+        dropZone.addEventListener('dragleave', function() {
+            this.classList.remove('dragover');
+        });
+        dropZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.classList.remove('dragover');
+            if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+        });
+        fileInput.addEventListener('change', function() {
+            if (this.files.length) handleFile(this.files[0]);
+        });
+        removeBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            imageFile = null;
+            imageDataUrl = null;
+            fileInput.value = '';
+            dropPlaceholder.classList.remove('hidden');
+            dropPreview.classList.add('hidden');
+        });
+
+        // Form submission
+        var form = document.getElementById('add-form');
+        var formError = document.getElementById('form-error');
+        var outputSection = document.getElementById('output-section');
+        var newEntry = null;
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formError.classList.add('hidden');
+
+            var title = document.getElementById('field-title').value.trim();
+            var year = document.getElementById('field-year').value;
+            var category = document.getElementById('field-category').value;
+            var imdbUrl = document.getElementById('field-imdb').value.trim();
+
+            // Validate
+            var errors = [];
+            if (!title) errors.push('Title is required');
+            if (!year) errors.push('Year is required');
+            if (!imdbUrl) errors.push('IMDb link is required');
+
+            var imdbMatch = imdbUrl.match(/tt\d+/);
+            if (imdbUrl && !imdbMatch) errors.push('IMDb link must contain a valid ID (e.g. tt0468569)');
+
+            if (errors.length) {
+                formError.innerHTML = errors.join('<br>');
+                formError.classList.remove('hidden');
+                return;
+            }
+
+            var imdbId = imdbMatch[0];
+            var imdbLink = 'https://www.imdb.com/title/' + imdbId + '/';
+            var yearFolder = year === 'unknown' ? 'unknown_year' : year;
+            var posterFilename = imdbId + '_' + title + '.webp';
+            var posterPath = yearFolder + '/' + posterFilename;
+
+            newEntry = {
+                title: title,
+                year: year,
+                imdb_id: imdbId,
+                imdb_link: imdbLink,
+                poster: imageFile ? posterPath : '',
+                category: category
+            };
+
+            // Insert at position 0
+            worksData.unshift(newEntry);
+
+            // Show output
+            outputSection.classList.remove('hidden');
+            form.classList.add('hidden');
+
+            // Update image destination text
+            document.getElementById('image-dest').textContent =
+                'Place in: assets/images/work/' + yearFolder + '/';
+            document.getElementById('folder-dest').textContent =
+                'assets/images/work/' + yearFolder + '/';
+
+            // Hide image step if no image
+            if (!imageFile) {
+                document.getElementById('step-image').classList.add('hidden');
+            } else {
+                document.getElementById('step-image').classList.remove('hidden');
+            }
+
+            // Re-render table
+            renderTable(worksData);
+        });
+
+        // Download JSON
+        document.getElementById('download-json-btn').addEventListener('click', function() {
+            var json = JSON.stringify(worksData, null, 2);
+            var blob = new Blob([json], { type: 'application/json' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'works.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+
+        // Download image (convert to webp via canvas)
+        document.getElementById('download-img-btn').addEventListener('click', function() {
+            if (!imageFile || !newEntry) return;
+
+            var img = new Image();
+            img.onload = function() {
+                var canvas = document.createElement('canvas');
+                canvas.width = img.naturalWidth;
+                canvas.height = img.naturalHeight;
+                var ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+
+                canvas.toBlob(function(blob) {
+                    var url = URL.createObjectURL(blob);
+                    var a = document.createElement('a');
+                    a.href = url;
+                    a.download = newEntry.imdb_id + '_' + newEntry.title + '.webp';
+                    a.click();
+                    URL.revokeObjectURL(url);
+                }, 'image/webp', 0.85);
+            };
+            img.src = imageDataUrl;
+        });
+
+        // Add another
+        document.getElementById('add-another-btn').addEventListener('click', function() {
+            outputSection.classList.add('hidden');
+            form.classList.remove('hidden');
+            document.getElementById('field-title').value = '';
+            document.getElementById('field-year').value = '';
+            document.getElementById('field-imdb').value = '';
+            imdbStatus.classList.add('hidden');
+            imageFile = null;
+            imageDataUrl = null;
+            fileInput.value = '';
+            dropPlaceholder.classList.remove('hidden');
+            dropPreview.classList.add('hidden');
+        });
+
+        // Table rendering
+        var tableBody = document.getElementById('table-body');
+        var tableCount = document.getElementById('table-count');
+        var tableEmpty = document.getElementById('table-empty');
+        var tableSearch = document.getElementById('table-search');
+
+        function renderTable(data) {
+            tableBody.innerHTML = '';
+            var search = tableSearch.value.trim().toLowerCase();
+            var filtered = data;
+            if (search) {
+                filtered = data.filter(function(w) {
+                    return w.title.toLowerCase().indexOf(search) !== -1 ||
+                           w.year.indexOf(search) !== -1;
+                });
+            }
+
+            tableCount.textContent = filtered.length + ' titles';
+
+            if (!filtered.length) {
+                tableEmpty.classList.remove('hidden');
+                return;
+            }
+            tableEmpty.classList.add('hidden');
+
+            filtered.forEach(function(w) {
+                var tr = document.createElement('tr');
+                tr.className = 'hover:bg-dark-700/50 transition-colors';
+
+                var posterTd = document.createElement('td');
+                posterTd.className = 'py-2 px-2';
+                if (w.poster) {
+                    var img = document.createElement('img');
+                    img.src = 'assets/images/work/' + w.poster;
+                    img.alt = w.title;
+                    img.className = 'w-10 h-14 object-cover rounded';
+                    img.loading = 'lazy';
+                    posterTd.appendChild(img);
+                } else {
+                    posterTd.innerHTML = '<div class="w-10 h-14 bg-dark-600 rounded flex items-center justify-center"><span class="text-zinc-600 text-xs">—</span></div>';
+                }
+
+                var titleTd = document.createElement('td');
+                titleTd.className = 'py-2 px-2 text-white font-medium';
+                titleTd.textContent = w.title;
+
+                var yearTd = document.createElement('td');
+                yearTd.className = 'py-2 px-2 text-musa-gold text-xs';
+                yearTd.textContent = w.year;
+
+                var catTd = document.createElement('td');
+                catTd.className = 'py-2 px-2 text-zinc-500 text-xs uppercase';
+                catTd.textContent = w.category || 'film';
+
+                var imdbTd = document.createElement('td');
+                imdbTd.className = 'py-2 px-2';
+                if (w.imdb_link) {
+                    var a = document.createElement('a');
+                    a.href = w.imdb_link;
+                    a.target = '_blank';
+                    a.rel = 'noopener';
+                    a.className = 'text-musa-gold/60 hover:text-musa-gold transition-colors';
+                    a.innerHTML = '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>';
+                    imdbTd.appendChild(a);
+                }
+
+                tr.appendChild(posterTd);
+                tr.appendChild(titleTd);
+                tr.appendChild(yearTd);
+                tr.appendChild(catTd);
+                tr.appendChild(imdbTd);
+                tableBody.appendChild(tr);
+            });
+        }
+
+        tableSearch.addEventListener('input', function() {
+            renderTable(worksData);
+        });
+
+        // Sorting
+        var sortDir = { title: 1, year: -1 };
+        document.getElementById('sort-title').addEventListener('click', function() {
+            sortDir.title *= -1;
+            worksData.sort(function(a, b) {
+                return a.title.localeCompare(b.title) * sortDir.title;
+            });
+            renderTable(worksData);
+        });
+        document.getElementById('sort-year').addEventListener('click', function() {
+            sortDir.year *= -1;
+            worksData.sort(function(a, b) {
+                var ya = a.year === 'unknown' ? 0 : parseInt(a.year);
+                var yb = b.year === 'unknown' ? 0 : parseInt(b.year);
+                return (ya - yb) * sortDir.year;
+            });
+            renderTable(worksData);
+        });
+
+        // Load data
+        fetch('works.json')
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+                worksData = data;
+                renderTable(worksData);
+            })
+            .catch(function() {
+                tableEmpty.classList.remove('hidden');
+                tableCount.textContent = '0 titles';
+            });
+    })();
+    </script>
+
+</body>
+</html>
