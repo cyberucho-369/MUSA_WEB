@@ -10,9 +10,7 @@
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -50,11 +48,9 @@
         ::-webkit-scrollbar-track { background: #0E0E10; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #B8895A; }
-
-        .drop-zone.dragover {
-            border-color: #B8895A;
-            background-color: rgba(184, 137, 90, 0.1);
-        }
+        .drop-zone.dragover { border-color: #B8895A; background-color: rgba(184, 137, 90, 0.1); }
+        .toast { animation: toastIn 0.3s ease-out; }
+        @keyframes toastIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 
@@ -70,55 +66,71 @@
                 <div class="w-px h-8 bg-white/10"></div>
                 <span class="text-zinc-400 text-sm font-medium tracking-wide uppercase">Content Manager</span>
             </div>
-            <a href="work.html" class="text-musa-gold text-sm font-medium hover:text-white transition-colors">
-                View Work Page &rarr;
-            </a>
+            <div class="flex items-center gap-4">
+                <a href="work.html" class="text-musa-gold text-sm font-medium hover:text-white transition-colors">View Work Page &rarr;</a>
+                <button id="logout-btn" class="hidden text-zinc-500 text-sm hover:text-red-400 transition-colors">Sign Out</button>
+            </div>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-6 py-10">
+    <!-- ═══════════════════════════════ LOGIN SCREEN ═══════════════════════════════ -->
+    <div id="login-screen" class="min-h-[70vh] flex items-center justify-center px-6">
+        <div class="bg-dark-800 border border-white/10 rounded-xl p-8 w-full max-w-sm">
+            <img src="assets/logos/logo_Musa.png" alt="MUSA" class="h-8 mx-auto mb-6 opacity-80">
+            <h2 class="text-xl font-serif text-white text-center mb-2">Content Manager</h2>
+            <p class="text-zinc-500 text-sm text-center mb-6">Enter your password to manage the Work page.</p>
+            <form id="login-form">
+                <input type="password" id="login-password" placeholder="Password"
+                    class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm mb-4">
+                <button type="submit" id="login-btn"
+                    class="w-full py-4 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-wide uppercase rounded-lg transition-all duration-300">
+                    Sign In
+                </button>
+            </form>
+            <div id="login-error" class="hidden mt-3 text-red-400 text-sm text-center"></div>
+            <div id="manual-mode-link" class="hidden mt-4 text-center">
+                <button id="switch-manual" class="text-zinc-600 text-xs hover:text-zinc-400 transition-colors underline">Use manual upload mode instead</button>
+            </div>
+        </div>
+    </div>
 
-        <!-- ═══════════════════════════════ INTRO ═══════════════════════════════ -->
+    <!-- ═══════════════════════════════ CMS MAIN ═══════════════════════════════ -->
+    <main id="cms-main" class="hidden max-w-6xl mx-auto px-6 py-10">
+
         <div class="mb-10">
             <h1 class="text-3xl font-serif text-white mb-3">Work Page — Content Manager</h1>
-            <p class="text-zinc-400 font-light max-w-2xl">
-                Use this page to add new titles to the MUSA Work page. Fill in the form below, then download the updated files and upload them to your server.
-            </p>
+            <p class="text-zinc-400 font-light max-w-2xl">Add, edit, or delete titles on the MUSA Work page. Changes go live automatically within ~30 seconds.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
 
             <!-- ═══════════════════════════════ FORM ═══════════════════════════════ -->
             <div class="lg:col-span-2">
-                <div class="bg-dark-800 border border-white/10 rounded-xl p-6 sticky top-6">
-                    <h2 class="text-xl font-serif text-white mb-6 flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-full bg-musa-gold/20 text-musa-gold flex items-center justify-center text-sm font-bold">+</span>
-                        Add New Title
+                <div id="form-panel" class="bg-dark-800 border border-white/10 rounded-xl p-6 sticky top-6">
+                    <h2 id="form-heading" class="text-xl font-serif text-white mb-6 flex items-center gap-3">
+                        <span id="form-icon" class="w-8 h-8 rounded-full bg-musa-gold/20 text-musa-gold flex items-center justify-center text-sm font-bold">+</span>
+                        <span id="form-title-text">Add New Title</span>
                     </h2>
 
                     <form id="add-form" class="space-y-5">
+                        <input type="hidden" id="edit-imdb-id" value="">
 
-                        <!-- Title -->
                         <div>
                             <label for="field-title" class="block text-sm font-medium text-zinc-300 mb-2">Title <span class="text-red-400">*</span></label>
                             <input type="text" id="field-title" placeholder="e.g. The Dark Knight"
                                 class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm">
                         </div>
 
-                        <!-- Year -->
                         <div>
                             <label for="field-year" class="block text-sm font-medium text-zinc-300 mb-2">Year <span class="text-red-400">*</span></label>
-                            <select id="field-year"
-                                class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                            <select id="field-year" class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white focus:border-musa-gold focus:outline-none transition-colors text-sm">
                                 <option value="">Select year...</option>
                             </select>
                         </div>
 
-                        <!-- Category -->
                         <div>
                             <label for="field-category" class="block text-sm font-medium text-zinc-300 mb-2">Category <span class="text-red-400">*</span></label>
-                            <select id="field-category"
-                                class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                            <select id="field-category" class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white focus:border-musa-gold focus:outline-none transition-colors text-sm">
                                 <option value="film">Film</option>
                                 <option value="game">Game</option>
                                 <option value="tv">TV Series</option>
@@ -126,7 +138,6 @@
                             </select>
                         </div>
 
-                        <!-- IMDb URL -->
                         <div>
                             <label for="field-imdb" class="block text-sm font-medium text-zinc-300 mb-2">IMDb Link <span class="text-red-400">*</span></label>
                             <input type="url" id="field-imdb" placeholder="https://www.imdb.com/title/tt0468569/"
@@ -134,7 +145,6 @@
                             <div id="imdb-status" class="mt-2 text-xs hidden"></div>
                         </div>
 
-                        <!-- Image Drop Zone -->
                         <div>
                             <label class="block text-sm font-medium text-zinc-300 mb-2">Poster Image</label>
                             <div id="drop-zone" class="drop-zone relative border-2 border-dashed border-white/20 rounded-lg p-6 text-center cursor-pointer hover:border-musa-gold/40 transition-colors">
@@ -150,81 +160,25 @@
                                     <p id="preview-name" class="text-musa-gold text-xs mt-3 truncate"></p>
                                     <button type="button" id="remove-img" class="mt-2 text-red-400 text-xs hover:text-red-300 transition-colors">Remove image</button>
                                 </div>
-                                <input type="file" id="file-input" accept=".webp,.jpg,.jpeg,.png,.webp" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                                <input type="file" id="file-input" accept=".webp,.jpg,.jpeg,.png" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
                             </div>
                         </div>
 
-                        <!-- Error message -->
                         <div id="form-error" class="hidden text-red-400 text-sm bg-red-400/10 border border-red-400/20 rounded-lg p-3"></div>
 
-                        <!-- Generate Button -->
-                        <button type="submit" id="generate-btn"
+                        <button type="submit" id="submit-btn"
                             class="w-full py-4 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-wide uppercase rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(184,137,90,0.3)] hover:shadow-[0_0_30px_rgba(184,137,90,0.5)]">
-                            Generate Updated Files
+                            Publish to Website
+                        </button>
+
+                        <button type="button" id="cancel-edit-btn" class="hidden w-full py-3 border border-white/10 text-zinc-400 text-sm font-medium rounded-lg hover:border-white/20 hover:text-zinc-300 transition-all">
+                            Cancel
                         </button>
                     </form>
-
-                    <!-- ═══════════════════════════════ OUTPUT ═══════════════════════════════ -->
-                    <div id="output-section" class="hidden mt-8 pt-8 border-t border-white/10">
-                        <h3 class="text-lg font-serif text-white mb-4 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            Title Added Successfully
-                        </h3>
-
-                        <p class="text-zinc-400 text-sm mb-6">Follow these steps to update the live Work page:</p>
-
-                        <div class="space-y-4">
-                            <!-- Step 1 -->
-                            <div class="bg-dark-700 rounded-lg p-4">
-                                <div class="flex items-center gap-3 mb-3">
-                                    <span class="w-6 h-6 rounded-full bg-musa-gold text-black flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
-                                    <span class="text-white text-sm font-medium">Download the updated data file</span>
-                                </div>
-                                <button id="download-json-btn"
-                                    class="w-full py-3 bg-dark-600 hover:bg-dark-800 border border-musa-gold/30 text-musa-gold text-sm font-medium rounded-lg transition-colors flex items-center justify-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                                    Download works.json
-                                </button>
-                                <p class="text-zinc-500 text-xs mt-2">Replace the existing <code class="text-musa-gold/70">works.json</code> in your website root folder</p>
-                            </div>
-
-                            <!-- Step 2 -->
-                            <div id="step-image" class="bg-dark-700 rounded-lg p-4">
-                                <div class="flex items-center gap-3 mb-3">
-                                    <span class="w-6 h-6 rounded-full bg-musa-gold text-black flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
-                                    <span class="text-white text-sm font-medium">Download the poster image</span>
-                                </div>
-                                <button id="download-img-btn"
-                                    class="w-full py-3 bg-dark-600 hover:bg-dark-800 border border-musa-gold/30 text-musa-gold text-sm font-medium rounded-lg transition-colors flex items-center justify-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                                    Download Poster Image
-                                </button>
-                                <p id="image-dest" class="text-zinc-500 text-xs mt-2"></p>
-                            </div>
-
-                            <!-- Step 3 -->
-                            <div class="bg-dark-700 rounded-lg p-4">
-                                <div class="flex items-center gap-3 mb-3">
-                                    <span class="w-6 h-6 rounded-full bg-musa-gold text-black flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
-                                    <span class="text-white text-sm font-medium">Upload to your server</span>
-                                </div>
-                                <ul class="text-zinc-400 text-sm space-y-2 ml-9">
-                                    <li>Upload <code class="text-musa-gold/70">works.json</code> to your website root folder</li>
-                                    <li>Upload the poster image to <code id="folder-dest" class="text-musa-gold/70"></code></li>
-                                    <li>The Work page will update automatically</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <button type="button" id="add-another-btn"
-                            class="w-full mt-6 py-3 border border-white/10 text-zinc-400 text-sm font-medium rounded-lg hover:border-musa-gold/40 hover:text-musa-gold transition-all">
-                            + Add Another Title
-                        </button>
-                    </div>
                 </div>
             </div>
 
-            <!-- ═══════════════════════════════ EXISTING TITLES TABLE ═══════════════════════════════ -->
+            <!-- ═══════════════════════════════ TABLE ═══════════════════════════════ -->
             <div class="lg:col-span-3">
                 <div class="bg-dark-800 border border-white/10 rounded-xl p-6">
                     <div class="flex items-center justify-between mb-6">
@@ -232,13 +186,11 @@
                         <span id="table-count" class="text-zinc-500 text-sm"></span>
                     </div>
 
-                    <!-- Search -->
                     <div class="mb-4">
                         <input type="text" id="table-search" placeholder="Search titles..."
                             class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm">
                     </div>
 
-                    <!-- Table -->
                     <div class="overflow-x-auto">
                         <table class="w-full text-sm">
                             <thead>
@@ -248,10 +200,10 @@
                                     <th class="text-left py-3 px-2 cursor-pointer hover:text-musa-gold transition-colors" id="sort-year">Year</th>
                                     <th class="text-left py-3 px-2">Cat.</th>
                                     <th class="text-left py-3 px-2">IMDb</th>
+                                    <th class="text-right py-3 px-2">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody id="table-body" class="divide-y divide-white/5">
-                            </tbody>
+                            <tbody id="table-body" class="divide-y divide-white/5"></tbody>
                         </table>
                     </div>
 
@@ -264,13 +216,83 @@
         </div>
     </main>
 
+    <!-- ═══════════════════════════════ DELETE MODAL ═══════════════════════════════ -->
+    <div id="delete-modal" class="fixed inset-0 z-[100] hidden items-center justify-center" style="background: rgba(14,14,16,0.85); backdrop-filter: blur(8px);">
+        <div class="bg-dark-800 border border-white/10 rounded-xl p-6 w-full max-w-sm mx-4">
+            <h3 class="text-lg font-serif text-white mb-2">Delete Title</h3>
+            <p class="text-zinc-400 text-sm mb-1">Are you sure you want to delete:</p>
+            <p id="delete-title-name" class="text-white font-medium mb-4"></p>
+            <p class="text-zinc-500 text-xs mb-6">This will remove the title and its poster image. This cannot be undone.</p>
+            <div class="flex gap-3">
+                <button id="delete-cancel" class="flex-1 py-3 border border-white/10 text-zinc-400 text-sm font-medium rounded-lg hover:border-white/20 transition-colors">Cancel</button>
+                <button id="delete-confirm" class="flex-1 py-3 bg-red-500/20 border border-red-500/30 text-red-400 text-sm font-bold rounded-lg hover:bg-red-500/30 transition-colors">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════ TOAST ═══════════════════════════════ -->
+    <div id="toast" class="fixed bottom-6 right-6 z-[110] hidden">
+        <div class="toast bg-dark-800 border border-white/10 rounded-lg px-5 py-4 shadow-2xl flex items-center gap-3 max-w-sm">
+            <span id="toast-icon"></span>
+            <span id="toast-text" class="text-sm text-white"></span>
+        </div>
+    </div>
+
     <script>
     (function() {
         var worksData = [];
         var imageFile = null;
         var imageDataUrl = null;
+        var imageChanged = false;
+        var editMode = false;
+        var editImdbId = '';
+        var serverlessAvailable = false;
+        var deleteTarget = null;
 
-        // Populate year dropdown
+        // ─── DOM REFS ───
+        var loginScreen = document.getElementById('login-screen');
+        var cmsMain = document.getElementById('cms-main');
+        var loginForm = document.getElementById('login-form');
+        var loginPassword = document.getElementById('login-password');
+        var loginError = document.getElementById('login-error');
+        var loginBtn = document.getElementById('login-btn');
+        var logoutBtn = document.getElementById('logout-btn');
+        var manualModeLink = document.getElementById('manual-mode-link');
+
+        var form = document.getElementById('add-form');
+        var formError = document.getElementById('form-error');
+        var formIcon = document.getElementById('form-icon');
+        var formTitleText = document.getElementById('form-title-text');
+        var submitBtn = document.getElementById('submit-btn');
+        var cancelEditBtn = document.getElementById('cancel-edit-btn');
+        var editImdbIdField = document.getElementById('edit-imdb-id');
+
+        var dropZone = document.getElementById('drop-zone');
+        var fileInput = document.getElementById('file-input');
+        var dropPlaceholder = document.getElementById('drop-placeholder');
+        var dropPreview = document.getElementById('drop-preview');
+        var previewImg = document.getElementById('preview-img');
+        var previewName = document.getElementById('preview-name');
+        var removeBtn = document.getElementById('remove-img');
+
+        var imdbInput = document.getElementById('field-imdb');
+        var imdbStatus = document.getElementById('imdb-status');
+
+        var tableBody = document.getElementById('table-body');
+        var tableCount = document.getElementById('table-count');
+        var tableEmpty = document.getElementById('table-empty');
+        var tableSearch = document.getElementById('table-search');
+
+        var deleteModal = document.getElementById('delete-modal');
+        var deleteTitleName = document.getElementById('delete-title-name');
+        var deleteCancel = document.getElementById('delete-cancel');
+        var deleteConfirm = document.getElementById('delete-confirm');
+
+        var toast = document.getElementById('toast');
+        var toastIcon = document.getElementById('toast-icon');
+        var toastText = document.getElementById('toast-text');
+
+        // ─── YEAR DROPDOWN ───
         var yearSelect = document.getElementById('field-year');
         var currentYear = new Date().getFullYear();
         for (var y = currentYear + 4; y >= 2004; y--) {
@@ -284,43 +306,123 @@
         unknownOpt.textContent = 'Unknown';
         yearSelect.appendChild(unknownOpt);
 
-        // IMDb URL auto-detection
-        var imdbInput = document.getElementById('field-imdb');
-        var imdbStatus = document.getElementById('imdb-status');
+        // ─── TOAST ───
+        var toastTimer = null;
+        function showToast(message, type) {
+            clearTimeout(toastTimer);
+            var iconHtml = type === 'success'
+                ? '<svg class="w-5 h-5 text-green-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>'
+                : '<svg class="w-5 h-5 text-red-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>';
+            toastIcon.innerHTML = iconHtml;
+            toastText.textContent = message;
+            toast.classList.remove('hidden');
+            toastTimer = setTimeout(function() { toast.classList.add('hidden'); }, 5000);
+        }
 
-        imdbInput.addEventListener('input', function() {
-            var val = this.value.trim();
-            var match = val.match(/tt\d+/);
-            if (match) {
-                imdbStatus.textContent = 'IMDb ID detected: ' + match[0];
-                imdbStatus.className = 'mt-2 text-xs text-green-400';
-                imdbStatus.classList.remove('hidden');
-            } else if (val.length > 5) {
-                imdbStatus.textContent = 'No valid IMDb ID found. URL should contain tt followed by numbers.';
-                imdbStatus.className = 'mt-2 text-xs text-yellow-400';
-                imdbStatus.classList.remove('hidden');
+        // ─── AUTH ───
+        function getPassword() { return sessionStorage.getItem('cms_password') || ''; }
+        function setPassword(pw) { sessionStorage.setItem('cms_password', pw); }
+        function clearPassword() { sessionStorage.removeItem('cms_password'); }
+
+        function showCMS() {
+            loginScreen.classList.add('hidden');
+            cmsMain.classList.remove('hidden');
+            logoutBtn.classList.remove('hidden');
+            loadWorksData();
+        }
+
+        function showLogin() {
+            loginScreen.classList.remove('hidden');
+            cmsMain.classList.add('hidden');
+            logoutBtn.classList.add('hidden');
+        }
+
+        logoutBtn.addEventListener('click', function() {
+            clearPassword();
+            showLogin();
+        });
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var pw = loginPassword.value.trim();
+            if (!pw) return;
+
+            loginBtn.textContent = 'Signing in...';
+            loginBtn.disabled = true;
+            loginError.classList.add('hidden');
+
+            if (serverlessAvailable) {
+                fetch('/api/publish', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + pw },
+                    body: JSON.stringify({ action: 'ping' })
+                }).then(function(res) {
+                    if (res.status === 401) {
+                        loginError.textContent = 'Incorrect password. Please try again.';
+                        loginError.classList.remove('hidden');
+                    } else {
+                        setPassword(pw);
+                        showCMS();
+                    }
+                }).catch(function() {
+                    loginError.textContent = 'Cannot reach server. Please try again.';
+                    loginError.classList.remove('hidden');
+                }).finally(function() {
+                    loginBtn.textContent = 'Sign In';
+                    loginBtn.disabled = false;
+                });
             } else {
-                imdbStatus.classList.add('hidden');
+                setPassword(pw);
+                showCMS();
             }
         });
 
-        // Image drag & drop
-        var dropZone = document.getElementById('drop-zone');
-        var fileInput = document.getElementById('file-input');
-        var dropPlaceholder = document.getElementById('drop-placeholder');
-        var dropPreview = document.getElementById('drop-preview');
-        var previewImg = document.getElementById('preview-img');
-        var previewName = document.getElementById('preview-name');
-        var removeBtn = document.getElementById('remove-img');
+        // ─── AUTO-DETECT SERVERLESS ───
+        fetch('/api/publish', { method: 'OPTIONS' })
+            .then(function(res) {
+                serverlessAvailable = res.ok || res.status === 405 || res.status === 401 || res.status === 200;
+                if (getPassword()) showCMS();
+            })
+            .catch(function() {
+                serverlessAvailable = false;
+                manualModeLink.classList.remove('hidden');
+                if (getPassword()) showCMS();
+            });
 
+        document.getElementById('switch-manual').addEventListener('click', function() {
+            showCMS();
+        });
+
+        // ─── API CALL ───
+        function apiCall(data) {
+            return fetch('/api/publish', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + getPassword() },
+                body: JSON.stringify(data)
+            }).then(function(res) {
+                if (res.status === 401) {
+                    clearPassword();
+                    showLogin();
+                    throw new Error('Session expired. Please sign in again.');
+                }
+                return res.json();
+            });
+        }
+
+        // ─── IMAGE HANDLING ───
         function handleFile(file) {
             if (!file) return;
             var validTypes = ['image/webp', 'image/jpeg', 'image/png'];
             if (validTypes.indexOf(file.type) === -1) {
-                alert('Please use a .webp, .jpg, or .png image.');
+                showToast('Please use a .webp, .jpg, or .png image.', 'error');
+                return;
+            }
+            if (file.size > 3 * 1024 * 1024) {
+                showToast('Image too large. Max 3MB.', 'error');
                 return;
             }
             imageFile = file;
+            imageChanged = true;
             var reader = new FileReader();
             reader.onload = function(e) {
                 imageDataUrl = e.target.result;
@@ -332,36 +434,125 @@
             reader.readAsDataURL(file);
         }
 
-        dropZone.addEventListener('dragover', function(e) {
-            e.preventDefault();
-            this.classList.add('dragover');
-        });
-        dropZone.addEventListener('dragleave', function() {
-            this.classList.remove('dragover');
-        });
+        dropZone.addEventListener('dragover', function(e) { e.preventDefault(); this.classList.add('dragover'); });
+        dropZone.addEventListener('dragleave', function() { this.classList.remove('dragover'); });
         dropZone.addEventListener('drop', function(e) {
             e.preventDefault();
             this.classList.remove('dragover');
             if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
         });
-        fileInput.addEventListener('change', function() {
-            if (this.files.length) handleFile(this.files[0]);
-        });
+        fileInput.addEventListener('change', function() { if (this.files.length) handleFile(this.files[0]); });
         removeBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             imageFile = null;
             imageDataUrl = null;
+            imageChanged = true;
             fileInput.value = '';
             dropPlaceholder.classList.remove('hidden');
             dropPreview.classList.add('hidden');
         });
 
-        // Form submission
-        var form = document.getElementById('add-form');
-        var formError = document.getElementById('form-error');
-        var outputSection = document.getElementById('output-section');
-        var newEntry = null;
+        // ─── IMDB AUTO-DETECT ───
+        imdbInput.addEventListener('input', function() {
+            var val = this.value.trim();
+            var match = val.match(/tt\d+/);
+            if (match) {
+                imdbStatus.textContent = 'IMDb ID detected: ' + match[0];
+                imdbStatus.className = 'mt-2 text-xs text-green-400';
+                imdbStatus.classList.remove('hidden');
+            } else if (val.length > 5) {
+                imdbStatus.textContent = 'No valid IMDb ID found.';
+                imdbStatus.className = 'mt-2 text-xs text-yellow-400';
+                imdbStatus.classList.remove('hidden');
+            } else {
+                imdbStatus.classList.add('hidden');
+            }
+        });
 
+        // ─── WEBP CONVERT ───
+        function convertToWebpBase64(file) {
+            return new Promise(function(resolve) {
+                var img = new Image();
+                img.onload = function() {
+                    var canvas = document.createElement('canvas');
+                    canvas.width = img.naturalWidth;
+                    canvas.height = img.naturalHeight;
+                    canvas.getContext('2d').drawImage(img, 0, 0);
+                    canvas.toBlob(function(blob) {
+                        var reader = new FileReader();
+                        reader.onload = function() { resolve(reader.result.split(',')[1]); };
+                        reader.readAsDataURL(blob);
+                    }, 'image/webp', 0.85);
+                };
+                img.src = URL.createObjectURL(file);
+            });
+        }
+
+        // ─── FORM MODE ───
+        function setAddMode() {
+            editMode = false;
+            editImdbId = '';
+            editImdbIdField.value = '';
+            formIcon.textContent = '+';
+            formTitleText.textContent = 'Add New Title';
+            submitBtn.textContent = 'Publish to Website';
+            cancelEditBtn.classList.add('hidden');
+            imdbInput.disabled = false;
+            resetForm();
+        }
+
+        function setEditMode(entry) {
+            editMode = true;
+            editImdbId = entry.imdb_id;
+            editImdbIdField.value = entry.imdb_id;
+            formIcon.innerHTML = '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>';
+            formTitleText.textContent = 'Edit Title';
+            submitBtn.textContent = 'Save Changes';
+            cancelEditBtn.classList.remove('hidden');
+            imdbInput.disabled = true;
+
+            document.getElementById('field-title').value = entry.title;
+            document.getElementById('field-year').value = entry.year;
+            document.getElementById('field-category').value = entry.category || 'film';
+            document.getElementById('field-imdb').value = entry.imdb_link || '';
+            imdbStatus.classList.add('hidden');
+
+            imageFile = null;
+            imageDataUrl = null;
+            imageChanged = false;
+            fileInput.value = '';
+
+            if (entry.poster) {
+                previewImg.src = 'assets/images/work/' + entry.poster;
+                previewName.textContent = 'Current poster';
+                dropPlaceholder.classList.add('hidden');
+                dropPreview.classList.remove('hidden');
+            } else {
+                dropPlaceholder.classList.remove('hidden');
+                dropPreview.classList.add('hidden');
+            }
+
+            document.getElementById('form-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function resetForm() {
+            document.getElementById('field-title').value = '';
+            document.getElementById('field-year').value = '';
+            document.getElementById('field-category').value = 'film';
+            document.getElementById('field-imdb').value = '';
+            imdbStatus.classList.add('hidden');
+            formError.classList.add('hidden');
+            imageFile = null;
+            imageDataUrl = null;
+            imageChanged = false;
+            fileInput.value = '';
+            dropPlaceholder.classList.remove('hidden');
+            dropPreview.classList.add('hidden');
+        }
+
+        cancelEditBtn.addEventListener('click', setAddMode);
+
+        // ─── FORM SUBMIT ───
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             formError.classList.add('hidden');
@@ -371,7 +562,6 @@
             var category = document.getElementById('field-category').value;
             var imdbUrl = document.getElementById('field-imdb').value.trim();
 
-            // Validate
             var errors = [];
             if (!title) errors.push('Title is required');
             if (!year) errors.push('Year is required');
@@ -386,47 +576,67 @@
                 return;
             }
 
-            var imdbId = imdbMatch[0];
+            var imdbId = editMode ? editImdbId : imdbMatch[0];
             var imdbLink = 'https://www.imdb.com/title/' + imdbId + '/';
-            var yearFolder = year === 'unknown' ? 'unknown_year' : year;
-            var posterFilename = imdbId + '_' + title + '.webp';
-            var posterPath = yearFolder + '/' + posterFilename;
 
-            newEntry = {
-                title: title,
-                year: year,
-                imdb_id: imdbId,
-                imdb_link: imdbLink,
-                poster: imageFile ? posterPath : '',
-                category: category
-            };
+            submitBtn.disabled = true;
+            var originalText = submitBtn.textContent;
+            submitBtn.textContent = editMode ? 'Saving...' : 'Publishing...';
 
-            // Insert at position 0
-            worksData.unshift(newEntry);
+            if (serverlessAvailable) {
+                var doSubmit = function(base64) {
+                    var payload = {
+                        action: editMode ? 'edit' : 'add',
+                        title: title,
+                        year: year,
+                        imdb_id: imdbId,
+                        imdb_link: imdbLink,
+                        category: category
+                    };
+                    if (base64) payload.image_base64 = base64;
 
-            // Show output
-            outputSection.classList.remove('hidden');
-            form.classList.add('hidden');
+                    apiCall(payload).then(function(data) {
+                        if (data.success) {
+                            showToast((editMode ? 'Updated: ' : 'Published: ') + title + ' (' + year + ')', 'success');
+                            setAddMode();
+                            loadWorksData();
+                        } else {
+                            showToast(data.error || 'Something went wrong.', 'error');
+                        }
+                    }).catch(function(err) {
+                        showToast(err.message || 'Network error.', 'error');
+                    }).finally(function() {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    });
+                };
 
-            // Update image destination text
-            document.getElementById('image-dest').textContent =
-                'Place in: assets/images/work/' + yearFolder + '/';
-            document.getElementById('folder-dest').textContent =
-                'assets/images/work/' + yearFolder + '/';
-
-            // Hide image step if no image
-            if (!imageFile) {
-                document.getElementById('step-image').classList.add('hidden');
+                if (imageFile && imageChanged) {
+                    convertToWebpBase64(imageFile).then(doSubmit);
+                } else {
+                    doSubmit(null);
+                }
             } else {
-                document.getElementById('step-image').classList.remove('hidden');
+                handleManualMode(title, year, category, imdbId, imdbLink);
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
             }
-
-            // Re-render table
-            renderTable(worksData);
         });
 
-        // Download JSON
-        document.getElementById('download-json-btn').addEventListener('click', function() {
+        // ─── MANUAL FALLBACK ───
+        function handleManualMode(title, year, category, imdbId, imdbLink) {
+            var yearFolder = year === 'unknown' ? 'unknown_year' : year;
+            var posterPath = imageFile ? yearFolder + '/' + imdbId + '_' + title + '.webp' : '';
+            var entry = { title: title, year: year, imdb_id: imdbId, imdb_link: imdbLink, poster: posterPath, category: category };
+
+            if (editMode) {
+                for (var i = 0; i < worksData.length; i++) {
+                    if (worksData[i].imdb_id === editImdbId) { worksData[i] = entry; break; }
+                }
+            } else {
+                worksData.unshift(entry);
+            }
+
             var json = JSON.stringify(worksData, null, 2);
             var blob = new Blob([json], { type: 'application/json' });
             var url = URL.createObjectURL(blob);
@@ -435,52 +645,107 @@
             a.download = 'works.json';
             a.click();
             URL.revokeObjectURL(url);
+
+            if (imageFile) {
+                var img = new Image();
+                img.onload = function() {
+                    var canvas = document.createElement('canvas');
+                    canvas.width = img.naturalWidth;
+                    canvas.height = img.naturalHeight;
+                    canvas.getContext('2d').drawImage(img, 0, 0);
+                    canvas.toBlob(function(b) {
+                        var u = URL.createObjectURL(b);
+                        var dl = document.createElement('a');
+                        dl.href = u;
+                        dl.download = imdbId + '_' + title + '.webp';
+                        dl.click();
+                        URL.revokeObjectURL(u);
+                    }, 'image/webp', 0.85);
+                };
+                img.src = imageDataUrl;
+            }
+
+            showToast('Files downloaded. Upload works.json and poster to your server.', 'success');
+            setAddMode();
+            renderTable(worksData);
+        }
+
+        // ─── DELETE ───
+        function openDeleteModal(entry) {
+            deleteTarget = entry;
+            deleteTitleName.textContent = entry.title + ' (' + entry.year + ')';
+            deleteModal.style.display = 'flex';
+        }
+
+        deleteCancel.addEventListener('click', function() {
+            deleteModal.style.display = 'none';
+            deleteTarget = null;
         });
 
-        // Download image (convert to webp via canvas)
-        document.getElementById('download-img-btn').addEventListener('click', function() {
-            if (!imageFile || !newEntry) return;
-
-            var img = new Image();
-            img.onload = function() {
-                var canvas = document.createElement('canvas');
-                canvas.width = img.naturalWidth;
-                canvas.height = img.naturalHeight;
-                var ctx = canvas.getContext('2d');
-                ctx.drawImage(img, 0, 0);
-
-                canvas.toBlob(function(blob) {
-                    var url = URL.createObjectURL(blob);
-                    var a = document.createElement('a');
-                    a.href = url;
-                    a.download = newEntry.imdb_id + '_' + newEntry.title + '.webp';
-                    a.click();
-                    URL.revokeObjectURL(url);
-                }, 'image/webp', 0.85);
-            };
-            img.src = imageDataUrl;
+        deleteModal.addEventListener('click', function(e) {
+            if (e.target === deleteModal) {
+                deleteModal.style.display = 'none';
+                deleteTarget = null;
+            }
         });
 
-        // Add another
-        document.getElementById('add-another-btn').addEventListener('click', function() {
-            outputSection.classList.add('hidden');
-            form.classList.remove('hidden');
-            document.getElementById('field-title').value = '';
-            document.getElementById('field-year').value = '';
-            document.getElementById('field-imdb').value = '';
-            imdbStatus.classList.add('hidden');
-            imageFile = null;
-            imageDataUrl = null;
-            fileInput.value = '';
-            dropPlaceholder.classList.remove('hidden');
-            dropPreview.classList.add('hidden');
+        deleteConfirm.addEventListener('click', function() {
+            if (!deleteTarget) return;
+            var entry = deleteTarget;
+            deleteConfirm.textContent = 'Deleting...';
+            deleteConfirm.disabled = true;
+
+            if (serverlessAvailable) {
+                apiCall({ action: 'delete', imdb_id: entry.imdb_id }).then(function(data) {
+                    if (data.success) {
+                        showToast('Deleted: ' + entry.title, 'success');
+                        loadWorksData();
+                    } else {
+                        showToast(data.error || 'Delete failed.', 'error');
+                    }
+                }).catch(function(err) {
+                    showToast(err.message || 'Network error.', 'error');
+                }).finally(function() {
+                    deleteModal.style.display = 'none';
+                    deleteTarget = null;
+                    deleteConfirm.textContent = 'Delete';
+                    deleteConfirm.disabled = false;
+                });
+            } else {
+                for (var i = 0; i < worksData.length; i++) {
+                    if (worksData[i].imdb_id === entry.imdb_id) { worksData.splice(i, 1); break; }
+                }
+                var json = JSON.stringify(worksData, null, 2);
+                var blob = new Blob([json], { type: 'application/json' });
+                var url = URL.createObjectURL(blob);
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = 'works.json';
+                a.click();
+                URL.revokeObjectURL(url);
+
+                showToast('Deleted locally. Upload updated works.json to your server.', 'success');
+                renderTable(worksData);
+                deleteModal.style.display = 'none';
+                deleteTarget = null;
+                deleteConfirm.textContent = 'Delete';
+                deleteConfirm.disabled = false;
+            }
         });
 
-        // Table rendering
-        var tableBody = document.getElementById('table-body');
-        var tableCount = document.getElementById('table-count');
-        var tableEmpty = document.getElementById('table-empty');
-        var tableSearch = document.getElementById('table-search');
+        // ─── TABLE ───
+        function loadWorksData() {
+            fetch('works.json')
+                .then(function(res) { return res.json(); })
+                .then(function(data) {
+                    worksData = data;
+                    renderTable(worksData);
+                })
+                .catch(function() {
+                    tableEmpty.classList.remove('hidden');
+                    tableCount.textContent = '0 titles';
+                });
+        }
 
         function renderTable(data) {
             tableBody.innerHTML = '';
@@ -488,12 +753,11 @@
             var filtered = data;
             if (search) {
                 filtered = data.filter(function(w) {
-                    return w.title.toLowerCase().indexOf(search) !== -1 ||
-                           w.year.indexOf(search) !== -1;
+                    return w.title.toLowerCase().indexOf(search) !== -1 || w.year.indexOf(search) !== -1;
                 });
             }
 
-            tableCount.textContent = filtered.length + ' titles';
+            tableCount.textContent = filtered.length + ' of ' + data.length + ' titles';
 
             if (!filtered.length) {
                 tableEmpty.classList.remove('hidden');
@@ -519,7 +783,7 @@
                 }
 
                 var titleTd = document.createElement('td');
-                titleTd.className = 'py-2 px-2 text-white font-medium';
+                titleTd.className = 'py-2 px-2 text-white font-medium text-xs';
                 titleTd.textContent = w.title;
 
                 var yearTd = document.createElement('td');
@@ -542,26 +806,44 @@
                     imdbTd.appendChild(a);
                 }
 
+                var actionsTd = document.createElement('td');
+                actionsTd.className = 'py-2 px-2 text-right whitespace-nowrap';
+
+                var editBtn = document.createElement('button');
+                editBtn.className = 'text-zinc-500 hover:text-musa-gold transition-colors p-1';
+                editBtn.title = 'Edit';
+                editBtn.innerHTML = '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>';
+                editBtn.addEventListener('click', (function(entry) {
+                    return function() { setEditMode(entry); };
+                })(w));
+
+                var delBtn = document.createElement('button');
+                delBtn.className = 'text-zinc-500 hover:text-red-400 transition-colors p-1 ml-1';
+                delBtn.title = 'Delete';
+                delBtn.innerHTML = '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>';
+                delBtn.addEventListener('click', (function(entry) {
+                    return function() { openDeleteModal(entry); };
+                })(w));
+
+                actionsTd.appendChild(editBtn);
+                actionsTd.appendChild(delBtn);
+
                 tr.appendChild(posterTd);
                 tr.appendChild(titleTd);
                 tr.appendChild(yearTd);
                 tr.appendChild(catTd);
                 tr.appendChild(imdbTd);
+                tr.appendChild(actionsTd);
                 tableBody.appendChild(tr);
             });
         }
 
-        tableSearch.addEventListener('input', function() {
-            renderTable(worksData);
-        });
+        tableSearch.addEventListener('input', function() { renderTable(worksData); });
 
-        // Sorting
         var sortDir = { title: 1, year: -1 };
         document.getElementById('sort-title').addEventListener('click', function() {
             sortDir.title *= -1;
-            worksData.sort(function(a, b) {
-                return a.title.localeCompare(b.title) * sortDir.title;
-            });
+            worksData.sort(function(a, b) { return a.title.localeCompare(b.title) * sortDir.title; });
             renderTable(worksData);
         });
         document.getElementById('sort-year').addEventListener('click', function() {
@@ -574,17 +856,17 @@
             renderTable(worksData);
         });
 
-        // Load data
-        fetch('works.json')
-            .then(function(res) { return res.json(); })
-            .then(function(data) {
-                worksData = data;
-                renderTable(worksData);
-            })
-            .catch(function() {
-                tableEmpty.classList.remove('hidden');
-                tableCount.textContent = '0 titles';
-            });
+        // ─── KEYBOARD ───
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                if (deleteModal.style.display === 'flex') {
+                    deleteModal.style.display = 'none';
+                    deleteTarget = null;
+                } else if (editMode) {
+                    setAddMode();
+                }
+            }
+        });
     })();
     </script>
 
