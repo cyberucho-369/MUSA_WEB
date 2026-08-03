@@ -78,8 +78,12 @@
         <div class="bg-dark-800 border border-white/10 rounded-xl p-8 w-full max-w-sm">
             <img src="assets/logos/logo_Musa.png" alt="MUSA" class="h-8 mx-auto mb-6 opacity-80">
             <h2 class="text-xl font-serif text-white text-center mb-2">Content Manager</h2>
-            <p class="text-zinc-500 text-sm text-center mb-6">Enter your password to manage the Work page.</p>
+            <p class="text-zinc-500 text-sm text-center mb-6">Sign in to manage the Work page.</p>
             <form id="login-form">
+                <label for="login-email" class="block text-sm font-medium text-zinc-400 mb-1">Email</label>
+                <input type="email" id="login-email" placeholder="info@musa.cz"
+                    class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm mb-4">
+                <label for="login-password" class="block text-sm font-medium text-zinc-400 mb-1">Password</label>
                 <input type="password" id="login-password" placeholder="Password"
                     class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm mb-4">
                 <button type="submit" id="login-btn"
@@ -94,12 +98,45 @@
         </div>
     </div>
 
+    <!-- ═══════════════════════════════ DASHBOARD ═══════════════════════════════ -->
+    <div id="dashboard" class="hidden min-h-[70vh] flex items-center justify-center px-6">
+        <div class="w-full max-w-2xl">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl font-serif text-white mb-3">Content Manager</h1>
+                <p class="text-zinc-400 font-light">Choose a section to manage.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <button id="dash-work" class="group bg-dark-800 border border-white/10 rounded-xl p-8 text-left hover:border-musa-gold/50 hover:shadow-[0_0_30px_rgba(184,137,90,0.15)] transition-all duration-300">
+                    <div class="w-12 h-12 rounded-full bg-musa-gold/20 text-musa-gold flex items-center justify-center mb-5 group-hover:bg-musa-gold/30 transition-colors">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
+                    </div>
+                    <h3 class="text-white text-lg font-serif mb-2">Work</h3>
+                    <p class="text-zinc-500 text-sm font-light leading-relaxed">Manage the film, game & music title gallery. Add, edit, or delete entries with poster images.</p>
+                    <span id="dash-work-count" class="inline-block mt-4 text-musa-gold text-xs font-medium tracking-wide"></span>
+                </button>
+                <div class="relative bg-dark-800 border border-white/10 rounded-xl p-8 text-left opacity-50 cursor-not-allowed">
+                    <div class="absolute top-4 right-4 bg-zinc-700/50 text-zinc-400 text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">Coming Soon</div>
+                    <div class="w-12 h-12 rounded-full bg-white/5 text-zinc-600 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V9a2 2 0 012-2h2a2 2 0 012 2v9a2 2 0 01-2 2h-2z"/></svg>
+                    </div>
+                    <h3 class="text-zinc-500 text-lg font-serif mb-2">Blog</h3>
+                    <p class="text-zinc-600 text-sm font-light leading-relaxed">Create and publish blog posts. This section is under development.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ═══════════════════════════════ CMS MAIN ═══════════════════════════════ -->
     <main id="cms-main" class="hidden max-w-6xl mx-auto px-6 py-10">
 
-        <div class="mb-10">
-            <h1 class="text-3xl font-serif text-white mb-3">Work Page — Content Manager</h1>
-            <p class="text-zinc-400 font-light max-w-2xl">Add, edit, or delete titles on the MUSA Work page. Changes go live automatically within ~30 seconds.</p>
+        <div class="mb-10 flex items-center gap-4">
+            <button id="back-to-dash" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-zinc-500 hover:text-musa-gold hover:border-musa-gold/30 transition-colors" title="Back to Dashboard">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <div>
+                <h1 class="text-3xl font-serif text-white mb-1">Work — Content Manager</h1>
+                <p class="text-zinc-400 font-light text-sm">Add, edit, or delete titles on the MUSA Work page. Changes go live automatically within ~30 seconds.</p>
+            </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -251,12 +288,17 @@
 
         // ─── DOM REFS ───
         var loginScreen = document.getElementById('login-screen');
+        var dashboard = document.getElementById('dashboard');
         var cmsMain = document.getElementById('cms-main');
         var loginForm = document.getElementById('login-form');
+        var loginEmail = document.getElementById('login-email');
         var loginPassword = document.getElementById('login-password');
         var loginError = document.getElementById('login-error');
         var loginBtn = document.getElementById('login-btn');
         var logoutBtn = document.getElementById('logout-btn');
+        var dashWork = document.getElementById('dash-work');
+        var dashWorkCount = document.getElementById('dash-work-count');
+        var backToDash = document.getElementById('back-to-dash');
         var manualModeLink = document.getElementById('manual-mode-link');
 
         var form = document.getElementById('add-form');
@@ -324,8 +366,20 @@
         function setPassword(pw) { sessionStorage.setItem('cms_password', pw); }
         function clearPassword() { sessionStorage.removeItem('cms_password'); }
 
-        function showCMS() {
+        function showDashboard() {
             loginScreen.classList.add('hidden');
+            dashboard.classList.remove('hidden');
+            dashboard.style.display = 'flex';
+            cmsMain.classList.add('hidden');
+            logoutBtn.classList.remove('hidden');
+            fetch('works.json').then(function(r) { return r.json(); }).then(function(d) {
+                dashWorkCount.textContent = d.length + ' titles';
+            }).catch(function() {});
+        }
+
+        function showWorkCMS() {
+            dashboard.classList.add('hidden');
+            dashboard.style.display = '';
             cmsMain.classList.remove('hidden');
             logoutBtn.classList.remove('hidden');
             loadWorksData();
@@ -333,6 +387,8 @@
 
         function showLogin() {
             loginScreen.classList.remove('hidden');
+            dashboard.classList.add('hidden');
+            dashboard.style.display = '';
             cmsMain.classList.add('hidden');
             logoutBtn.classList.add('hidden');
         }
@@ -342,10 +398,21 @@
             showLogin();
         });
 
+        dashWork.addEventListener('click', function() { showWorkCMS(); });
+        backToDash.addEventListener('click', function() { showDashboard(); });
+
+        var LOCAL_EMAIL = 'info@musa.cz';
+        var LOCAL_PASS = '0000';
+
         loginForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            var email = loginEmail.value.trim();
             var pw = loginPassword.value.trim();
-            if (!pw) return;
+            if (!email || !pw) {
+                loginError.textContent = 'Please enter both email and password.';
+                loginError.classList.remove('hidden');
+                return;
+            }
 
             loginBtn.textContent = 'Signing in...';
             loginBtn.disabled = true;
@@ -355,14 +422,14 @@
                 fetch('/api/publish', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + pw },
-                    body: JSON.stringify({ action: 'ping' })
+                    body: JSON.stringify({ action: 'ping', email: email })
                 }).then(function(res) {
                     if (res.status === 401) {
-                        loginError.textContent = 'Incorrect password. Please try again.';
+                        loginError.textContent = 'Incorrect email or password.';
                         loginError.classList.remove('hidden');
                     } else {
                         setPassword(pw);
-                        showCMS();
+                        showDashboard();
                     }
                 }).catch(function() {
                     loginError.textContent = 'Cannot reach server. Please try again.';
@@ -372,8 +439,15 @@
                     loginBtn.disabled = false;
                 });
             } else {
-                setPassword(pw);
-                showCMS();
+                if (email === LOCAL_EMAIL && pw === LOCAL_PASS) {
+                    setPassword(pw);
+                    showDashboard();
+                } else {
+                    loginError.textContent = 'Incorrect email or password.';
+                    loginError.classList.remove('hidden');
+                    loginBtn.textContent = 'Sign In';
+                    loginBtn.disabled = false;
+                }
             }
         });
 
@@ -381,16 +455,16 @@
         fetch('/api/publish', { method: 'OPTIONS' })
             .then(function(res) {
                 serverlessAvailable = res.ok || res.status === 405 || res.status === 401 || res.status === 200;
-                if (getPassword()) showCMS();
+                if (getPassword()) showDashboard();
             })
             .catch(function() {
                 serverlessAvailable = false;
                 manualModeLink.classList.remove('hidden');
-                if (getPassword()) showCMS();
+                if (getPassword()) showDashboard();
             });
 
         document.getElementById('switch-manual').addEventListener('click', function() {
-            showCMS();
+            showDashboard();
         });
 
         // ─── API CALL ───
@@ -623,7 +697,7 @@
             }
         });
 
-        // ─── MANUAL FALLBACK ───
+        // ─── LOCAL / MANUAL FALLBACK ───
         function handleManualMode(title, year, category, imdbId, imdbLink) {
             var yearFolder = year === 'unknown' ? 'unknown_year' : year;
             var posterPath = imageFile ? yearFolder + '/' + imdbId + '_' + title + '.webp' : '';
@@ -637,35 +711,12 @@
                 worksData.unshift(entry);
             }
 
-            var json = JSON.stringify(worksData, null, 2);
-            var blob = new Blob([json], { type: 'application/json' });
-            var url = URL.createObjectURL(blob);
-            var a = document.createElement('a');
-            a.href = url;
-            a.download = 'works.json';
-            a.click();
-            URL.revokeObjectURL(url);
-
-            if (imageFile) {
-                var img = new Image();
-                img.onload = function() {
-                    var canvas = document.createElement('canvas');
-                    canvas.width = img.naturalWidth;
-                    canvas.height = img.naturalHeight;
-                    canvas.getContext('2d').drawImage(img, 0, 0);
-                    canvas.toBlob(function(b) {
-                        var u = URL.createObjectURL(b);
-                        var dl = document.createElement('a');
-                        dl.href = u;
-                        dl.download = imdbId + '_' + title + '.webp';
-                        dl.click();
-                        URL.revokeObjectURL(u);
-                    }, 'image/webp', 0.85);
-                };
-                img.src = imageDataUrl;
+            if (imageFile && imageDataUrl) {
+                entry.poster = '';
+                entry._localThumb = imageDataUrl;
             }
 
-            showToast('Files downloaded. Upload works.json and poster to your server.', 'success');
+            showToast((editMode ? 'Updated: ' : 'Added: ') + title + ' (' + year + ') — local preview only, not saved to disk.', 'success');
             setAddMode();
             renderTable(worksData);
         }
@@ -715,16 +766,7 @@
                 for (var i = 0; i < worksData.length; i++) {
                     if (worksData[i].imdb_id === entry.imdb_id) { worksData.splice(i, 1); break; }
                 }
-                var json = JSON.stringify(worksData, null, 2);
-                var blob = new Blob([json], { type: 'application/json' });
-                var url = URL.createObjectURL(blob);
-                var a = document.createElement('a');
-                a.href = url;
-                a.download = 'works.json';
-                a.click();
-                URL.revokeObjectURL(url);
-
-                showToast('Deleted locally. Upload updated works.json to your server.', 'success');
+                showToast('Deleted: ' + entry.title + ' — local preview only, not saved to disk.', 'success');
                 renderTable(worksData);
                 deleteModal.style.display = 'none';
                 deleteTarget = null;
@@ -771,7 +813,13 @@
 
                 var posterTd = document.createElement('td');
                 posterTd.className = 'py-2 px-2';
-                if (w.poster) {
+                if (w._localThumb) {
+                    var img = document.createElement('img');
+                    img.src = w._localThumb;
+                    img.alt = w.title;
+                    img.className = 'w-10 h-14 object-cover rounded';
+                    posterTd.appendChild(img);
+                } else if (w.poster) {
                     var img = document.createElement('img');
                     img.src = 'assets/images/work/' + w.poster;
                     img.alt = w.title;
