@@ -92,9 +92,6 @@
                 </button>
             </form>
             <div id="login-error" class="hidden mt-3 text-red-400 text-sm text-center"></div>
-            <div id="manual-mode-link" class="hidden mt-4 text-center">
-                <button id="switch-manual" class="text-zinc-600 text-xs hover:text-zinc-400 transition-colors underline">Use manual upload mode instead</button>
-            </div>
         </div>
     </div>
 
@@ -296,10 +293,9 @@
         var loginError = document.getElementById('login-error');
         var loginBtn = document.getElementById('login-btn');
         var logoutBtn = document.getElementById('logout-btn');
-        var dashWork = document.getElementById('dash-work');
         var dashWorkCount = document.getElementById('dash-work-count');
         var backToDash = document.getElementById('back-to-dash');
-        var manualModeLink = document.getElementById('manual-mode-link');
+
 
         var form = document.getElementById('add-form');
         var formError = document.getElementById('form-error');
@@ -401,9 +397,6 @@
         dashWork.addEventListener('click', function() { showWorkCMS(); });
         backToDash.addEventListener('click', function() { showDashboard(); });
 
-        var LOCAL_EMAIL = 'info@musa.cz';
-        var LOCAL_PASS = '0000';
-
         loginForm.addEventListener('submit', function(e) {
             e.preventDefault();
             var email = loginEmail.value.trim();
@@ -439,15 +432,10 @@
                     loginBtn.disabled = false;
                 });
             } else {
-                if (email === LOCAL_EMAIL && pw === LOCAL_PASS) {
-                    setPassword(pw);
-                    showDashboard();
-                } else {
-                    loginError.textContent = 'Incorrect email or password.';
-                    loginError.classList.remove('hidden');
-                    loginBtn.textContent = 'Sign In';
-                    loginBtn.disabled = false;
-                }
+                loginError.textContent = 'CMS requires Vercel deployment. This feature is not available on local or FTP hosting.';
+                loginError.classList.remove('hidden');
+                loginBtn.textContent = 'Sign In';
+                loginBtn.disabled = false;
             }
         });
 
@@ -459,13 +447,8 @@
             })
             .catch(function() {
                 serverlessAvailable = false;
-                manualModeLink.classList.remove('hidden');
                 if (getPassword()) showDashboard();
             });
-
-        document.getElementById('switch-manual').addEventListener('click', function() {
-            showDashboard();
-        });
 
         // ─── API CALL ───
         function apiCall(data) {
