@@ -29,14 +29,21 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid action. Use: add, edit, delete' });
   }
 
+  var DEPLOY_HOOK = 'https://api.vercel.com/v1/integrations/deploy/prj_FhYWLr4TCbMQbiLRWJZfjCL8BIED/4cZKT08Unc';
+
   try {
+    var result;
     if (action === 'add') {
-      return await handleAdd(body, API, REPO, BRANCH, headers, res);
+      result = await handleAdd(body, API, REPO, BRANCH, headers);
     } else if (action === 'edit') {
-      return await handleEdit(body, API, REPO, BRANCH, headers, res);
+      result = await handleEdit(body, API, REPO, BRANCH, headers);
     } else if (action === 'delete') {
-      return await handleDelete(body, API, REPO, BRANCH, headers, res);
+      result = await handleDelete(body, API, REPO, BRANCH, headers);
     }
+
+    fetch(DEPLOY_HOOK, { method: 'POST' }).catch(function() {});
+
+    return res.status(200).json(result);
   } catch (err) {
     return res.status(500).json({ error: 'Server error: ' + (err.message || 'Unknown') });
   }
@@ -102,7 +109,7 @@ function buildPosterPath(year, imdb_id, title) {
   return { relative: yearFolder + '/' + filename, full: 'assets/images/work/' + yearFolder + '/' + filename };
 }
 
-async function handleAdd(body, API, REPO, BRANCH, headers, res) {
+async function handleAdd(body, API, REPO, BRANCH, headers) {
   var title = (body.title || '').trim();
   var year = (body.year || '').trim();
   var imdb_id = (body.imdb_id || '').trim();
@@ -111,7 +118,7 @@ async function handleAdd(body, API, REPO, BRANCH, headers, res) {
   var image_base64 = body.image_base64 || null;
 
   if (!title || !year || !imdb_id) {
-    return res.status(400).json({ error: 'Title, year, and imdb_id are required' });
+    throw new Error('Title, year, and imdb_id are required');
   }
 
   var posterRelative = '';
@@ -138,19 +145,19 @@ async function handleAdd(body, API, REPO, BRANCH, headers, res) {
   });
 
   await commitWorksJson(data.works, data.sha, 'Add work: ' + title + ' (' + year + ')', API, REPO, BRANCH, headers);
-  return res.status(200).json({ success: true, action: 'add', title: title, year: year });
+  return { success: true, action: 'add', title: title, year: year };
 }
 
-async function handleEdit(body, API, REPO, BRANCH, headers, res) {
+async function handleEdit(body, API, REPO, BRANCH, headers) {
   var imdb_id = (body.imdb_id || '').trim();
-  if (!imdb_id) return res.status(400).json({ error: 'imdb_id is required for edit' });
+  if (!imdb_id) throw new Error('imdb_id is required for edit');
 
   var data = await getWorksJson(API, REPO, BRANCH, headers);
   var index = -1;
   for (var i = 0; i < data.works.length; i++) {
     if (data.works[i].imdb_id === imdb_id) { index = i; break; }
   }
-  if (index === -1) return res.status(404).json({ error: 'Title not found: ' + imdb_id });
+  if (index === -1) throw new Error('Title not found: ' + imdb_id);
 
   var entry = data.works[index];
   var oldPoster = entry.poster;
@@ -186,19 +193,19 @@ async function handleEdit(body, API, REPO, BRANCH, headers, res) {
 
   data.works[index] = entry;
   await commitWorksJson(data.works, data.sha, 'Edit work: ' + entry.title + ' (' + entry.year + ')', API, REPO, BRANCH, headers);
-  return res.status(200).json({ success: true, action: 'edit', title: entry.title, year: entry.year });
+  return { success: true, action: 'edit', title: entry.title, year: entry.year };
 }
 
-async function handleDelete(body, API, REPO, BRANCH, headers, res) {
+async function handleDelete(body, API, REPO, BRANCH, headers) {
   var imdb_id = (body.imdb_id || '').trim();
-  if (!imdb_id) return res.status(400).json({ error: 'imdb_id is required for delete' });
+  if (!imdb_id) throw new Error('imdb_id is required for delete');
 
   var data = await getWorksJson(API, REPO, BRANCH, headers);
   var index = -1;
   for (var i = 0; i < data.works.length; i++) {
     if (data.works[i].imdb_id === imdb_id) { index = i; break; }
   }
-  if (index === -1) return res.status(404).json({ error: 'Title not found: ' + imdb_id });
+  if (index === -1) throw new Error('Title not found: ' + imdb_id);
 
   var entry = data.works[index];
 
@@ -217,5 +224,5 @@ async function handleDelete(body, API, REPO, BRANCH, headers, res) {
 
   data.works.splice(index, 1);
   await commitWorksJson(data.works, data.sha, 'Delete work: ' + entry.title + ' (' + entry.year + ')', API, REPO, BRANCH, headers);
-  return res.status(200).json({ success: true, action: 'delete', title: entry.title });
+  return { success: true, action: 'delete', title: entry.title };
 }
