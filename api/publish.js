@@ -103,6 +103,18 @@ async function commitWorksJson(works, sha, message, API, REPO, BRANCH, headers) 
   );
 }
 
+async function uploadFile(url, headers, message, content, branch) {
+  var data = { message: message, content: content, branch: branch };
+  try {
+    var existing = await fetch(url + '?ref=' + branch, { headers: headers });
+    if (existing.ok) {
+      var file = await existing.json();
+      data.sha = file.sha;
+    }
+  } catch (e) { /* file doesn't exist, no sha needed */ }
+  return githubPut(url, headers, data);
+}
+
 function buildPosterPath(year, imdb_id, title) {
   var yearFolder = year === 'unknown' ? 'unknown_year' : year;
   var filename = imdb_id + '_' + title + '.webp';
@@ -127,10 +139,9 @@ async function handleAdd(body, API, REPO, BRANCH, headers) {
     var paths = buildPosterPath(year, imdb_id, title);
     posterRelative = paths.relative;
     var encodedPath = paths.full.split('/').map(encodeURIComponent).join('/');
-    await githubPut(
+    await uploadFile(
       API + '/repos/' + REPO + '/contents/' + encodedPath,
-      headers,
-      { message: 'Add poster: ' + title + ' (' + year + ')', content: image_base64, branch: BRANCH }
+      headers, 'Add poster: ' + title + ' (' + year + ')', image_base64, BRANCH
     );
   }
 
@@ -184,10 +195,9 @@ async function handleEdit(body, API, REPO, BRANCH, headers) {
     var paths = buildPosterPath(entry.year, entry.imdb_id, entry.title);
     entry.poster = paths.relative;
     var encodedPath = paths.full.split('/').map(encodeURIComponent).join('/');
-    await githubPut(
+    await uploadFile(
       API + '/repos/' + REPO + '/contents/' + encodedPath,
-      headers,
-      { message: 'Update poster: ' + entry.title, content: body.image_base64, branch: BRANCH }
+      headers, 'Update poster: ' + entry.title, body.image_base64, BRANCH
     );
   }
 
