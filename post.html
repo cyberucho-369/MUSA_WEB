@@ -4,14 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog — MUSA Prague | News & Insights</title>
-    <meta name="description"
-        content="Behind-the-scenes stories, recording session highlights, and news from MUSA — Prague's orchestral recording agency.">
-    <meta property="og:title" content="Blog — MUSA Prague | News & Insights">
-    <meta property="og:description"
-        content="Behind-the-scenes stories, recording session highlights, and news from MUSA — Prague's orchestral recording agency.">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    <title id="page-title">Blog — MUSA Prague</title>
+    <meta name="description" id="page-description" content="Blog post from MUSA — Prague's orchestral recording agency.">
+    <meta name="robots" content="noindex">
     <link rel="canonical" href="https://musa.cz/blog.html">
 
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
@@ -68,16 +63,7 @@
         }
         .delay-100 { animation-delay: 100ms; }
         .delay-200 { animation-delay: 200ms; }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(32px);
-            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .delay-300 { animation-delay: 300ms; }
     </style>
 </head>
 
@@ -139,52 +125,70 @@
         </div>
     </header>
 
-    <!-- ═══════════════════════════════ PAGE HERO ═══════════════════════════════ -->
-    <section class="relative bg-dark-900 pt-36 pb-16 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-dark-800 to-dark-900"></div>
+    <!-- ═══════════════════════════════ POST CONTENT ═══════════════════════════════ -->
+    <article class="pt-36 pb-32">
+        <div class="max-w-3xl mx-auto px-6">
 
-        <div class="max-w-3xl mx-auto px-6 w-full relative z-10">
-
+            <!-- Breadcrumb -->
             <nav class="flex items-center gap-2 text-xs font-medium tracking-widest uppercase text-zinc-600 mb-10 fade-in-up">
                 <a href="index.html" class="hover:text-musa-gold transition-colors">Home</a>
                 <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
-                <span class="text-musa-gold">Blog</span>
+                <a href="blog.html" class="hover:text-musa-gold transition-colors">Blog</a>
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                <span id="breadcrumb-title" class="text-musa-gold truncate max-w-[200px]"></span>
             </nav>
 
-            <div class="flex items-center gap-4 mb-6 fade-in-up delay-100">
-                <div class="w-12 h-px bg-musa-gold"></div>
-                <span class="text-musa-gold text-sm font-bold tracking-[0.2em] uppercase">News & Insights</span>
+            <!-- Date -->
+            <div class="flex items-center gap-4 mb-4 fade-in-up delay-100">
+                <div class="w-8 h-px bg-musa-gold"></div>
+                <span id="post-date" class="text-musa-gold text-sm font-medium tracking-widest uppercase"></span>
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-serif text-white leading-[1.08] mb-6 fade-in-up delay-100">
-                From the <span class="text-musa-gold italic font-light">Studio</span>
-            </h1>
+            <!-- Title -->
+            <h1 id="post-title" class="text-3xl md:text-4xl lg:text-5xl font-serif text-white leading-tight mb-10 fade-in-up delay-100"></h1>
 
-            <p class="text-lg text-zinc-400 max-w-2xl font-light leading-relaxed fade-in-up delay-200">
-                Behind-the-scenes stories, recording session highlights, and news from Prague.
-            </p>
+            <!-- Featured image -->
+            <div id="post-image" class="mb-10 fade-in-up delay-200"></div>
+
+            <!-- Embedded video -->
+            <div id="post-video" class="mb-10 fade-in-up delay-200"></div>
+
+            <!-- Body -->
+            <div id="post-body" class="text-zinc-300 text-lg font-light leading-relaxed space-y-6 fade-in-up delay-300"></div>
+
+            <!-- Back link -->
+            <div class="mt-16 pt-10 border-t border-white/5">
+                <a href="blog.html" class="inline-flex items-center gap-2 text-musa-gold text-sm font-medium tracking-wide uppercase hover:text-white transition-colors group">
+                    <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back to Blog
+                </a>
+            </div>
         </div>
-    </section>
+    </article>
 
-    <!-- ═══════════════════════════════ POST LIST ═══════════════════════════════ -->
-    <section class="bg-dark-900 pb-32">
-        <div class="max-w-3xl mx-auto px-6">
-
-            <div id="blog-list" class="divide-y divide-white/5"></div>
-
-            <!-- Empty state -->
-            <div id="blog-empty" class="hidden text-center py-20">
-                <svg class="w-16 h-16 text-zinc-700 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V9a2 2 0 012-2h2a2 2 0 012 2v9a2 2 0 01-2 2h-2z" />
+    <!-- ═══════════════════════════════ NOT FOUND STATE ═══════════════════════════════ -->
+    <div id="post-not-found" class="hidden pt-36 pb-32">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <svg class="w-16 h-16 text-zinc-700 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                    d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h1 class="text-2xl font-serif text-white mb-4">Post not found</h1>
+            <p class="text-zinc-500 mb-8">This post may have been removed or the link is incorrect.</p>
+            <a href="blog.html" class="inline-flex items-center gap-2 text-musa-gold font-medium hover:text-white transition-colors">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                 </svg>
-                <p class="text-zinc-500 text-lg font-serif mb-2">No posts yet</p>
-                <p class="text-zinc-600 text-sm font-light">Check back soon for news and insights from the studio.</p>
-            </div>
+                Back to Blog
+            </a>
         </div>
-    </section>
+    </div>
 
     <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
     <footer class="bg-dark-900 pt-20 pb-10 border-t border-white/10">
@@ -275,8 +279,16 @@
 
     <script>
     (function() {
-        var list = document.getElementById('blog-list');
-        var blogEmpty = document.getElementById('blog-empty');
+        var params = new URLSearchParams(window.location.search);
+        var postId = params.get('id');
+        var article = document.querySelector('article');
+        var notFound = document.getElementById('post-not-found');
+
+        if (!postId) {
+            article.classList.add('hidden');
+            notFound.classList.remove('hidden');
+            return;
+        }
 
         function formatDate(dateStr) {
             var parts = dateStr.split('-');
@@ -285,73 +297,79 @@
             return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
         }
 
-        function truncate(text, len) {
-            if (text.length <= len) return text;
-            return text.substring(0, len).replace(/\s+\S*$/, '') + '...';
+        function getYouTubeId(url) {
+            var match = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+            return match ? match[1] : null;
         }
 
-        function createRow(post) {
-            var a = document.createElement('a');
-            a.href = 'post.html?id=' + encodeURIComponent(post.id);
-            a.className = 'reveal flex gap-5 md:gap-8 py-8 group cursor-pointer';
-
-            var thumbHtml = '';
-            if (post.image) {
-                thumbHtml = '<div class="flex-shrink-0 w-24 h-24 md:w-36 md:h-24 rounded-lg overflow-hidden bg-dark-700">' +
-                    '<img src="assets/images/blog/' + post.image + '" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">' +
-                    '</div>';
-            } else {
-                thumbHtml = '<div class="flex-shrink-0 w-24 h-24 md:w-36 md:h-24 rounded-lg bg-dark-700 flex items-center justify-center">' +
-                    '<svg class="w-8 h-8 text-zinc-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V9a2 2 0 012-2h2a2 2 0 012 2v9a2 2 0 01-2 2h-2z"/></svg>' +
-                    '</div>';
-            }
-
-            a.innerHTML = thumbHtml +
-                '<div class="flex-1 min-w-0">' +
-                    '<span class="text-musa-gold text-xs font-medium tracking-widest uppercase">' + formatDate(post.date) + '</span>' +
-                    '<h2 class="text-white font-serif text-lg md:text-xl leading-snug mt-1 mb-2 group-hover:text-musa-gold transition-colors">' + post.title + '</h2>' +
-                    '<p class="text-zinc-500 text-sm font-light leading-relaxed hidden md:block">' + truncate(post.body, 200) + '</p>' +
-                    '<span class="inline-flex items-center gap-1.5 text-musa-gold text-xs font-medium tracking-wide uppercase mt-3 opacity-0 group-hover:opacity-100 transition-opacity">' +
-                        'Read more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>' +
-                    '</span>' +
-                '</div>';
-
-            return a;
+        function getVimeoId(url) {
+            var match = url.match(/vimeo\.com\/(\d+)/);
+            return match ? match[1] : null;
         }
 
-        function renderPosts(posts) {
-            list.innerHTML = '';
-            if (!posts.length) {
-                blogEmpty.classList.remove('hidden');
-                return;
-            }
-            blogEmpty.classList.add('hidden');
-
-            posts.sort(function(a, b) { return b.date.localeCompare(a.date); });
-
-            for (var i = 0; i < posts.length; i++) {
-                list.appendChild(createRow(posts[i]));
-            }
-            initReveal();
-        }
-
-        function initReveal() {
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.15 });
-            var els = document.querySelectorAll('.reveal:not(.visible)');
-            for (var i = 0; i < els.length; i++) { observer.observe(els[i]); }
+        function escapeHtml(text) {
+            var div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
         }
 
         fetch('posts.json')
             .then(function(res) { return res.json(); })
-            .then(function(data) { renderPosts(data); })
-            .catch(function() { blogEmpty.classList.remove('hidden'); });
+            .then(function(posts) {
+                var post = null;
+                for (var i = 0; i < posts.length; i++) {
+                    if (posts[i].id === postId) { post = posts[i]; break; }
+                }
+
+                if (!post) {
+                    article.classList.add('hidden');
+                    notFound.classList.remove('hidden');
+                    return;
+                }
+
+                document.getElementById('page-title').textContent = post.title + ' — MUSA Blog';
+                document.getElementById('page-description').setAttribute('content', post.body.substring(0, 160));
+                document.getElementById('breadcrumb-title').textContent = post.title;
+                document.getElementById('post-date').textContent = formatDate(post.date);
+                document.getElementById('post-title').textContent = post.title;
+
+                if (post.image) {
+                    document.getElementById('post-image').innerHTML =
+                        '<img src="assets/images/blog/' + post.image + '" alt="' + escapeHtml(post.title) + '" class="w-full rounded-xl shadow-2xl shadow-black/40">';
+                }
+
+                if (post.link && post.link.trim()) {
+                    var link = post.link.trim();
+                    var ytId = getYouTubeId(link);
+                    var vimeoId = getVimeoId(link);
+
+                    if (ytId) {
+                        document.getElementById('post-video').innerHTML =
+                            '<div class="relative w-full rounded-xl overflow-hidden shadow-2xl shadow-black/40" style="padding-bottom:56.25%">' +
+                            '<iframe src="https://www.youtube-nocookie.com/embed/' + ytId + '" class="absolute inset-0 w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
+                            '</div>';
+                    } else if (vimeoId) {
+                        document.getElementById('post-video').innerHTML =
+                            '<div class="relative w-full rounded-xl overflow-hidden shadow-2xl shadow-black/40" style="padding-bottom:56.25%">' +
+                            '<iframe src="https://player.vimeo.com/video/' + vimeoId + '" class="absolute inset-0 w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>' +
+                            '</div>';
+                    } else {
+                        document.getElementById('post-video').innerHTML =
+                            '<a href="' + escapeHtml(link) + '" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-3 bg-dark-700 border border-white/10 rounded-lg text-musa-gold text-sm font-medium hover:border-musa-gold/30 transition-colors">' +
+                            '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>' +
+                            'Open external link</a>';
+                    }
+                }
+
+                var paragraphs = post.body.split('\n').filter(function(p) { return p.trim(); });
+                document.getElementById('post-body').innerHTML = paragraphs.map(function(p) {
+                    return '<p>' + escapeHtml(p) + '</p>';
+                }).join('');
+            })
+            .catch(function() {
+                article.classList.add('hidden');
+                notFound.classList.remove('hidden');
+            });
 
         // Mobile menu
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
