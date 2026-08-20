@@ -25,8 +25,8 @@ export default async function handler(req, res) {
 
   if (action === 'ping') return res.status(200).json({ success: true });
 
-  if (!action || ['add', 'edit', 'delete'].indexOf(action) === -1) {
-    return res.status(400).json({ error: 'Invalid action. Use: add, edit, delete' });
+  if (!action || ['add', 'edit', 'delete', 'blog-add', 'blog-edit', 'blog-delete'].indexOf(action) === -1) {
+    return res.status(400).json({ error: 'Invalid action' });
   }
 
   var DEPLOY_HOOK = 'https://api.vercel.com/v1/integrations/deploy/prj_FhYWLr4TCbMQbiLRWJZfjCL8BIED/4cZKT08Unc';
@@ -39,6 +39,12 @@ export default async function handler(req, res) {
       result = await handleEdit(body, API, REPO, BRANCH, headers);
     } else if (action === 'delete') {
       result = await handleDelete(body, API, REPO, BRANCH, headers);
+    } else if (action === 'blog-add') {
+      result = await handleBlogAdd(body, API, REPO, BRANCH, headers);
+    } else if (action === 'blog-edit') {
+      result = await handleBlogEdit(body, API, REPO, BRANCH, headers);
+    } else if (action === 'blog-delete') {
+      result = await handleBlogDelete(body, API, REPO, BRANCH, headers);
     }
 
     fetch(DEPLOY_HOOK, { method: 'POST' }).catch(function() {});
@@ -235,4 +241,162 @@ async function handleDelete(body, API, REPO, BRANCH, headers) {
   data.works.splice(index, 1);
   await commitWorksJson(data.works, data.sha, 'Delete work: ' + entry.title + ' (' + entry.year + ')', API, REPO, BRANCH, headers);
   return { success: true, action: 'delete', title: entry.title };
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// BLOG HANDLERS
+// ═══════════════════════════════════════════════════════════════════
+
+async function getPostsJson(API, REPO, BRANCH, headers) {
+  var fileData = await githubGet(
+    API + '/repos/' + REPO + '/contents/posts.json?ref=' + BRANCH,
+    headers
+  );
+  var content = Buffer.from(fileData.content, 'base64').toString('utf8');
+  return { posts: JSON.parse(content), sha: fileData.sha };
+}
+
+async function commitPostsJson(posts, sha, message, API, REPO, BRANCH, headers) {
+  var encoded = Buffer.from(JSON.stringify(posts, null, 2)).toString('base64');
+  await githubPut(
+    API + '/repos/' + REPO + '/contents/posts.json',
+    headers,
+    { message: message, content: encoded, sha: sha, branch: BRANCH }
+  );
+}
+
+function buildBlogImagePath(id, title) {
+  var slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').substring(0, 60);
+  var filename = id + '_' + slug + '.webp';
+  return { filename: filename, full: 'assets/images/blog/' + filename };
+}
+
+async function handleBlogAdd(body, API, REPO, BRANCH, headers) {
+  var id = (body.id || '').trim();
+  var title = (body.title || '').trim();
+  var date = (body.date || '').trim();
+  var link = (body.link || '').trim();
+  var bodyText = (body.body || '').trim();
+  var image_base64 = body.image_base64 || null;
+
+  if (!id || !title || !date || !bodyText) {
+    throw new Error('id, title, date, and body are required');
+  }
+
+  var imageFilename = '';
+
+  if (image_base64) {
+    var paths = buildBlogImagePath(id, title);
+    imageFilename = paths.filename;
+    var encodedPath = paths.full.split('/').map(encodeURIComponent).join('/');
+    await uploadFile(
+      API + '/repos/' + REPO + '/contents/' + encodedPath,
+      headers, 'Add blog image: ' + title, image_base64, BRANCH
+    );
+  }
+
+  var data = await getPostsJson(API, REPO, BRANCH, headers);
+  data.posts.unshift({
+    id: id,
+    title: title,
+    date: date,
+    link: link,
+    image: imageFilename,
+    body: bodyText
+  });
+
+  await commitPostsJson(data.posts, data.sha, 'Add blog post: ' + title, API, REPO, BRANCH, headers);
+  return { success: true, action: 'blog-add', title: title };
+}
+
+async function handleBlogEdit(body, API, REPO, BRANCH, headers) {
+  var id = (body.id || '').trim();
+  if (!id) throw new Error('id is required for blog edit');
+
+  var data = await getPostsJson(API, REPO, BRANCH, headers);
+  var index = -1;
+  for (var i = 0; i < data.posts.length; i++) {
+    if (data.posts[i].id === id) { index = i; break; }
+  }
+  if (index === -1) throw new Error('Post not found: ' + id);
+
+  var entry = data.posts[index];
+  var oldImage = entry.image;
+
+  if (body.title) entry.title = body.title.trim();
+  if (body.date) entry.date = body.date.trim();
+  entry.link = (body.link || '').trim();
+  if (body.body) entry.body = body.body.trim();
+
+  if (body.remove_image && oldImage) {
+    var oldPath = 'assets/images/blog/' + oldImage;
+    var oldEncodedPath = oldPath.split('/').map(encodeURIComponent).join('/');
+    try {
+      var oldFile = await githubGet(API + '/repos/' + REPO + '/contents/' + oldEncodedPath + '?ref=' + BRANCH, headers);
+      await githubDelete(
+        API + '/repos/' + REPO + '/contents/' + oldEncodedPath,
+        headers,
+        { message: 'Remove blog image: ' + oldImage, sha: oldFile.sha, branch: BRANCH }
+      );
+    } catch (e) { /* old file may not exist */ }
+    entry.image = '';
+  }
+
+  if (body.image_base64) {
+    if (oldImage) {
+      var oldImgPath = 'assets/images/blog/' + oldImage;
+      var oldImgEnc = oldImgPath.split('/').map(encodeURIComponent).join('/');
+      try {
+        var existingFile = await githubGet(API + '/repos/' + REPO + '/contents/' + oldImgEnc + '?ref=' + BRANCH, headers);
+        await githubDelete(
+          API + '/repos/' + REPO + '/contents/' + oldImgEnc,
+          headers,
+          { message: 'Remove old blog image: ' + oldImage, sha: existingFile.sha, branch: BRANCH }
+        );
+      } catch (e) { /* old file may not exist */ }
+    }
+
+    var paths = buildBlogImagePath(entry.id, entry.title);
+    entry.image = paths.filename;
+    var encodedPath = paths.full.split('/').map(encodeURIComponent).join('/');
+    await uploadFile(
+      API + '/repos/' + REPO + '/contents/' + encodedPath,
+      headers, 'Update blog image: ' + entry.title, body.image_base64, BRANCH
+    );
+  }
+
+  data.posts[index] = entry;
+  await commitPostsJson(data.posts, data.sha, 'Edit blog post: ' + entry.title, API, REPO, BRANCH, headers);
+  return { success: true, action: 'blog-edit', title: entry.title };
+}
+
+async function handleBlogDelete(body, API, REPO, BRANCH, headers) {
+  var id = (body.id || '').trim();
+  if (!id) throw new Error('id is required for blog delete');
+
+  var data = await getPostsJson(API, REPO, BRANCH, headers);
+  var index = -1;
+  for (var i = 0; i < data.posts.length; i++) {
+    if (data.posts[i].id === id) { index = i; break; }
+  }
+  if (index === -1) throw new Error('Post not found: ' + id);
+
+  var entry = data.posts[index];
+
+  if (entry.image) {
+    var imgPath = 'assets/images/blog/' + entry.image;
+    var encodedPath = imgPath.split('/').map(encodeURIComponent).join('/');
+    try {
+      var imgFile = await githubGet(API + '/repos/' + REPO + '/contents/' + encodedPath + '?ref=' + BRANCH, headers);
+      await githubDelete(
+        API + '/repos/' + REPO + '/contents/' + encodedPath,
+        headers,
+        { message: 'Remove blog image: ' + entry.title, sha: imgFile.sha, branch: BRANCH }
+      );
+    } catch (e) { /* image may not exist */ }
+  }
+
+  data.posts.splice(index, 1);
+  await commitPostsJson(data.posts, data.sha, 'Delete blog post: ' + entry.title, API, REPO, BRANCH, headers);
+  return { success: true, action: 'blog-delete', title: entry.title };
 }

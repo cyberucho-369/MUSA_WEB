@@ -67,7 +67,7 @@
                 <span class="text-zinc-400 text-sm font-medium tracking-wide uppercase">Content Manager</span>
             </div>
             <div class="flex items-center gap-4">
-                <a href="work.html" class="text-musa-gold text-sm font-medium hover:text-white transition-colors">View Work Page &rarr;</a>
+                <a id="view-page-link" href="work.html" class="text-musa-gold text-sm font-medium hover:text-white transition-colors">View Work Page &rarr;</a>
                 <button id="logout-btn" class="hidden text-zinc-500 text-sm hover:text-red-400 transition-colors">Sign Out</button>
             </div>
         </div>
@@ -111,14 +111,14 @@
                     <p class="text-zinc-500 text-sm font-light leading-relaxed">Manage the film, game & music title gallery. Add, edit, or delete entries with poster images.</p>
                     <span id="dash-work-count" class="inline-block mt-4 text-musa-gold text-xs font-medium tracking-wide"></span>
                 </button>
-                <div class="relative bg-dark-800 border border-white/10 rounded-xl p-8 text-left opacity-50 cursor-not-allowed">
-                    <div class="absolute top-4 right-4 bg-zinc-700/50 text-zinc-400 text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">Coming Soon</div>
-                    <div class="w-12 h-12 rounded-full bg-white/5 text-zinc-600 flex items-center justify-center mb-5">
+                <button id="dash-blog" class="group bg-dark-800 border border-white/10 rounded-xl p-8 text-left hover:border-musa-gold/50 hover:shadow-[0_0_30px_rgba(184,137,90,0.15)] transition-all duration-300">
+                    <div class="w-12 h-12 rounded-full bg-musa-gold/20 text-musa-gold flex items-center justify-center mb-5 group-hover:bg-musa-gold/30 transition-colors">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V9a2 2 0 012-2h2a2 2 0 012 2v9a2 2 0 01-2 2h-2z"/></svg>
                     </div>
-                    <h3 class="text-zinc-500 text-lg font-serif mb-2">Blog</h3>
-                    <p class="text-zinc-600 text-sm font-light leading-relaxed">Create and publish blog posts. This section is under development.</p>
-                </div>
+                    <h3 class="text-white text-lg font-serif mb-2">Blog</h3>
+                    <p class="text-zinc-500 text-sm font-light leading-relaxed">Create and publish blog posts with text, images, and links to articles or videos.</p>
+                    <span id="dash-blog-count" class="inline-block mt-4 text-musa-gold text-xs font-medium tracking-wide"></span>
+                </button>
             </div>
         </div>
     </div>
@@ -249,6 +249,140 @@
 
         </div>
     </main>
+
+    <!-- ═══════════════════════════════ BLOG CMS MAIN ═══════════════════════════════ -->
+    <main id="blog-cms-main" class="hidden max-w-6xl mx-auto px-6 py-10">
+
+        <div class="mb-10 flex items-center gap-4">
+            <button id="blog-back-to-dash" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-zinc-500 hover:text-musa-gold hover:border-musa-gold/30 transition-colors" title="Back to Dashboard">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <div>
+                <h1 class="text-3xl font-serif text-white mb-1">Blog — Content Manager</h1>
+                <p class="text-zinc-400 font-light text-sm">Create, edit, or delete blog posts. Changes go live automatically within ~30 seconds.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+
+            <!-- ═══════════════════════════════ BLOG FORM ═══════════════════════════════ -->
+            <div class="lg:col-span-2">
+                <div id="blog-form-panel" class="bg-dark-800 border border-white/10 rounded-xl p-6 sticky top-6">
+                    <h2 class="text-xl font-serif text-white mb-6 flex items-center gap-3">
+                        <span id="blog-form-icon" class="w-8 h-8 rounded-full bg-musa-gold/20 text-musa-gold flex items-center justify-center text-sm font-bold">+</span>
+                        <span id="blog-form-title-text">New Blog Post</span>
+                    </h2>
+
+                    <form id="blog-form" class="space-y-5">
+                        <input type="hidden" id="blog-edit-id" value="">
+
+                        <div>
+                            <label for="blog-field-title" class="block text-sm font-medium text-zinc-300 mb-2">Title <span class="text-red-400">*</span></label>
+                            <input type="text" id="blog-field-title" placeholder="e.g. Behind the Scenes: Recording Session"
+                                class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                        </div>
+
+                        <div>
+                            <label for="blog-field-date" class="block text-sm font-medium text-zinc-300 mb-2">Date <span class="text-red-400">*</span></label>
+                            <input type="date" id="blog-field-date"
+                                class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                        </div>
+
+                        <div>
+                            <label for="blog-field-link" class="block text-sm font-medium text-zinc-300 mb-2">External Link <span class="text-zinc-600">(optional)</span></label>
+                            <input type="url" id="blog-field-link" placeholder="https://youtube.com/watch?v=..."
+                                class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                            <p class="text-zinc-600 text-xs mt-1">YouTube, article, or any URL. If set, clicking the post card opens this link.</p>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-zinc-300 mb-2">Featured Image</label>
+                            <div id="blog-drop-zone" class="drop-zone relative border-2 border-dashed border-white/20 rounded-lg p-6 text-center cursor-pointer hover:border-musa-gold/40 transition-colors">
+                                <div id="blog-drop-placeholder">
+                                    <svg class="w-10 h-10 text-zinc-600 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    <p class="text-zinc-500 text-sm mb-1">Drag & drop image here</p>
+                                    <p class="text-zinc-600 text-xs">or click to browse (.webp, .jpg, .png)</p>
+                                </div>
+                                <div id="blog-drop-preview" class="hidden">
+                                    <img id="blog-preview-img" class="max-h-48 mx-auto rounded-lg shadow-lg" alt="Preview">
+                                    <p id="blog-preview-name" class="text-musa-gold text-xs mt-3 truncate"></p>
+                                    <button type="button" id="blog-remove-img" class="mt-2 text-red-400 text-xs hover:text-red-300 transition-colors">Remove image</button>
+                                </div>
+                                <input type="file" id="blog-file-input" accept=".webp,.jpg,.jpeg,.png" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="blog-field-body" class="block text-sm font-medium text-zinc-300 mb-2">Body Text <span class="text-red-400">*</span></label>
+                            <textarea id="blog-field-body" rows="8" placeholder="Write your blog post here. Use line breaks to separate paragraphs."
+                                class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm resize-y min-h-[120px]"></textarea>
+                        </div>
+
+                        <div id="blog-form-error" class="hidden text-red-400 text-sm bg-red-400/10 border border-red-400/20 rounded-lg p-3"></div>
+
+                        <button type="submit" id="blog-submit-btn"
+                            class="w-full py-4 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-wide uppercase rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(184,137,90,0.3)] hover:shadow-[0_0_30px_rgba(184,137,90,0.5)]">
+                            Publish Post
+                        </button>
+
+                        <button type="button" id="blog-cancel-edit-btn" class="hidden w-full py-3 border border-white/10 text-zinc-400 text-sm font-medium rounded-lg hover:border-white/20 hover:text-zinc-300 transition-all">
+                            Cancel
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════ BLOG TABLE ═══════════════════════════════ -->
+            <div class="lg:col-span-3">
+                <div class="bg-dark-800 border border-white/10 rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-serif text-white">Published Posts</h2>
+                        <span id="blog-table-count" class="text-zinc-500 text-sm"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <input type="text" id="blog-table-search" placeholder="Search posts..."
+                            class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="text-zinc-500 text-xs uppercase tracking-widest border-b border-white/10">
+                                    <th class="text-left py-3 px-2">Image</th>
+                                    <th class="text-left py-3 px-2 cursor-pointer hover:text-musa-gold transition-colors" id="blog-sort-title">Title</th>
+                                    <th class="text-left py-3 px-2 cursor-pointer hover:text-musa-gold transition-colors" id="blog-sort-date">Date</th>
+                                    <th class="text-left py-3 px-2">Link</th>
+                                    <th class="text-right py-3 px-2">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="blog-table-body" class="divide-y divide-white/5"></tbody>
+                        </table>
+                    </div>
+
+                    <div id="blog-table-empty" class="hidden text-center py-10">
+                        <p class="text-zinc-500">No posts found</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ═══════════════════════════════ BLOG DELETE MODAL ═══════════════════════════════ -->
+    <div id="blog-delete-modal" class="fixed inset-0 z-[100] hidden items-center justify-center" style="background: rgba(14,14,16,0.85); backdrop-filter: blur(8px);">
+        <div class="bg-dark-800 border border-white/10 rounded-xl p-6 w-full max-w-sm mx-4">
+            <h3 class="text-lg font-serif text-white mb-2">Delete Post</h3>
+            <p class="text-zinc-400 text-sm mb-1">Are you sure you want to delete:</p>
+            <p id="blog-delete-title-name" class="text-white font-medium mb-4"></p>
+            <p class="text-zinc-500 text-xs mb-6">This will remove the post and its image. This cannot be undone.</p>
+            <div class="flex gap-3">
+                <button id="blog-delete-cancel" class="flex-1 py-3 border border-white/10 text-zinc-400 text-sm font-medium rounded-lg hover:border-white/20 transition-colors">Cancel</button>
+                <button id="blog-delete-confirm" class="flex-1 py-3 bg-red-500/20 border border-red-500/30 text-red-400 text-sm font-bold rounded-lg hover:bg-red-500/30 transition-colors">Delete</button>
+            </div>
+        </div>
+    </div>
 
     <!-- ═══════════════════════════════ DELETE MODAL ═══════════════════════════════ -->
     <div id="delete-modal" class="fixed inset-0 z-[100] hidden items-center justify-center" style="background: rgba(14,14,16,0.85); backdrop-filter: blur(8px);">
@@ -387,6 +521,8 @@
             dashboard.classList.add('hidden');
             dashboard.style.display = '';
             cmsMain.classList.add('hidden');
+            var blogMain = document.getElementById('blog-cms-main');
+            if (blogMain) blogMain.classList.add('hidden');
             logoutBtn.classList.add('hidden');
         }
 
@@ -888,14 +1024,458 @@
             renderTable(worksData);
         });
 
+        // ═══════════════════════════════════════════════════════════════════
+        // ─── BLOG CMS ───
+        // ═══════════════════════════════════════════════════════════════════
+        var postsData = [];
+        var blogImageFile = null;
+        var blogImageDataUrl = null;
+        var blogImageChanged = false;
+        var blogEditMode = false;
+        var blogEditId = '';
+        var blogDeleteTarget = null;
+
+        var blogCmsMain = document.getElementById('blog-cms-main');
+        var dashBlog = document.getElementById('dash-blog');
+        var dashBlogCount = document.getElementById('dash-blog-count');
+        var blogBackToDash = document.getElementById('blog-back-to-dash');
+        var viewPageLink = document.getElementById('view-page-link');
+
+        var blogForm = document.getElementById('blog-form');
+        var blogFormError = document.getElementById('blog-form-error');
+        var blogFormIcon = document.getElementById('blog-form-icon');
+        var blogFormTitleText = document.getElementById('blog-form-title-text');
+        var blogSubmitBtn = document.getElementById('blog-submit-btn');
+        var blogCancelEditBtn = document.getElementById('blog-cancel-edit-btn');
+        var blogEditIdField = document.getElementById('blog-edit-id');
+
+        var blogDropZone = document.getElementById('blog-drop-zone');
+        var blogFileInput = document.getElementById('blog-file-input');
+        var blogDropPlaceholder = document.getElementById('blog-drop-placeholder');
+        var blogDropPreview = document.getElementById('blog-drop-preview');
+        var blogPreviewImg = document.getElementById('blog-preview-img');
+        var blogPreviewName = document.getElementById('blog-preview-name');
+        var blogRemoveBtn = document.getElementById('blog-remove-img');
+
+        var blogTableBody = document.getElementById('blog-table-body');
+        var blogTableCount = document.getElementById('blog-table-count');
+        var blogTableEmpty = document.getElementById('blog-table-empty');
+        var blogTableSearch = document.getElementById('blog-table-search');
+
+        var blogDeleteModal = document.getElementById('blog-delete-modal');
+        var blogDeleteTitleName = document.getElementById('blog-delete-title-name');
+        var blogDeleteCancel = document.getElementById('blog-delete-cancel');
+        var blogDeleteConfirm = document.getElementById('blog-delete-confirm');
+
+        // Set today as default date
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
+        document.getElementById('blog-field-date').value = yyyy + '-' + mm + '-' + dd;
+
+        function showBlogCMS() {
+            dashboard.classList.add('hidden');
+            dashboard.style.display = '';
+            cmsMain.classList.add('hidden');
+            blogCmsMain.classList.remove('hidden');
+            logoutBtn.classList.remove('hidden');
+            viewPageLink.href = 'blog.html';
+            viewPageLink.textContent = 'View Blog Page →';
+            loadPostsData();
+        }
+
+        function showDashboardFromBlog() {
+            blogCmsMain.classList.add('hidden');
+            viewPageLink.href = 'work.html';
+            viewPageLink.textContent = 'View Work Page →';
+            showDashboard();
+        }
+
+        dashBlog.addEventListener('click', function() { showBlogCMS(); });
+        blogBackToDash.addEventListener('click', function() { showDashboardFromBlog(); });
+
+        // Update showDashboard to also load blog count
+        var origShowDashboard = showDashboard;
+        showDashboard = function() {
+            origShowDashboard();
+            blogCmsMain.classList.add('hidden');
+            viewPageLink.href = 'work.html';
+            viewPageLink.textContent = 'View Work Page →';
+            fetch('posts.json').then(function(r) { return r.json(); }).then(function(d) {
+                dashBlogCount.textContent = d.length + ' posts';
+            }).catch(function() {});
+        };
+
+        // Update showWorkCMS to also hide blog
+        var origShowWorkCMS = showWorkCMS;
+        showWorkCMS = function() {
+            blogCmsMain.classList.add('hidden');
+            viewPageLink.href = 'work.html';
+            viewPageLink.textContent = 'View Work Page →';
+            origShowWorkCMS();
+        };
+
+        // ─── BLOG IMAGE ───
+        function handleBlogFile(file) {
+            if (!file) return;
+            var validTypes = ['image/webp', 'image/jpeg', 'image/png'];
+            if (validTypes.indexOf(file.type) === -1) {
+                showToast('Please use a .webp, .jpg, or .png image.', 'error');
+                return;
+            }
+            if (file.size > 3 * 1024 * 1024) {
+                showToast('Image too large. Max 3MB.', 'error');
+                return;
+            }
+            blogImageFile = file;
+            blogImageChanged = true;
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                blogImageDataUrl = e.target.result;
+                blogPreviewImg.src = blogImageDataUrl;
+                blogPreviewName.textContent = file.name;
+                blogDropPlaceholder.classList.add('hidden');
+                blogDropPreview.classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        blogDropZone.addEventListener('dragover', function(e) { e.preventDefault(); this.classList.add('dragover'); });
+        blogDropZone.addEventListener('dragleave', function() { this.classList.remove('dragover'); });
+        blogDropZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.classList.remove('dragover');
+            if (e.dataTransfer.files.length) handleBlogFile(e.dataTransfer.files[0]);
+        });
+        blogFileInput.addEventListener('change', function() { if (this.files.length) handleBlogFile(this.files[0]); });
+        blogRemoveBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            blogImageFile = null;
+            blogImageDataUrl = null;
+            blogImageChanged = true;
+            blogFileInput.value = '';
+            blogDropPlaceholder.classList.remove('hidden');
+            blogDropPreview.classList.add('hidden');
+        });
+
+        // ─── BLOG ID GENERATOR ───
+        function generateId() {
+            return Date.now().toString(36) + Math.random().toString(36).substring(2, 8);
+        }
+
+        // ─── BLOG FORM MODES ───
+        function setBlogAddMode() {
+            blogEditMode = false;
+            blogEditId = '';
+            blogEditIdField.value = '';
+            blogFormIcon.textContent = '+';
+            blogFormTitleText.textContent = 'New Blog Post';
+            blogSubmitBtn.textContent = 'Publish Post';
+            blogCancelEditBtn.classList.add('hidden');
+            resetBlogForm();
+        }
+
+        function setBlogEditMode(entry) {
+            blogEditMode = true;
+            blogEditId = entry.id;
+            blogEditIdField.value = entry.id;
+            blogFormIcon.innerHTML = '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>';
+            blogFormTitleText.textContent = 'Edit Post';
+            blogSubmitBtn.textContent = 'Save Changes';
+            blogCancelEditBtn.classList.remove('hidden');
+
+            document.getElementById('blog-field-title').value = entry.title;
+            document.getElementById('blog-field-date').value = entry.date;
+            document.getElementById('blog-field-link').value = entry.link || '';
+            document.getElementById('blog-field-body').value = entry.body || '';
+            blogFormError.classList.add('hidden');
+
+            blogImageFile = null;
+            blogImageDataUrl = null;
+            blogImageChanged = false;
+            blogFileInput.value = '';
+
+            if (entry.image) {
+                blogPreviewImg.src = 'assets/images/blog/' + entry.image;
+                blogPreviewName.textContent = 'Current image';
+                blogDropPlaceholder.classList.add('hidden');
+                blogDropPreview.classList.remove('hidden');
+            } else {
+                blogDropPlaceholder.classList.remove('hidden');
+                blogDropPreview.classList.add('hidden');
+            }
+
+            document.getElementById('blog-form-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function resetBlogForm() {
+            document.getElementById('blog-field-title').value = '';
+            var todayReset = new Date();
+            var ddr = String(todayReset.getDate()).padStart(2, '0');
+            var mmr = String(todayReset.getMonth() + 1).padStart(2, '0');
+            var yyyyr = todayReset.getFullYear();
+            document.getElementById('blog-field-date').value = yyyyr + '-' + mmr + '-' + ddr;
+            document.getElementById('blog-field-link').value = '';
+            document.getElementById('blog-field-body').value = '';
+            blogFormError.classList.add('hidden');
+            blogImageFile = null;
+            blogImageDataUrl = null;
+            blogImageChanged = false;
+            blogFileInput.value = '';
+            blogDropPlaceholder.classList.remove('hidden');
+            blogDropPreview.classList.add('hidden');
+        }
+
+        blogCancelEditBtn.addEventListener('click', setBlogAddMode);
+
+        // ─── BLOG FORM SUBMIT ───
+        blogForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            blogFormError.classList.add('hidden');
+
+            var title = document.getElementById('blog-field-title').value.trim();
+            var date = document.getElementById('blog-field-date').value;
+            var link = document.getElementById('blog-field-link').value.trim();
+            var body = document.getElementById('blog-field-body').value.trim();
+
+            var errors = [];
+            if (!title) errors.push('Title is required');
+            if (!date) errors.push('Date is required');
+            if (!body) errors.push('Body text is required');
+
+            if (errors.length) {
+                blogFormError.innerHTML = errors.join('<br>');
+                blogFormError.classList.remove('hidden');
+                return;
+            }
+
+            var postId = blogEditMode ? blogEditId : generateId();
+
+            blogSubmitBtn.disabled = true;
+            var originalText = blogSubmitBtn.textContent;
+            blogSubmitBtn.textContent = blogEditMode ? 'Saving...' : 'Publishing...';
+
+            if (serverlessAvailable) {
+                var doSubmit = function(base64) {
+                    var payload = {
+                        action: blogEditMode ? 'blog-edit' : 'blog-add',
+                        id: postId,
+                        title: title,
+                        date: date,
+                        link: link,
+                        body: body
+                    };
+                    if (base64) payload.image_base64 = base64;
+                    if (blogEditMode && blogImageChanged && !blogImageFile) payload.remove_image = true;
+
+                    apiCall(payload).then(function(data) {
+                        if (data.success) {
+                            showToast((blogEditMode ? 'Updated: ' : 'Published: ') + title, 'success');
+                            setBlogAddMode();
+                            loadPostsData();
+                        } else {
+                            showToast(data.error || 'Something went wrong.', 'error');
+                        }
+                    }).catch(function(err) {
+                        showToast(err.message || 'Network error.', 'error');
+                    }).finally(function() {
+                        blogSubmitBtn.disabled = false;
+                        blogSubmitBtn.textContent = originalText;
+                    });
+                };
+
+                if (blogImageFile && blogImageChanged) {
+                    convertToWebpBase64(blogImageFile).then(doSubmit);
+                } else {
+                    doSubmit(null);
+                }
+            } else {
+                showToast('CMS requires Vercel deployment.', 'error');
+                blogSubmitBtn.disabled = false;
+                blogSubmitBtn.textContent = originalText;
+            }
+        });
+
+        // ─── BLOG DELETE ───
+        function openBlogDeleteModal(entry) {
+            blogDeleteTarget = entry;
+            blogDeleteTitleName.textContent = entry.title;
+            blogDeleteModal.style.display = 'flex';
+        }
+
+        blogDeleteCancel.addEventListener('click', function() {
+            blogDeleteModal.style.display = 'none';
+            blogDeleteTarget = null;
+        });
+
+        blogDeleteModal.addEventListener('click', function(e) {
+            if (e.target === blogDeleteModal) {
+                blogDeleteModal.style.display = 'none';
+                blogDeleteTarget = null;
+            }
+        });
+
+        blogDeleteConfirm.addEventListener('click', function() {
+            if (!blogDeleteTarget) return;
+            var entry = blogDeleteTarget;
+            blogDeleteConfirm.textContent = 'Deleting...';
+            blogDeleteConfirm.disabled = true;
+
+            if (serverlessAvailable) {
+                apiCall({ action: 'blog-delete', id: entry.id }).then(function(data) {
+                    if (data.success) {
+                        showToast('Deleted: ' + entry.title, 'success');
+                        loadPostsData();
+                    } else {
+                        showToast(data.error || 'Delete failed.', 'error');
+                    }
+                }).catch(function(err) {
+                    showToast(err.message || 'Network error.', 'error');
+                }).finally(function() {
+                    blogDeleteModal.style.display = 'none';
+                    blogDeleteTarget = null;
+                    blogDeleteConfirm.textContent = 'Delete';
+                    blogDeleteConfirm.disabled = false;
+                });
+            }
+        });
+
+        // ─── BLOG TABLE ───
+        function loadPostsData() {
+            fetch('posts.json')
+                .then(function(res) { return res.json(); })
+                .then(function(data) {
+                    postsData = data;
+                    renderBlogTable(postsData);
+                })
+                .catch(function() {
+                    blogTableEmpty.classList.remove('hidden');
+                    blogTableCount.textContent = '0 posts';
+                });
+        }
+
+        function formatDateShort(dateStr) {
+            var parts = dateStr.split('-');
+            return parts[2] + '/' + parts[1] + '/' + parts[0];
+        }
+
+        function renderBlogTable(data) {
+            blogTableBody.innerHTML = '';
+            var search = blogTableSearch.value.trim().toLowerCase();
+            var filtered = data;
+            if (search) {
+                filtered = data.filter(function(p) {
+                    return p.title.toLowerCase().indexOf(search) !== -1 || p.body.toLowerCase().indexOf(search) !== -1;
+                });
+            }
+
+            blogTableCount.textContent = filtered.length + ' of ' + data.length + ' posts';
+
+            if (!filtered.length) {
+                blogTableEmpty.classList.remove('hidden');
+                return;
+            }
+            blogTableEmpty.classList.add('hidden');
+
+            filtered.forEach(function(p) {
+                var tr = document.createElement('tr');
+                tr.className = 'hover:bg-dark-700/50 transition-colors';
+
+                var imgTd = document.createElement('td');
+                imgTd.className = 'py-2 px-2';
+                if (p.image) {
+                    var img = document.createElement('img');
+                    img.src = 'assets/images/blog/' + p.image;
+                    img.alt = p.title;
+                    img.className = 'w-14 h-9 object-cover rounded';
+                    img.loading = 'lazy';
+                    imgTd.appendChild(img);
+                } else {
+                    imgTd.innerHTML = '<div class="w-14 h-9 bg-dark-600 rounded flex items-center justify-center"><span class="text-zinc-600 text-xs">—</span></div>';
+                }
+
+                var titleTd = document.createElement('td');
+                titleTd.className = 'py-2 px-2 text-white font-medium text-xs max-w-[200px]';
+                titleTd.textContent = p.title;
+                titleTd.style.overflow = 'hidden';
+                titleTd.style.textOverflow = 'ellipsis';
+                titleTd.style.whiteSpace = 'nowrap';
+
+                var dateTd = document.createElement('td');
+                dateTd.className = 'py-2 px-2 text-musa-gold text-xs whitespace-nowrap';
+                dateTd.textContent = formatDateShort(p.date);
+
+                var linkTd = document.createElement('td');
+                linkTd.className = 'py-2 px-2';
+                if (p.link && p.link.trim()) {
+                    var a = document.createElement('a');
+                    a.href = p.link;
+                    a.target = '_blank';
+                    a.rel = 'noopener';
+                    a.className = 'text-musa-gold/60 hover:text-musa-gold transition-colors';
+                    a.innerHTML = '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>';
+                    linkTd.appendChild(a);
+                }
+
+                var actionsTd = document.createElement('td');
+                actionsTd.className = 'py-2 px-2 text-right whitespace-nowrap';
+
+                var editBtn = document.createElement('button');
+                editBtn.className = 'text-zinc-500 hover:text-musa-gold transition-colors p-1';
+                editBtn.title = 'Edit';
+                editBtn.innerHTML = '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>';
+                editBtn.addEventListener('click', (function(entry) {
+                    return function() { setBlogEditMode(entry); };
+                })(p));
+
+                var delBtn = document.createElement('button');
+                delBtn.className = 'text-zinc-500 hover:text-red-400 transition-colors p-1 ml-1';
+                delBtn.title = 'Delete';
+                delBtn.innerHTML = '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>';
+                delBtn.addEventListener('click', (function(entry) {
+                    return function() { openBlogDeleteModal(entry); };
+                })(p));
+
+                actionsTd.appendChild(editBtn);
+                actionsTd.appendChild(delBtn);
+
+                tr.appendChild(imgTd);
+                tr.appendChild(titleTd);
+                tr.appendChild(dateTd);
+                tr.appendChild(linkTd);
+                tr.appendChild(actionsTd);
+                blogTableBody.appendChild(tr);
+            });
+        }
+
+        blogTableSearch.addEventListener('input', function() { renderBlogTable(postsData); });
+
+        var blogSortDir = { title: 1, date: -1 };
+        document.getElementById('blog-sort-title').addEventListener('click', function() {
+            blogSortDir.title *= -1;
+            postsData.sort(function(a, b) { return a.title.localeCompare(b.title) * blogSortDir.title; });
+            renderBlogTable(postsData);
+        });
+        document.getElementById('blog-sort-date').addEventListener('click', function() {
+            blogSortDir.date *= -1;
+            postsData.sort(function(a, b) { return a.date.localeCompare(b.date) * blogSortDir.date; });
+            renderBlogTable(postsData);
+        });
+
         // ─── KEYBOARD ───
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 if (deleteModal.style.display === 'flex') {
                     deleteModal.style.display = 'none';
                     deleteTarget = null;
+                } else if (blogDeleteModal.style.display === 'flex') {
+                    blogDeleteModal.style.display = 'none';
+                    blogDeleteTarget = null;
                 } else if (editMode) {
                     setAddMode();
+                } else if (blogEditMode) {
+                    setBlogAddMode();
                 }
             }
         });
