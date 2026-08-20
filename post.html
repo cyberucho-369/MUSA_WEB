@@ -313,6 +313,13 @@
             return div.innerHTML;
         }
 
+        function formatText(text) {
+            var html = escapeHtml(text);
+            html = html.replace(/\*\*(.+?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>');
+            html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+            return html;
+        }
+
         fetch('posts.json')
             .then(function(res) { return res.json(); })
             .then(function(posts) {
@@ -361,9 +368,13 @@
                     }
                 }
 
-                var paragraphs = post.body.split('\n').filter(function(p) { return p.trim(); });
-                document.getElementById('post-body').innerHTML = paragraphs.map(function(p) {
-                    return '<p>' + escapeHtml(p) + '</p>';
+                var lines = post.body.split('\n').filter(function(p) { return p.trim(); });
+                document.getElementById('post-body').innerHTML = lines.map(function(line) {
+                    var trimmed = line.trim();
+                    if (trimmed.indexOf('## ') === 0) {
+                        return '<h2 class="text-2xl font-serif text-white mt-4">' + formatText(trimmed.substring(3)) + '</h2>';
+                    }
+                    return '<p>' + formatText(trimmed) + '</p>';
                 }).join('');
             })
             .catch(function() {

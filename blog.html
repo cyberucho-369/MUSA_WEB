@@ -285,9 +285,14 @@
             return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
         }
 
+        function stripFormatting(text) {
+            return text.replace(/\*\*(.+?)\*\*/g, '$1').replace(/\*(.+?)\*/g, '$1').replace(/^## /gm, '');
+        }
+
         function truncate(text, len) {
-            if (text.length <= len) return text;
-            return text.substring(0, len).replace(/\s+\S*$/, '') + '...';
+            var clean = stripFormatting(text);
+            if (clean.length <= len) return clean;
+            return clean.substring(0, len).replace(/\s+\S*$/, '') + '...';
         }
 
         function createRow(post) {
