@@ -315,6 +315,19 @@
                         </div>
 
                         <div>
+                            <label class="block text-sm font-medium text-zinc-300 mb-2">Gallery Images <span class="text-zinc-600">(optional, multiple)</span></label>
+                            <div id="blog-gallery-zone" class="drop-zone relative border-2 border-dashed border-white/20 rounded-lg p-6 text-center cursor-pointer hover:border-musa-gold/40 transition-colors">
+                                <svg class="w-10 h-10 text-zinc-600 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                                <p class="text-zinc-500 text-sm mb-1">Drag & drop or click to add more images</p>
+                                <p class="text-zinc-600 text-xs">Shown as a gallery below the post. Add several at once.</p>
+                                <input type="file" id="blog-gallery-input" accept=".webp,.jpg,.jpeg,.png" multiple class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                            </div>
+                            <div id="blog-gallery-grid" class="hidden grid grid-cols-3 gap-2 mt-3"></div>
+                        </div>
+
+                        <div>
                             <label for="blog-field-body" class="block text-sm font-medium text-zinc-300 mb-2">Body Text <span class="text-red-400">*</span></label>
                             <textarea id="blog-field-body" rows="8" placeholder="Write your blog post here. Use line breaks to separate paragraphs."
                                 class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm resize-y min-h-[120px]"></textarea>
@@ -1037,6 +1050,8 @@
         var blogEditMode = false;
         var blogEditId = '';
         var blogDeleteTarget = null;
+        // Gallery items: { existing: true, name } for saved images, or { file, dataUrl } for new ones.
+        var blogGallery = [];
 
         var blogCmsMain = document.getElementById('blog-cms-main');
         var dashBlog = document.getElementById('dash-blog');
@@ -1059,6 +1074,10 @@
         var blogPreviewImg = document.getElementById('blog-preview-img');
         var blogPreviewName = document.getElementById('blog-preview-name');
         var blogRemoveBtn = document.getElementById('blog-remove-img');
+
+        var blogGalleryZone = document.getElementById('blog-gallery-zone');
+        var blogGalleryInput = document.getElementById('blog-gallery-input');
+        var blogGalleryGrid = document.getElementById('blog-gallery-grid');
 
         var blogTableBody = document.getElementById('blog-table-body');
         var blogTableCount = document.getElementById('blog-table-count');
@@ -1162,6 +1181,93 @@
             blogDropPreview.classList.add('hidden');
         });
 
+        // ─── BLOG GALLERY (multiple images) ───
+        function renderBlogGallery() {
+            blogGalleryGrid.innerHTML = '';
+            if (!blogGallery.length) {
+                blogGalleryGrid.classList.add('hidden');
+                return;
+            }
+            blogGalleryGrid.classList.remove('hidden');
+            blogGallery.forEach(function(item, idx) {
+                var src = item.existing ? ('assets/images/blog/' + item.name) : item.dataUrl;
+                var cell = document.createElement('div');
+                cell.className = 'relative group aspect-square rounded-lg overflow-hidden border border-white/10 bg-dark-700';
+                cell.innerHTML =
+                    '<img src="' + src + '" class="w-full h-full object-cover" alt="Gallery image">' +
+                    '<button type="button" data-idx="' + idx + '" class="gallery-remove absolute top-1 right-1 w-6 h-6 rounded-full bg-black/70 text-red-400 hover:bg-black/90 hover:text-red-300 flex items-center justify-center text-sm leading-none transition-colors" title="Remove">&times;</button>';
+                blogGalleryGrid.appendChild(cell);
+            });
+            var removeBtns = blogGalleryGrid.querySelectorAll('.gallery-remove');
+            for (var i = 0; i < removeBtns.length; i++) {
+                removeBtns[i].addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    blogGallery.splice(parseInt(this.getAttribute('data-idx'), 10), 1);
+                    renderBlogGallery();
+                });
+            }
+        }
+
+        function addBlogGalleryFiles(files) {
+            var validTypes = ['image/webp', 'image/jpeg', 'image/png'];
+            var MAX_GALLERY = 12;
+            var list = Array.prototype.slice.call(files);
+            list.forEach(function(file) {
+                if (blogGallery.length >= MAX_GALLERY) {
+                    showToast('Gallery limit is ' + MAX_GALLERY + ' images.', 'error');
+                    return;
+                }
+                if (validTypes.indexOf(file.type) === -1) {
+                    showToast('Skipped "' + file.name + '": use .webp, .jpg, or .png.', 'error');
+                    return;
+                }
+                if (file.size > 5 * 1024 * 1024) {
+                    showToast('Skipped "' + file.name + '": max 5MB.', 'error');
+                    return;
+                }
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    blogGallery.push({ file: file, dataUrl: e.target.result });
+                    renderBlogGallery();
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        blogGalleryZone.addEventListener('dragover', function(e) { e.preventDefault(); this.classList.add('dragover'); });
+        blogGalleryZone.addEventListener('dragleave', function() { this.classList.remove('dragover'); });
+        blogGalleryZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.classList.remove('dragover');
+            if (e.dataTransfer.files.length) addBlogGalleryFiles(e.dataTransfer.files);
+        });
+        blogGalleryInput.addEventListener('change', function() {
+            if (this.files.length) addBlogGalleryFiles(this.files);
+            this.value = '';
+        });
+
+        // Convert to webp base64, downscaling so the longest side is <= maxDim
+        // (keeps gallery uploads small and well under the serverless body limit).
+        function convertToWebpBase64Scaled(file, maxDim) {
+            return new Promise(function(resolve) {
+                var img = new Image();
+                img.onload = function() {
+                    var w = img.naturalWidth, h = img.naturalHeight;
+                    var scale = Math.min(1, maxDim / Math.max(w, h));
+                    var canvas = document.createElement('canvas');
+                    canvas.width = Math.round(w * scale);
+                    canvas.height = Math.round(h * scale);
+                    canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+                    canvas.toBlob(function(blob) {
+                        var reader = new FileReader();
+                        reader.onload = function() { resolve(reader.result.split(',')[1]); };
+                        reader.readAsDataURL(blob);
+                    }, 'image/webp', 0.82);
+                };
+                img.src = URL.createObjectURL(file);
+            });
+        }
+
         // ─── BLOG ID GENERATOR ───
         function generateId() {
             return Date.now().toString(36) + Math.random().toString(36).substring(2, 8);
@@ -1209,6 +1315,9 @@
                 blogDropPreview.classList.add('hidden');
             }
 
+            blogGallery = (entry.images || []).map(function(name) { return { existing: true, name: name }; });
+            renderBlogGallery();
+
             document.getElementById('blog-form-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
@@ -1228,6 +1337,8 @@
             blogFileInput.value = '';
             blogDropPlaceholder.classList.remove('hidden');
             blogDropPreview.classList.add('hidden');
+            blogGallery = [];
+            renderBlogGallery();
         }
 
         blogCancelEditBtn.addEventListener('click', setBlogAddMode);
@@ -1261,18 +1372,28 @@
 
             if (serverlessAvailable) {
                 var doSubmit = function(base64) {
-                    var payload = {
-                        action: blogEditMode ? 'blog-edit' : 'blog-add',
-                        id: postId,
-                        title: title,
-                        date: date,
-                        link: link,
-                        body: body
-                    };
-                    if (base64) payload.image_base64 = base64;
-                    if (blogEditMode && blogImageChanged && !blogImageFile) payload.remove_image = true;
+                    var galleryExisting = blogGallery
+                        .filter(function(it) { return it.existing; })
+                        .map(function(it) { return it.name; });
+                    var newItems = blogGallery.filter(function(it) { return !it.existing; });
 
-                    apiCall(payload).then(function(data) {
+                    Promise.all(newItems.map(function(it) {
+                        return convertToWebpBase64Scaled(it.file, 1600);
+                    })).then(function(galleryNew) {
+                        var payload = {
+                            action: blogEditMode ? 'blog-edit' : 'blog-add',
+                            id: postId,
+                            title: title,
+                            date: date,
+                            link: link,
+                            body: body,
+                            gallery_existing: galleryExisting,
+                            gallery_new: galleryNew
+                        };
+                        if (base64) payload.image_base64 = base64;
+                        if (blogEditMode && blogImageChanged && !blogImageFile) payload.remove_image = true;
+
+                        apiCall(payload).then(function(data) {
                         if (data.success) {
                             showToast((blogEditMode ? 'Updated: ' : 'Published: ') + title, 'success');
                             setBlogAddMode();
@@ -1285,6 +1406,7 @@
                     }).finally(function() {
                         blogSubmitBtn.disabled = false;
                         blogSubmitBtn.textContent = originalText;
+                    });
                     });
                 };
 

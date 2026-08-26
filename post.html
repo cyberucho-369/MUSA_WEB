@@ -160,6 +160,9 @@
             <!-- Body -->
             <div id="post-body" class="text-zinc-300 text-lg font-light leading-relaxed space-y-6 fade-in-up delay-300"></div>
 
+            <!-- Gallery -->
+            <div id="post-gallery" class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 fade-in-up delay-300"></div>
+
             <!-- Back link -->
             <div class="mt-16 pt-10 border-t border-white/5">
                 <a href="blog.html" class="inline-flex items-center gap-2 text-musa-gold text-sm font-medium tracking-wide uppercase hover:text-white transition-colors group">
@@ -171,6 +174,12 @@
             </div>
         </div>
     </article>
+
+    <!-- ═══════════════════════════════ LIGHTBOX ═══════════════════════════════ -->
+    <div id="lightbox" class="hidden fixed inset-0 z-[100] items-center justify-center p-4 cursor-zoom-out" style="background: rgba(10,10,12,0.92); backdrop-filter: blur(6px);">
+        <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full rounded-lg shadow-2xl shadow-black/60">
+        <button id="lightbox-close" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 text-white hover:bg-white/20 flex items-center justify-center text-2xl leading-none transition-colors" aria-label="Close">&times;</button>
+    </div>
 
     <!-- ═══════════════════════════════ NOT FOUND STATE ═══════════════════════════════ -->
     <div id="post-not-found" class="hidden pt-36 pb-32">
@@ -376,11 +385,47 @@
                     }
                     return '<p>' + formatText(trimmed) + '</p>';
                 }).join('');
+
+                var gallery = post.images || [];
+                var galleryEl = document.getElementById('post-gallery');
+                if (gallery.length) {
+                    galleryEl.innerHTML = gallery.map(function(name) {
+                        var src = 'assets/images/blog/' + name;
+                        return '<button type="button" class="gallery-item group relative aspect-[4/3] overflow-hidden rounded-lg border border-white/10 bg-dark-800 cursor-zoom-in" data-src="' + escapeHtml(src) + '">' +
+                            '<img src="' + escapeHtml(src) + '" alt="' + escapeHtml(post.title) + '" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">' +
+                            '</button>';
+                    }).join('');
+                    var items = galleryEl.querySelectorAll('.gallery-item');
+                    for (var gi = 0; gi < items.length; gi++) {
+                        items[gi].addEventListener('click', function() { openLightbox(this.getAttribute('data-src')); });
+                    }
+                } else {
+                    galleryEl.classList.add('hidden');
+                }
             })
             .catch(function() {
                 article.classList.add('hidden');
                 notFound.classList.remove('hidden');
             });
+
+        // Lightbox
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            lightboxImg.src = '';
+            document.body.style.overflow = '';
+        }
+        lightbox.addEventListener('click', closeLightbox);
+        document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
 
         // Mobile menu
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {

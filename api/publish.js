@@ -265,10 +265,49 @@ async function commitPostsJson(posts, sha, message, API, REPO, BRANCH, headers) 
   );
 }
 
+function slugifyTitle(title) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').substring(0, 60);
+}
+
 function buildBlogImagePath(id, title) {
-  var slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').substring(0, 60);
-  var filename = id + '_' + slug + '.webp';
+  var filename = id + '_' + slugifyTitle(title) + '.webp';
   return { filename: filename, full: 'assets/images/blog/' + filename };
+}
+
+// Upload an array of base64 gallery images, returning their stored filenames.
+async function uploadGalleryImages(galleryBase64, id, title, startIndex, API, REPO, BRANCH, headers) {
+  var names = [];
+  if (!galleryBase64 || !galleryBase64.length) return names;
+  var slug = slugifyTitle(title);
+  for (var i = 0; i < galleryBase64.length; i++) {
+    var b64 = galleryBase64[i];
+    if (!b64) continue;
+    var rand = Math.random().toString(36).substring(2, 8);
+    var filename = id + '_' + slug + '_g' + (startIndex + i) + '_' + rand + '.webp';
+    var full = 'assets/images/blog/' + filename;
+    var encodedPath = full.split('/').map(encodeURIComponent).join('/');
+    await uploadFile(
+      API + '/repos/' + REPO + '/contents/' + encodedPath,
+      headers, 'Add blog gallery image: ' + title, b64, BRANCH
+    );
+    names.push(filename);
+  }
+  return names;
+}
+
+// Delete a single blog image file by filename (best-effort).
+async function deleteBlogImage(filename, API, REPO, BRANCH, headers) {
+  if (!filename) return;
+  var path = 'assets/images/blog/' + filename;
+  var enc = path.split('/').map(encodeURIComponent).join('/');
+  try {
+    var f = await githubGet(API + '/repos/' + REPO + '/contents/' + enc + '?ref=' + BRANCH, headers);
+    await githubDelete(
+      API + '/repos/' + REPO + '/contents/' + enc,
+      headers,
+      { message: 'Remove blog image: ' + filename, sha: f.sha, branch: BRANCH }
+    );
+  } catch (e) { /* file may not exist */ }
 }
 
 async function handleBlogAdd(body, API, REPO, BRANCH, headers) {
@@ -295,6 +334,8 @@ async function handleBlogAdd(body, API, REPO, BRANCH, headers) {
     );
   }
 
+  var galleryNames = await uploadGalleryImages(body.gallery_new, id, title, 0, API, REPO, BRANCH, headers);
+
   var data = await getPostsJson(API, REPO, BRANCH, headers);
   data.posts.unshift({
     id: id,
@@ -302,6 +343,7 @@ async function handleBlogAdd(body, API, REPO, BRANCH, headers) {
     date: date,
     link: link,
     image: imageFilename,
+    images: galleryNames,
     body: bodyText
   });
 
@@ -365,6 +407,20 @@ async function handleBlogEdit(body, API, REPO, BRANCH, headers) {
     );
   }
 
+  // Reconcile the gallery: keep the filenames the client kept, delete the
+  // orphaned ones, and upload any new images.
+  if (body.gallery_existing || body.gallery_new) {
+    var oldGallery = entry.images || [];
+    var keep = body.gallery_existing || [];
+    for (var g = 0; g < oldGallery.length; g++) {
+      if (keep.indexOf(oldGallery[g]) === -1) {
+        await deleteBlogImage(oldGallery[g], API, REPO, BRANCH, headers);
+      }
+    }
+    var newNames = await uploadGalleryImages(body.gallery_new, entry.id, entry.title, keep.length, API, REPO, BRANCH, headers);
+    entry.images = keep.concat(newNames);
+  }
+
   data.posts[index] = entry;
   await commitPostsJson(data.posts, data.sha, 'Edit blog post: ' + entry.title, API, REPO, BRANCH, headers);
   return { success: true, action: 'blog-edit', title: entry.title };
@@ -394,6 +450,11 @@ async function handleBlogDelete(body, API, REPO, BRANCH, headers) {
         { message: 'Remove blog image: ' + entry.title, sha: imgFile.sha, branch: BRANCH }
       );
     } catch (e) { /* image may not exist */ }
+  }
+
+  var gallery = entry.images || [];
+  for (var g = 0; g < gallery.length; g++) {
+    await deleteBlogImage(gallery[g], API, REPO, BRANCH, headers);
   }
 
   data.posts.splice(index, 1);
