@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quote — MUSA Prague | Orchestral Recording</title>
+    <meta name="description"
+        content="Request a quote for orchestral recording in Prague. Film scoring, game soundtracks, album production, and remote sessions.">
+    <meta property="og:title" content="Request a Quote — MUSA Prague">
+    <meta property="og:description"
+        content="Request a quote for orchestral recording in Prague. Film scoring, game soundtracks, album production, and remote sessions.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://musa.cz/quote.html">
+
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        musa: {
+                            gold: '#B8895A',
+                            'gold-light': '#D4A96A',
+                            'gold-dark': '#96703F',
+                            parchment: '#F5EFE6',
+                            charcoal: '#0E0E10',
+                            grey: '#7A7B7E',
+                            'text-light': '#EDE9E2',
+                            'text-dark': '#1A1A1C',
+                        },
+                        dark: {
+                            900: '#0E0E10',
+                            800: '#161618',
+                            700: '#222226',
+                            600: '#2E2E33',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0E0E10; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #B8895A; }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 100ms; }
+        .reveal-delay-2 { transition-delay: 200ms; }
+    </style>
+</head>
+
+<body class="bg-dark-900 text-musa-text-light antialiased selection:bg-musa-gold selection:text-black">
+
+    <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+    <header
+        class="fixed w-full top-0 z-50 transition-all duration-300 bg-gradient-to-b from-dark-900/90 to-transparent backdrop-blur-sm border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+
+            <a href="index.html" class="flex items-center group">
+                <img src="assets/logos/logo_Musa.png" alt="MUSA"
+                    class="h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
+                <a href="about.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">About</a>
+                <a href="index.html#services" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Services</a>
+                <a href="orchestra.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Orchestra</a>
+                <a href="venues.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Venues</a>
+                <a href="work.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Work</a>
+                <a href="blog.html" class="text-zinc-400 hover:text-musa-gold transition-colors underline-offset-4 hover:underline decoration-musa-gold">Blog</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="contact.html"
+                    class="px-6 py-3 border border-musa-gold/30 hover:border-musa-gold text-musa-gold text-sm font-semibold tracking-wide uppercase transition-all duration-300 rounded">
+                    Contact Us
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-zinc-300 hover:text-white transition-transform duration-300">
+                <svg class="w-6 h-6 block" id="menu-icon-open" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg class="w-6 h-6 hidden" id="menu-icon-close" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-dark-900/30 backdrop-blur-xl border-t border-musa-gold/20 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+            <nav class="max-w-7xl mx-auto px-6 py-8 flex flex-col gap-6 text-sm font-medium tracking-wide uppercase">
+                <a href="about.html" class="text-zinc-400 hover:text-musa-gold transition-colors">About</a>
+                <a href="index.html#services" class="text-zinc-400 hover:text-musa-gold transition-colors">Services</a>
+                <a href="orchestra.html" class="text-zinc-400 hover:text-musa-gold transition-colors">Orchestra</a>
+                <a href="venues.html" class="text-zinc-400 hover:text-musa-gold transition-colors">Venues</a>
+                <a href="work.html" class="text-zinc-400 hover:text-musa-gold transition-colors">Work</a>
+                <a href="blog.html" class="text-zinc-400 hover:text-musa-gold transition-colors">Blog</a>
+                <a href="contact.html"
+                    class="mt-2 px-6 py-3 border border-musa-gold/30 text-musa-gold text-sm font-semibold tracking-wide uppercase text-center rounded">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════ PAGE HERO ═══════════════════════════════ -->
+    <section class="relative bg-dark-900 pt-36 pb-16 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-800 to-dark-900"></div>
+
+        <div class="max-w-5xl mx-auto px-6 w-full relative z-10">
+            <nav class="flex items-center gap-2 text-xs font-medium tracking-widest uppercase text-zinc-600 mb-10 fade-in-up">
+                <a href="index.html" class="hover:text-musa-gold transition-colors">Home</a>
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                <span class="text-musa-gold">Request a Quote</span>
+            </nav>
+
+            <div class="flex items-center gap-4 mb-6 fade-in-up delay-100">
+                <div class="w-12 h-px bg-musa-gold"></div>
+                <span class="text-musa-gold text-sm font-bold tracking-[0.2em] uppercase">Start Your Project</span>
+            </div>
+
+            <h1 class="text-4xl md:text-5xl font-serif text-white leading-[1.08] mb-6 fade-in-up delay-100">
+                Request a <span class="text-musa-gold italic font-light">Quote</span>
+            </h1>
+
+            <p class="text-lg text-zinc-400 max-w-2xl font-light leading-relaxed fade-in-up delay-200">
+                Tell us about your project and we'll put together a detailed proposal. Every production is different — the more detail you share, the more accurate our estimate.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ QUOTE FORM ═══════════════════════════════ -->
+    <section class="bg-dark-900 pb-32">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
+
+                <!-- Sidebar info -->
+                <div class="lg:col-span-2 reveal">
+                    <h2 class="text-2xl font-serif text-white mb-8">What to Expect</h2>
+
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-musa-gold/10 text-musa-gold flex items-center justify-center flex-shrink-0">
+                                <span class="text-sm font-bold">1</span>
+                            </div>
+                            <div>
+                                <p class="text-white font-medium mb-1">Submit Your Details</p>
+                                <p class="text-zinc-500 text-sm font-light">Share your project scope, timeline, and any specific requirements.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-musa-gold/10 text-musa-gold flex items-center justify-center flex-shrink-0">
+                                <span class="text-sm font-bold">2</span>
+                            </div>
+                            <div>
+                                <p class="text-white font-medium mb-1">We Review &amp; Respond</p>
+                                <p class="text-zinc-500 text-sm font-light">Our team reviews your request and responds within 1–2 business days.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-musa-gold/10 text-musa-gold flex items-center justify-center flex-shrink-0">
+                                <span class="text-sm font-bold">3</span>
+                            </div>
+                            <div>
+                                <p class="text-white font-medium mb-1">Custom Proposal</p>
+                                <p class="text-zinc-500 text-sm font-light">You receive a detailed proposal with pricing, timeline, and venue recommendations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 pt-8 border-t border-white/5">
+                        <p class="text-zinc-500 text-xs font-bold tracking-[0.15em] uppercase mb-4">Prefer email?</p>
+                        <a href="mailto:info@musa.cz" class="inline-flex items-center gap-2 text-musa-gold text-sm font-medium hover:text-white transition-colors group">
+                            info@musa.cz
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                        <p class="text-zinc-600 text-xs mt-2">+420 724 029 525</p>
+                    </div>
+                </div>
+
+                <!-- Quote form -->
+                <div class="lg:col-span-3 reveal reveal-delay-1">
+                    <div class="bg-dark-800 border border-white/10 rounded-xl p-8">
+                        <h2 class="text-2xl font-serif text-white mb-2">Project Details</h2>
+                        <p class="text-zinc-500 text-sm font-light mb-8">Fields marked with <span class="text-red-400">*</span> are required.</p>
+
+                        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6" id="quote-form">
+                            <input type="hidden" name="access_key" value="89e58aca-31d3-4095-a4a5-7a46d7627644">
+                            <input type="hidden" name="subject" value="New Quote Request — MUSA Website">
+                            <input type="hidden" name="from_name" value="MUSA Website Quote">
+                            <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="quote-name" class="block text-sm font-medium text-zinc-300 mb-2">Full Name <span class="text-red-400">*</span></label>
+                                    <input type="text" name="name" id="quote-name" required placeholder="Your name"
+                                        class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                                </div>
+                                <div>
+                                    <label for="quote-email" class="block text-sm font-medium text-zinc-300 mb-2">Email <span class="text-red-400">*</span></label>
+                                    <input type="email" name="email" id="quote-email" required placeholder="your@email.com"
+                                        class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="quote-company" class="block text-sm font-medium text-zinc-300 mb-2">Company / Studio</label>
+                                    <input type="text" name="company" id="quote-company" placeholder="Your company (optional)"
+                                        class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                                </div>
+                                <div>
+                                    <label for="quote-phone" class="block text-sm font-medium text-zinc-300 mb-2">Phone</label>
+                                    <input type="tel" name="phone" id="quote-phone" placeholder="+1 (555) 000-0000"
+                                        class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="quote-type" class="block text-sm font-medium text-zinc-300 mb-2">Project Type <span class="text-red-400">*</span></label>
+                                <select name="project_type" id="quote-type" required
+                                    class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white focus:border-musa-gold focus:outline-none transition-colors text-sm appearance-none"
+                                    style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22%237A7B7E%22><path stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M19 9l-7 7-7-7%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px;">
+                                    <option value="" disabled selected class="text-zinc-600">Select project type</option>
+                                    <option value="Film / TV Score">Film / TV Score</option>
+                                    <option value="Video Game Soundtrack">Video Game Soundtrack</option>
+                                    <option value="Album Production">Album Production</option>
+                                    <option value="Remote Recording Session">Remote Recording Session</option>
+                                    <option value="Trailer / Commercial">Trailer / Commercial</option>
+                                    <option value="Live Event / Concert">Live Event / Concert</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="quote-budget" class="block text-sm font-medium text-zinc-300 mb-2">Estimated Budget</label>
+                                    <select name="budget" id="quote-budget"
+                                        class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white focus:border-musa-gold focus:outline-none transition-colors text-sm appearance-none"
+                                        style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22%237A7B7E%22><path stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M19 9l-7 7-7-7%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px;">
+                                        <option value="" disabled selected class="text-zinc-600">Select range (optional)</option>
+                                        <option value="Under $5,000">Under $5,000</option>
+                                        <option value="$5,000 – $15,000">$5,000 – $15,000</option>
+                                        <option value="$15,000 – $50,000">$15,000 – $50,000</option>
+                                        <option value="$50,000 – $100,000">$50,000 – $100,000</option>
+                                        <option value="$100,000+">$100,000+</option>
+                                        <option value="Not sure yet">Not sure yet</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="quote-timeline" class="block text-sm font-medium text-zinc-300 mb-2">Preferred Timeline</label>
+                                    <input type="text" name="timeline" id="quote-timeline" placeholder="e.g., March 2027"
+                                        class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="quote-details" class="block text-sm font-medium text-zinc-300 mb-2">Project Description <span class="text-red-400">*</span></label>
+                                <textarea name="description" id="quote-details" rows="6" required
+                                    placeholder="Tell us about your project — genre, number of minutes of music, ensemble size, any reference scores, special requirements..."
+                                    class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm resize-y min-h-[140px]"></textarea>
+                            </div>
+
+                            <div>
+                                <label for="quote-referral" class="block text-sm font-medium text-zinc-300 mb-2">How did you hear about us?</label>
+                                <input type="text" name="referral" id="quote-referral" placeholder="e.g., Colleague, IMDb, Google..."
+                                    class="w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg text-white placeholder-zinc-600 focus:border-musa-gold focus:outline-none transition-colors text-sm">
+                            </div>
+
+                            <button type="submit"
+                                class="w-full sm:w-auto px-10 py-4 bg-musa-gold hover:bg-musa-gold-dark text-black text-sm font-bold tracking-widest uppercase rounded transition-all duration-300 shadow-[0_0_20px_rgba(184,137,90,0.3)] hover:shadow-[0_0_30px_rgba(184,137,90,0.5)]">
+                                Submit Quote Request
+                            </button>
+                        </form>
+
+                        <div id="quote-success" class="hidden text-center py-10">
+                            <svg class="w-12 h-12 text-green-400 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <h3 class="text-xl font-serif text-white mb-2">Quote Request Submitted</h3>
+                            <p class="text-zinc-400 text-sm">Thank you! We'll review your project details and respond within 1–2 business days.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+    <footer class="bg-dark-900 pt-20 pb-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="flex items-center mb-6">
+                        <img src="assets/logos/logo_Musa.png" alt="MUSA"
+                            class="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300">
+                    </a>
+                    <p class="text-zinc-500 text-sm font-light leading-relaxed max-w-sm mb-6">
+                        Hollywood-grade orchestral scoring, recorded in Prague. Serving the global film, game, and
+                        television industries for over twenty-five years.
+                    </p>
+                    <p class="text-zinc-500 text-sm font-light mb-2">
+                        MUSA, Ltd. &bull; Skroupovo namesti 4 &bull; 130 00, Prague 3 &bull; Czech Republic
+                    </p>
+                    <a href="mailto:info@musa.cz"
+                        class="text-musa-gold font-bold tracking-widest uppercase text-sm hover:text-white transition-colors">
+                        info@musa.cz
+                    </a>
+                    <p class="text-zinc-500 text-sm mt-1">+420 724 029 525</p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Company</h4>
+                    <ul class="space-y-4">
+                        <li><a href="about.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Our Story</a></li>
+                        <li><a href="orchestra.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Orchestra &amp; Venues</a></li>
+                        <li><a href="contact.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Services</h4>
+                    <ul class="space-y-4">
+                        <li><a href="services-film-game.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Film &amp; Game Scoring</a></li>
+                        <li><a href="services-remote.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Remote Scoring Sessions</a></li>
+                        <li><a href="services-album.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Album Production</a></li>
+                        <li><a href="services-concierge.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Production Concierge</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Resources</h4>
+                    <ul class="space-y-4">
+                        <li><a href="case-studies.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Case Studies</a></li>
+                        <li><a href="faq.html" class="text-zinc-500 hover:text-musa-gold text-sm transition-colors">Frequently Asked Questions</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-zinc-600 text-xs tracking-wide">
+                    &copy; 2026 MUSA, Ltd. — Prague. All rights reserved.
+                </p>
+                <div class="flex items-center gap-6">
+                    <a href="privacy.html" class="text-zinc-600 hover:text-musa-gold transition-colors text-xs tracking-wide uppercase">Privacy Policy</a>
+                    <a href="terms.html" class="text-zinc-600 hover:text-musa-gold transition-colors text-xs tracking-wide uppercase">Terms of Service</a>
+                    <a href="admin.html" class="text-zinc-700 hover:text-musa-gold transition-colors" aria-label="CMS" title="Content Manager"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></a>
+                    <a href="#" class="text-zinc-600 hover:text-musa-gold transition-colors" aria-label="LinkedIn">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="#" class="text-zinc-600 hover:text-musa-gold transition-colors" aria-label="YouTube">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <a href="#" class="text-zinc-600 hover:text-musa-gold transition-colors" aria-label="Instagram">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="#" class="text-zinc-600 hover:text-musa-gold transition-colors" aria-label="IMDb">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.31 9.588v.005c-.077-.048-.227-.07-.42-.07v4.815c.27 0 .44-.06.5-.165.062-.105.093-.39.093-.855v-2.98c0-.36-.012-.596-.037-.706-.025-.11-.072-.18-.136-.044zM22.416 0H1.62C.742.06.06.744 0 1.596V22.38c.06.876.744 1.56 1.596 1.62H22.38c.876-.06 1.56-.744 1.62-1.596V1.62C23.94.744 23.256.06 22.416 0zM4.14 17.82H2.04V6.18h2.1v11.64zM11.34 17.82H9.48v-7.44c-.18.66-.36 1.32-.54 1.98l-1.08 3.54H6.66l-1.62-5.34c-.06-.18-.12-.36-.18-.54-.12-.42-.18-.66-.18-.66v8.46H3.24V6.18H5.4l1.44 5.1c.18.6.3 1.08.36 1.44.06-.36.18-.84.36-1.44L9.12 6.18h2.1l.12 11.64zM16.62 16.266c0 .528-.063.924-.192 1.188-.126.264-.348.444-.66.54-.192.06-.42.096-.684.096H13.14V6.18h2.1c.56 0 .966.036 1.2.108.234.072.414.204.54.396.126.192.192.432.216.72.024.288.036.756.036 1.404v6.054c.384 0 .384.672.39 1.404zM21.96 13.164c0 .96-.024 1.632-.072 2.016-.048.384-.156.696-.324.936-.168.24-.396.396-.684.468-.168.048-.372.072-.612.072-.24 0-.456-.024-.636-.072-.264-.072-.468-.24-.612-.504-.084-.144-.144-.324-.18-.54-.036-.216-.06-.54-.06-.972v-.648h2.04v-.528c0-.504-.024-.828-.072-.972-.048-.144-.156-.216-.324-.216-.192 0-.312.084-.36.252-.048.168-.072.492-.072.972v3.408c0 .48.024.804.072.972.048.168.168.252.36.252.192 0 .312-.084.36-.252.048-.168.072-.504.072-1.008v-1.008h-1.08v-1.56h3.18v5.724h-1.32l-.18-.756c-.192.336-.396.576-.612.72-.216.144-.468.216-.756.216-.36 0-.66-.084-.9-.252-.24-.168-.42-.384-.54-.648-.12-.264-.192-.54-.216-.828-.024-.288-.036-.744-.036-1.368V11.22c0-.72.012-1.224.036-1.512.024-.288.096-.552.216-.792.12-.24.3-.432.54-.576.24-.144.528-.216.864-.216.384 0 .708.084.972.252.264.168.456.396.576.684.072.168.12.36.144.576.024.216.036.576.036 1.08v2.448z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+        // Mobile menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+            document.getElementById('menu-icon-open').classList.toggle('hidden');
+            document.getElementById('menu-icon-open').classList.toggle('block');
+            document.getElementById('menu-icon-close').classList.toggle('hidden');
+            document.getElementById('menu-icon-close').classList.toggle('block');
+        });
+
+        // Reveal
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+        // Form submission via fetch
+        var form = document.getElementById('quote-form');
+        var successMsg = document.getElementById('quote-success');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var btn = form.querySelector('button[type="submit"]');
+            btn.textContent = 'Submitting...';
+            btn.disabled = true;
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form)
+            }).then(function(res) {
+                return res.json();
+            }).then(function(data) {
+                if (data.success) {
+                    form.classList.add('hidden');
+                    successMsg.classList.remove('hidden');
+                } else {
+                    btn.textContent = 'Submit Quote Request';
+                    btn.disabled = false;
+                    alert('Something went wrong. Please try again or email us directly at info@musa.cz');
+                }
+            }).catch(function() {
+                btn.textContent = 'Submit Quote Request';
+                btn.disabled = false;
+                alert('Network error. Please try again or email us directly at info@musa.cz');
+            });
+        });
+    })();
+    </script>
+
+</body>
+</html>
