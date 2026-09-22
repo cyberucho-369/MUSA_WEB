@@ -181,6 +181,7 @@
                 <button data-filter="film" class="filter-btn px-4 py-2 text-sm font-medium rounded-full border border-white/10 text-zinc-400 hover:border-musa-gold/40 hover:text-musa-gold transition-all duration-300">Films</button>
                 <button data-filter="tv" class="filter-btn px-4 py-2 text-sm font-medium rounded-full border border-white/10 text-zinc-400 hover:border-musa-gold/40 hover:text-musa-gold transition-all duration-300">TV Shows</button>
                 <button data-filter="game" class="filter-btn px-4 py-2 text-sm font-medium rounded-full border border-white/10 text-zinc-400 hover:border-musa-gold/40 hover:text-musa-gold transition-all duration-300">Games</button>
+                <button data-filter="album" class="filter-btn px-4 py-2 text-sm font-medium rounded-full border border-white/10 text-zinc-400 hover:border-musa-gold/40 hover:text-musa-gold transition-all duration-300">CDs</button>
             </div>
             <div class="text-sm text-zinc-500">
                 Showing <span id="showing-count" class="text-musa-gold font-medium">0</span> of <span id="total-count" class="text-musa-gold font-medium">0</span> titles
@@ -327,7 +328,9 @@
 
         function createCard(work, index) {
             var a = document.createElement('a');
-            a.href = work.imdb_link || '#';
+            a.href = work.category === 'album'
+                ? (work.spotify_link || work.discogs_link || work.source_link || '#')
+                : (work.imdb_link || '#');
             a.target = '_blank';
             a.rel = 'noopener';
             a.className = 'poster-card group relative aspect-[2/3] bg-dark-800 border border-white/10 hover:border-musa-gold/40 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 reveal reveal-delay-' + ((index % 5) + 1);

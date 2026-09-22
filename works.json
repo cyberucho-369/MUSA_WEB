@@ -1,13 +1,5 @@
 [
   {
-    "title": "Last Light",
-    "year": "2022",
-    "imdb_id": "tt9845070",
-    "imdb_link": "https://www.imdb.com/title/tt9845070/",
-    "poster": "2022/tt9845070_Last Light.webp",
-    "category": "tv"
-  },
-  {
     "title": "Barry & Me",
     "year": "2026",
     "imdb_id": "tt36230671",
@@ -16,12 +8,40 @@
     "category": "film"
   },
   {
+    "title": "Born in the Jungle",
+    "year": "2026",
+    "imdb_id": "tt37162310",
+    "imdb_link": "https://www.imdb.com/title/tt37162310/",
+    "poster": "2026/tt37162310_Born in the Jungle.webp",
+    "category": "film"
+  },
+  {
+    "title": "MOVIE",
+    "year": "2026",
+    "artist": "Sofiane Pamart",
+    "discogs_id": 37103361,
+    "discogs_link": "https://www.discogs.com/release/37103361",
+    "poster": "2026/d37103361_MOVIE.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/34b2JCGkaXuPeYZk1FB4SR"
+  },
+  {
     "title": "Peddi",
     "year": "2026",
     "imdb_id": "tt23865918",
     "imdb_link": "https://www.imdb.com/title/tt23865918/",
     "poster": "2026/tt23865918_Peddi.webp",
     "category": "film"
+  },
+  {
+    "title": "Vipers at the Onyx",
+    "year": "2026",
+    "artist": "Dave Soldier / Adam Klemens / FILMharmonic Orchestra, Prague",
+    "discogs_id": 37297254,
+    "discogs_link": "https://www.discogs.com/release/37297254",
+    "poster": "2026/d37297254_Vipers at the Onyx.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/76A0nKS1mpNcV6x7UsGImf"
   },
   {
     "title": "A Girl Named Willow",
@@ -64,6 +84,15 @@
     "category": "film"
   },
   {
+    "title": "Shadow",
+    "year": "2025",
+    "artist": "Black Marine",
+    "poster": "2025/r105_Shadow.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273b3b716d57cb3f15475babafa"
+  },
+  {
     "title": "Tere Ishk Mein",
     "year": "2025",
     "imdb_id": "tt28142095",
@@ -78,6 +107,32 @@
     "imdb_link": "https://www.imdb.com/title/tt33549478/",
     "poster": "2025/tt33549478_The Map That Leads to You.webp",
     "category": "film"
+  },
+  {
+    "title": "Askepot The Musical",
+    "year": "2024",
+    "artist": "Various artists / Rasmus Seebach",
+    "poster": "2024/r103_Askepot The Musical.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b27322bdc23196fd39c8e97b5fcd",
+    "spotify_link": "https://open.spotify.com/album/2DooNKIu6kTw1NcxrqWOpG"
+  },
+  {
+    "title": "Singapore Saloon",
+    "year": "2024",
+    "imdb_id": "tt23558124",
+    "imdb_link": "https://www.imdb.com/title/tt23558124/",
+    "poster": "2024/tt23558124_Singapore Saloon.webp",
+    "category": "film"
+  },
+  {
+    "title": "The Elder Scrolls Online: Gold Road",
+    "year": "2024",
+    "imdb_id": "tt32567640",
+    "imdb_link": "https://www.imdb.com/title/tt32567640/",
+    "poster": "2024/tt32567640_The Elder Scrolls Online_ Gold Road.webp",
+    "category": "game"
   },
   {
     "title": "The Ice Cream Man",
@@ -96,6 +151,15 @@
     "category": "film"
   },
   {
+    "title": "Victory Fanfare for Orchestra",
+    "year": "2024",
+    "artist": "Manuel Hilleke",
+    "poster": "2024/r104_Victory Fanfare for Orchestra.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273237897f6fa735906a9bf91b4"
+  },
+  {
     "title": "Wonder Pets: In the City",
     "year": "2024",
     "imdb_id": "tt33999695",
@@ -112,6 +176,26 @@
     "category": "film"
   },
   {
+    "title": "Antagonist",
+    "year": "2023",
+    "artist": "Apashe",
+    "discogs_id": 33089415,
+    "discogs_link": "https://www.discogs.com/release/33089415",
+    "poster": "2023/d33089415_Antagonist.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/6u26YQ3XrrBmHUj3g0dzhJ"
+  },
+  {
+    "title": "Behind the Tea Chronicles",
+    "year": "2023",
+    "artist": "Ed Motta",
+    "discogs_id": 28654165,
+    "discogs_link": "https://www.discogs.com/release/28654165",
+    "poster": "2023/d28654165_Behind the Tea Chronicles.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/6kMSZIcPxDzBh7QbDUp7sq"
+  },
+  {
     "title": "Bihter",
     "year": "2023",
     "imdb_id": "tt26258488",
@@ -120,12 +204,38 @@
     "category": "film"
   },
   {
+    "title": "Classical 90s Dance: The Icons",
+    "year": "2023",
+    "artist": "Alex Christensen & The Berlin Orchestra",
+    "discogs_id": 28530760,
+    "discogs_link": "https://www.discogs.com/release/28530760",
+    "poster": "2023/d28530760_Classical 90s Dance_ The Icons.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/0owIszJHScaFc1U7GOVl0T"
+  },
+  {
     "title": "Guns & Gulaabs",
     "year": "2023",
     "imdb_id": "tt17524566",
     "imdb_link": "https://www.imdb.com/title/tt17524566/",
     "poster": "2023/tt17524566_Guns _ Gulaabs.webp",
     "category": "tv"
+  },
+  {
+    "title": "Hearts of Iron IV: Arms Against Tyranny",
+    "year": "2023",
+    "imdb_id": "tt33255072",
+    "imdb_link": "https://www.imdb.com/title/tt33255072/",
+    "poster": "2023/tt33255072_Hearts of Iron IV_ Arms Against Tyranny.webp",
+    "category": "game"
+  },
+  {
+    "title": "Jagged Alliance 3",
+    "year": "2023",
+    "imdb_id": "tt28379068",
+    "imdb_link": "https://www.imdb.com/title/tt28379068/",
+    "poster": "2023/tt28379068_Jagged Alliance 3.webp",
+    "category": "game"
   },
   {
     "title": "Jane Goodall: Reasons for Hope",
@@ -144,6 +254,16 @@
     "category": "film"
   },
   {
+    "title": "México con Escalas en Mi Corazón (Ciudades)",
+    "year": "2023",
+    "artist": "Juan Gabriel",
+    "discogs_id": 31348384,
+    "discogs_link": "https://www.discogs.com/release/31348384",
+    "poster": "2023/d31348384_Mexico con Escalas en Mi Corazon (Ciudades).webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/6crc7s1ElftoT9ksHKt3Qg"
+  },
+  {
     "title": "Pathaan",
     "year": "2023",
     "imdb_id": "tt12844910",
@@ -158,6 +278,23 @@
     "imdb_link": "https://www.imdb.com/title/tt11912616/",
     "poster": "2023/tt11912616_Pilecki_s Report.webp",
     "category": "film"
+  },
+  {
+    "title": "Time Flies and Memory's Cruel Orchestral Version",
+    "year": "2023",
+    "artist": "Kevin Tan / Summer Fades Away",
+    "poster": "2023/r102_Time Flies and Memory's Cruel Orchestral Version.webp",
+    "category": "album",
+    "source": "bandcamp",
+    "source_link": "https://f4.bcbits.com/img/a2939552977_0.jpg"
+  },
+  {
+    "title": "Victoria 3: Melodies for the Masses Music Pack",
+    "year": "2023",
+    "imdb_id": "tt33255200",
+    "imdb_link": "https://www.imdb.com/title/tt33255200/",
+    "poster": "2023/tt33255200_Victoria 3_ Melodies for the Masses Music Pack.webp",
+    "category": "game"
   },
   {
     "title": "A Gaza Weekend",
@@ -208,11 +345,61 @@
     "category": "tv"
   },
   {
+    "title": "Knights of Honor II: Sovereign",
+    "year": "2022",
+    "imdb_id": "tt29510546",
+    "imdb_link": "https://www.imdb.com/title/tt29510546/",
+    "poster": "2022/tt29510546_Knights of Honor II_ Sovereign.webp",
+    "category": "game"
+  },
+  {
+    "title": "Last Light",
+    "year": "2022",
+    "imdb_id": "tt9845070",
+    "imdb_link": "https://www.imdb.com/title/tt9845070/",
+    "poster": "2022/tt9845070_Last Light.webp",
+    "category": "tv"
+  },
+  {
     "title": "Los Tigres Del Norte: Stories to Tell",
     "year": "2022",
     "imdb_id": "tt6504844",
     "imdb_link": "https://www.imdb.com/title/tt6504844/",
     "poster": "2022/tt6504844_Los Tigres Del Norte_ Stories to Tell.webp",
+    "category": "film"
+  },
+  {
+    "title": "Maharaj",
+    "year": "2022",
+    "imdb_id": "tt4501268",
+    "imdb_link": "https://www.imdb.com/title/tt4501268/",
+    "poster": "2022/tt4501268_Maharaj.webp",
+    "category": "film"
+  },
+  {
+    "title": "Marvel Super War",
+    "year": "2022",
+    "imdb_id": "tt26787834",
+    "imdb_link": "https://www.imdb.com/title/tt26787834/",
+    "poster": "2022/tt26787834_Marvel Super War.webp",
+    "category": "game"
+  },
+  {
+    "title": "Modern Primitive",
+    "year": "2022",
+    "artist": "Septicflesh",
+    "discogs_id": 23244257,
+    "discogs_link": "https://www.discogs.com/release/23244257",
+    "poster": "2022/d23244257_Modern Primitive.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/2Mys40rXrG4GNkRDeJMZ88"
+  },
+  {
+    "title": "Orleta. Grodno '39",
+    "year": "2022",
+    "imdb_id": "tt13556268",
+    "imdb_link": "https://www.imdb.com/title/tt13556268/",
+    "poster": "2022/tt13556268_Orleta_ Grodno _39.webp",
     "category": "film"
   },
   {
@@ -248,11 +435,28 @@
     "category": "film"
   },
   {
+    "title": "Whimsica Sardonica",
+    "year": "2022",
+    "artist": "The Friends Of Norman Havelock",
+    "poster": "2022/r99_Whimsica Sardonica.webp",
+    "category": "album",
+    "source": "bandcamp",
+    "source_link": "https://f4.bcbits.com/img/a1067066083_0.jpg"
+  },
+  {
     "title": "Anbirkiniyal",
     "year": "2021",
     "imdb_id": "tt14092076",
     "imdb_link": "https://www.imdb.com/title/tt14092076/",
     "poster": "2021/tt14092076_Anbirkiniyal.webp",
+    "category": "film"
+  },
+  {
+    "title": "Black Widow",
+    "year": "2021",
+    "imdb_id": "tt3480822",
+    "imdb_link": "https://www.imdb.com/title/tt3480822/",
+    "poster": "2021/tt3480822_Black Widow.webp",
     "category": "film"
   },
   {
@@ -296,6 +500,16 @@
     "category": "film"
   },
   {
+    "title": "Dark Angel",
+    "year": "2021",
+    "artist": "Lucy Kay",
+    "poster": "2021/r108_Dark Angel.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273b2299f8ef8ea59f851bb826b",
+    "spotify_link": "https://open.spotify.com/album/6gcRV7D8Jfnrzt1yNljvyu"
+  },
+  {
     "title": "Even Mice Belong in Heaven",
     "year": "2021",
     "imdb_id": "tt3804810",
@@ -312,12 +526,40 @@
     "category": "film"
   },
   {
+    "title": "If the Music Stops They'll Eat Him Up",
+    "year": "2021",
+    "artist": "Asger Baden",
+    "discogs_id": 21320824,
+    "discogs_link": "https://www.discogs.com/release/21320824",
+    "poster": "2021/d21320824_If the Music Stops They'll Eat Him Up.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/0rnLpCHbSagJ9UuTszP1Zw"
+  },
+  {
+    "title": "La Liberación de Silas",
+    "year": "2021",
+    "imdb_id": "tt19865164",
+    "imdb_link": "https://www.imdb.com/title/tt19865164/",
+    "poster": "2021/tt19865164_La Liberación de Silas.webp",
+    "category": "film"
+  },
+  {
     "title": "Love Me Instead",
     "year": "2021",
     "imdb_id": "tt13161356",
     "imdb_link": "https://www.imdb.com/title/tt13161356/",
     "poster": "2021/tt13161356_Love Me Instead.webp",
     "category": "film"
+  },
+  {
+    "title": "Microsinfonías",
+    "year": "2021",
+    "artist": "Sergio Vallín",
+    "discogs_id": 30344978,
+    "discogs_link": "https://www.discogs.com/release/30344978",
+    "poster": "2021/d30344978_Microsinfonias.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/7KK6L8yJdD1YoXbMddkvmt"
   },
   {
     "title": "Skater Girl",
@@ -352,11 +594,38 @@
     "category": "tv"
   },
   {
+    "title": "Stargazer",
+    "year": "2021",
+    "artist": "Marti Pellow",
+    "discogs_id": 21681220,
+    "discogs_link": "https://www.discogs.com/release/21681220",
+    "poster": "2021/d21681220_Stargazer.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/7MPMzmYBXSssL3VrAyIzcj"
+  },
+  {
+    "title": "The Stars",
+    "year": "2021",
+    "artist": "iskwē",
+    "poster": "2021/r97_The Stars.webp",
+    "category": "album",
+    "source": "bandcamp",
+    "source_link": "https://f4.bcbits.com/img/a2069249985_0.jpg"
+  },
+  {
     "title": "Tokyo Revengers",
     "year": "2021",
     "imdb_id": "tt11923304",
     "imdb_link": "https://www.imdb.com/title/tt11923304/",
     "poster": "2021/tt11923304_Tokyo Revengers.webp",
+    "category": "film"
+  },
+  {
+    "title": "A Father's Job",
+    "year": "2020",
+    "imdb_id": "tt12594922",
+    "imdb_link": "https://www.imdb.com/title/tt12594922/",
+    "poster": "2020/tt12594922_A Father_s Job.webp",
     "category": "film"
   },
   {
@@ -368,6 +637,14 @@
     "category": "film"
   },
   {
+    "title": "Age of Empires III: Definitive Edition",
+    "year": "2020",
+    "imdb_id": "tt15399106",
+    "imdb_link": "https://www.imdb.com/title/tt15399106/",
+    "poster": "2020/tt15399106_Age of Empires III_ Definitive Edition.webp",
+    "category": "game"
+  },
+  {
     "title": "Alice in Borderland",
     "year": "2020",
     "imdb_id": "tt10795658",
@@ -376,11 +653,39 @@
     "category": "tv"
   },
   {
+    "title": "Beyond the Music Reimagines the Joshua Tree",
+    "year": "2020",
+    "artist": "Beyond The Music",
+    "poster": "2020/r88_Beyond the Music Reimagines the Joshua Tree.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b27312c3f69d12fcf1750804065b",
+    "spotify_link": "https://open.spotify.com/album/7l7kmNQwj92iwEmS1T1ki2"
+  },
+  {
+    "title": "Classical 80s Dance",
+    "year": "2020",
+    "artist": "Alex Christensen & The Berlin Orchestra",
+    "discogs_id": 20109247,
+    "discogs_link": "https://www.discogs.com/release/20109247",
+    "poster": "2020/d20109247_Classical 80s Dance.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/4lXao2y0nV9OyHL4QBW6x5"
+  },
+  {
     "title": "Coolie No. 1",
     "year": "2020",
     "imdb_id": "tt10280276",
     "imdb_link": "https://www.imdb.com/title/tt10280276/",
     "poster": "2020/tt10280276_Coolie No_ 1.webp",
+    "category": "film"
+  },
+  {
+    "title": "Dragon Girl",
+    "year": "2020",
+    "imdb_id": "tt6562812",
+    "imdb_link": "https://www.imdb.com/title/tt6562812/",
+    "poster": "2020/tt6562812_Dragon Girl.webp",
     "category": "film"
   },
   {
@@ -400,6 +705,14 @@
     "category": "tv"
   },
   {
+    "title": "Mafia: Definitive Edition",
+    "year": "2020",
+    "imdb_id": "tt12354406",
+    "imdb_link": "https://www.imdb.com/title/tt12354406/",
+    "poster": "2020/tt12354406_Mafia_ Definitive Edition.webp",
+    "category": "game"
+  },
+  {
     "title": "Magnesium",
     "year": "2020",
     "imdb_id": "tt10792570",
@@ -416,12 +729,32 @@
     "category": "film"
   },
   {
+    "title": "Renaissance",
+    "year": "2020",
+    "artist": "Apashe",
+    "discogs_id": 17929726,
+    "discogs_link": "https://www.discogs.com/release/17929726",
+    "poster": "2020/d17929726_Renaissance.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/4aN2EaQB4G7z6BqcEClnMd"
+  },
+  {
     "title": "Speedway",
     "year": "2020",
     "imdb_id": "tt7424824",
     "imdb_link": "https://www.imdb.com/title/tt7424824/",
     "poster": "2020/tt7424824_Speedway.webp",
     "category": "film"
+  },
+  {
+    "title": "The Bodyguard: The Musical (World Premiere Cast Recording)",
+    "year": "2020",
+    "artist": "Various Artists",
+    "poster": "2020/r91_The Bodyguard_ The Musical (World Premiere Cast Recording).webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273cde7fadbd0ec70e6b1faa242",
+    "spotify_link": "https://open.spotify.com/album/4E85kmdjM4kbr6o71i9g1x"
   },
   {
     "title": "The Defeated",
@@ -432,12 +765,39 @@
     "category": "tv"
   },
   {
+    "title": "The Defeated",
+    "year": "2020",
+    "imdb_id": "tt8879894",
+    "imdb_link": "https://www.imdb.com/title/tt8879894/",
+    "poster": "2020/tt8879894_The Defeated.webp",
+    "category": "film"
+  },
+  {
+    "title": "The Road to Christmas",
+    "year": "2020",
+    "artist": "Derek Ryan",
+    "discogs_id": 16570035,
+    "discogs_link": "https://www.discogs.com/release/16570035",
+    "poster": "2020/d16570035_The Road to Christmas.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/66NKk6qVwx1MXs3xZolESx"
+  },
+  {
     "title": "Violet Evergarden: The Movie",
     "year": "2020",
     "imdb_id": "tt8652818",
     "imdb_link": "https://www.imdb.com/title/tt8652818/",
     "poster": "2020/tt8652818_Violet Evergarden_ The Movie.webp",
     "category": "film"
+  },
+  {
+    "title": "What I Did for Love",
+    "year": "2020",
+    "artist": "Paul Byrom",
+    "poster": "2020/r93_What I Did for Love.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b2737d657ae9f65a36fd0c951cea"
   },
   {
     "title": "Zieja",
@@ -456,6 +816,23 @@
     "category": "tv"
   },
   {
+    "title": "Dreaming: The Prague Sessions",
+    "year": "2019",
+    "artist": "Allan Gilliland / PJ Perry / James Campbell",
+    "poster": "2019/r78_Dreaming_ The Prague Sessions.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b27312755c4aec165e010b10ccd6"
+  },
+  {
+    "title": "Fritzi: A Revolutionary Tale",
+    "year": "2019",
+    "imdb_id": "tt9805160",
+    "imdb_link": "https://www.imdb.com/title/tt9805160/",
+    "poster": "2019/tt9805160_Fritzi_ A Revolutionary Tale.webp",
+    "category": "film"
+  },
+  {
     "title": "I'll Find You",
     "year": "2019",
     "imdb_id": "tt5070062",
@@ -470,6 +847,14 @@
     "imdb_link": "https://www.imdb.com/title/tt16610100/",
     "poster": "2019/tt16610100_Jonas Kaufmann - Mein Wien.webp",
     "category": "film"
+  },
+  {
+    "title": "Jumanji: The Video Game",
+    "year": "2019",
+    "imdb_id": "tt10436940",
+    "imdb_link": "https://www.imdb.com/title/tt10436940/",
+    "poster": "2019/tt10436940_Jumanji_ The Video Game.webp",
+    "category": "game"
   },
   {
     "title": "Kalank",
@@ -496,6 +881,25 @@
     "category": "tv"
   },
   {
+    "title": "Legacy of the Dark Lands",
+    "year": "2019",
+    "artist": "Blind Guardian Twilight Orchestra / Blind Guardian",
+    "discogs_id": 14389056,
+    "discogs_link": "https://www.discogs.com/release/14389056",
+    "poster": "2019/d14389056_Legacy of the Dark Lands.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/3s7vWjOc6TEA8zxrIjhNIw"
+  },
+  {
+    "title": "Love & Drama",
+    "year": "2019",
+    "artist": "Wolfgang Käfer",
+    "poster": "2019/r80_Love & Drama.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273c8b73b7dc49d79d245f48df9"
+  },
+  {
     "title": "Made in Heaven",
     "year": "2019",
     "imdb_id": "tt6494622",
@@ -512,6 +916,15 @@
     "category": "film"
   },
   {
+    "title": "Piano Love Themes",
+    "year": "2019",
+    "artist": "Wolfgang Käfer / Bent Andersen",
+    "poster": "2019/r82_Piano Love Themes.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b2733945ada586caa96574e21ca0"
+  },
+  {
     "title": "Rock'n'Roll Eddie",
     "year": "2019",
     "imdb_id": "tt7368004",
@@ -520,12 +933,52 @@
     "category": "film"
   },
   {
+    "title": "Sin4onico",
+    "year": "2019",
+    "artist": "Los Temerarios",
+    "poster": "2019/r83_Sin4onico.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273655a9c7f3c159884c408fb59",
+    "spotify_link": "https://open.spotify.com/album/4BcA4LD8UI3GUGPrR5Qkxk"
+  },
+  {
+    "title": "Solo Amore",
+    "year": "2019",
+    "artist": "Karl Loxley / Martin Quinn",
+    "poster": "2019/r84_Solo Amore.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273fcc9280ae29470f6411494c1",
+    "spotify_link": "https://open.spotify.com/album/5T0HhqEprEysFZDaUXpUWz"
+  },
+  {
     "title": "Student of the Year 2",
     "year": "2019",
     "imdb_id": "tt7255568",
     "imdb_link": "https://www.imdb.com/title/tt7255568/",
     "poster": "2019/tt7255568_Student of the Year 2.webp",
     "category": "film"
+  },
+  {
+    "title": "The Debut",
+    "year": "2019",
+    "artist": "Jackie Evancho",
+    "discogs_id": 13538950,
+    "discogs_link": "https://www.discogs.com/release/13538950",
+    "poster": "2019/d13538950_The Debut.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/34Cm8IsSrWCbOluLsLA5PU"
+  },
+  {
+    "title": "The Magic of Christmas [International Version]",
+    "year": "2019",
+    "artist": "Celtic Woman",
+    "poster": "2019/r86_The Magic of Christmas [International Version].webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273bb7938aa265c59926359782d",
+    "spotify_link": "https://open.spotify.com/album/30b0pfeNAMVCGSEuJheKC4"
   },
   {
     "title": "The Miracle 2: Love",
@@ -552,6 +1005,14 @@
     "category": "film"
   },
   {
+    "title": "Total War: Three Kingdoms",
+    "year": "2019",
+    "imdb_id": "tt8061198",
+    "imdb_link": "https://www.imdb.com/title/tt8061198/",
+    "poster": "2019/tt8061198_Total War_ Three Kingdoms.webp",
+    "category": "game"
+  },
+  {
     "title": "Valhalla: The Legend of Thor",
     "year": "2019",
     "imdb_id": "tt8956872",
@@ -568,6 +1029,16 @@
     "category": "tv"
   },
   {
+    "title": "Wave",
+    "year": "2019",
+    "artist": "Patrick Watson",
+    "discogs_id": 14284440,
+    "discogs_link": "https://www.discogs.com/release/14284440",
+    "poster": "2019/d14284440_Wave.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/5ei12KxBgQem1h0602ewLf"
+  },
+  {
     "title": "Zuzana: Music Is Life",
     "year": "2019",
     "imdb_id": "tt6331364",
@@ -582,6 +1053,23 @@
     "imdb_link": "https://www.imdb.com/title/tt7852002/",
     "poster": "2018/tt7852002_A Dog_s Courage.webp",
     "category": "film"
+  },
+  {
+    "title": "Age of Empires: Definitive Edition",
+    "year": "2018",
+    "imdb_id": "tt15399088",
+    "imdb_link": "https://www.imdb.com/title/tt15399088/",
+    "poster": "2018/tt15399088_Age of Empires_ Definitive Edition.webp",
+    "category": "game"
+  },
+  {
+    "title": "Amour Bohemian",
+    "year": "2018",
+    "artist": "MERCH",
+    "discogs_id": 11270910,
+    "discogs_link": "https://www.discogs.com/release/11270910",
+    "poster": "2018/d11270910_Amour Bohemian.webp",
+    "category": "album"
   },
   {
     "title": "Backstabbing for Beginners",
@@ -632,6 +1120,15 @@
     "category": "film"
   },
   {
+    "title": "Lumina, Vol. 2",
+    "year": "2018",
+    "artist": "Liam Lawton / Mark Cahill",
+    "poster": "2018/r72_Lumina, Vol. 2.webp",
+    "category": "album",
+    "source": "applemusic",
+    "source_link": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/70/45/d0/7045d005-1400-3cc2-89ed-3ece953a389b/317008.jpg/3000x3000bb.jpg"
+  },
+  {
     "title": "Parallel",
     "year": "2018",
     "imdb_id": "tt4922674",
@@ -648,6 +1145,43 @@
     "category": "film"
   },
   {
+    "title": "Recollections",
+    "year": "2018",
+    "artist": "Antonis C. Simintiras",
+    "discogs_id": 30490327,
+    "discogs_link": "https://www.discogs.com/release/30490327",
+    "poster": "2018/d30490327_Recollections.webp",
+    "category": "album"
+  },
+  {
+    "title": "The Greatest Love Songs",
+    "year": "2018",
+    "artist": "Monique / Søren Sebber",
+    "poster": "2018/r75_The Greatest Love Songs.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273f657993cf579fe5140889038",
+    "spotify_link": "https://open.spotify.com/album/3wB6VogLFaaHmwylJej5Tz"
+  },
+  {
+    "title": "The War Within",
+    "year": "2018",
+    "imdb_id": "tt10871970",
+    "imdb_link": "https://www.imdb.com/title/tt10871970/",
+    "poster": "2018/tt10871970_The War Within.webp",
+    "category": "film"
+  },
+  {
+    "title": "This is Thiago Arancam",
+    "year": "2018",
+    "artist": "Thiago Arancam",
+    "discogs_id": 19221292,
+    "discogs_link": "https://www.discogs.com/release/19221292",
+    "poster": "2018/d19221292_This is Thiago Arancam.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/6RTMOmyK6n6J49Y8Nz3DpB"
+  },
+  {
     "title": "Tokyo Ghoul: Re",
     "year": "2018",
     "imdb_id": "tt8213522",
@@ -662,6 +1196,16 @@
     "imdb_link": "https://www.imdb.com/title/tt8403164/",
     "poster": "2018/tt8403164_Total War Saga_ Thrones of Britannia.webp",
     "category": "game"
+  },
+  {
+    "title": "What Xmas Means to Me",
+    "year": "2018",
+    "artist": "Aga Zaryan",
+    "discogs_id": 12910368,
+    "discogs_link": "https://www.discogs.com/release/12910368",
+    "poster": "2018/d12910368_What Xmas Means to Me.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/4pmw5BMaUmV2zzjBs5dFhr"
   },
   {
     "title": "Yaar Ivargal",
@@ -704,12 +1248,40 @@
     "category": "tv"
   },
   {
+    "title": "Bela Primavera",
+    "year": "2017",
+    "artist": "Thiago Arancam",
+    "discogs_id": 17618854,
+    "discogs_link": "https://www.discogs.com/release/17618854",
+    "poster": "2017/d17618854_Bela Primavera.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/2x86SDIKU8OUW1Ropz9eG7"
+  },
+  {
+    "title": "Gundam Versus",
+    "year": "2017",
+    "imdb_id": "tt6914768",
+    "imdb_link": "https://www.imdb.com/title/tt6914768/",
+    "poster": "2017/tt6914768_Gundam Versus.webp",
+    "category": "game"
+  },
+  {
     "title": "In Search of Fellini",
     "year": "2017",
     "imdb_id": "tt4801232",
     "imdb_link": "https://www.imdb.com/title/tt4801232/",
     "poster": "2017/tt4801232_In Search of Fellini.webp",
     "category": "film"
+  },
+  {
+    "title": "Lumina, Vol. II (Orchestral Music of Liam Lawton)",
+    "year": "2017",
+    "artist": "Liam Lawton / The Prague FILMharmonic Orchestra",
+    "poster": "2017/r66_Lumina, Vol. II (Orchestral Music of Liam Lawton).webp",
+    "category": "album",
+    "source": "applemusic",
+    "source_link": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/70/45/d0/7045d005-1400-3cc2-89ed-3ece953a389b/317008.jpg/3000x3000bb.jpg",
+    "spotify_link": "https://open.spotify.com/album/0yJUDkFwhMr5zjXVzcs4Nw"
   },
   {
     "title": "Maria Theresa",
@@ -720,12 +1292,48 @@
     "category": "tv"
   },
   {
+    "title": "Music Is My World",
+    "year": "2017",
+    "artist": "Wolfgang Käfer",
+    "poster": "2017/r67_Music Is My World.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b2733e76e06df0989805e4c6a187"
+  },
+  {
     "title": "My Enemy, My Brother",
     "year": "2017",
     "imdb_id": "tt6158630",
     "imdb_link": "https://www.imdb.com/title/tt6158630/",
     "poster": "",
     "category": "film"
+  },
+  {
+    "title": "Narcos: Mexico Jefe de Jefes",
+    "year": "2017",
+    "imdb_id": "tt6038990",
+    "imdb_link": "https://www.imdb.com/title/tt6038990/",
+    "poster": "2017/tt6038990_Narcos_ Mexico Jefe de Jefes.webp",
+    "category": "film"
+  },
+  {
+    "title": "Never Too Late",
+    "year": "2017",
+    "artist": "Claudia Lofton Boelte",
+    "poster": "2017/r68_Never Too Late.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273b055cd0ebb4f0a45b88a53c1"
+  },
+  {
+    "title": "Rise",
+    "year": "2017",
+    "artist": "The Texas Tenors",
+    "discogs_id": 34934555,
+    "discogs_link": "https://www.discogs.com/release/34934555",
+    "poster": "2017/d34934555_Rise.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/2Oct65s56RGoKuc7dKwLtN"
   },
   {
     "title": "The Pillars of the Earth",
@@ -736,11 +1344,27 @@
     "category": "game"
   },
   {
+    "title": "Through the Ages: President Obama Celebrates America's National Parks",
+    "year": "2017",
+    "imdb_id": "tt8846372",
+    "imdb_link": "https://www.imdb.com/title/tt8846372/",
+    "poster": "2017/tt8846372_Through the Ages_ President Obama Celebrates America_s National Parks.webp",
+    "category": "film"
+  },
+  {
     "title": "Union Leader",
     "year": "2017",
     "imdb_id": "tt6395306",
     "imdb_link": "https://www.imdb.com/title/tt6395306/",
     "poster": "2017/tt6395306_Union Leader.webp",
+    "category": "film"
+  },
+  {
+    "title": "Voices of Our Ancestors",
+    "year": "2017",
+    "imdb_id": "tt8364458",
+    "imdb_link": "https://www.imdb.com/title/tt8364458/",
+    "poster": "2017/tt8364458_Voices of Our Ancestors.webp",
     "category": "film"
   },
   {
@@ -752,12 +1376,41 @@
     "category": "film"
   },
   {
+    "title": "Agony And Drama",
+    "year": "2016",
+    "artist": "The Prague FILMharmonic Orchestra",
+    "poster": "2016/r57_Agony And Drama.webp",
+    "category": "album",
+    "source": "audiomack",
+    "source_link": "https://i.audiomack.com/the-prague-filmharmonic-orchestra/406f55a130.webp?width=1400",
+    "spotify_link": "https://open.spotify.com/album/5qDpWLH8ZPNGt1MS2gnnr7"
+  },
+  {
+    "title": "ALL HEART",
+    "year": "2016",
+    "artist": "Mina Tulchinsky",
+    "poster": "2016/r56_ALL HEART.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273832fa7ffd0f73e4f6ee28a77",
+    "spotify_link": "https://open.spotify.com/album/203v4LtiHtwZjiM6uX66uC"
+  },
+  {
     "title": "Civilization VI",
     "year": "2016",
     "imdb_id": "tt5989308",
     "imdb_link": "https://www.imdb.com/title/tt5989308/",
     "poster": "2016/tt5989308_Civilization VI.webp",
     "category": "game"
+  },
+  {
+    "title": "Danish Indie Artists",
+    "year": "2016",
+    "artist": "Wolfgang Käfer / Anders Ladegaard / Søren Sebber",
+    "poster": "2016/r58_Danish Indie Artists.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273d5d963d025020cee1db20edf"
   },
   {
     "title": "Feast of Varanasi",
@@ -784,6 +1437,15 @@
     "category": "film"
   },
   {
+    "title": "In Search of Lost Sounds Symphony",
+    "year": "2016",
+    "artist": "Emre Aracı",
+    "poster": "2016/r59_In Search of Lost Sounds Symphony.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b2731d9f1317c75d016ef6545193"
+  },
+  {
     "title": "Iqbal & superchippen",
     "year": "2016",
     "imdb_id": "tt5822910",
@@ -792,12 +1454,61 @@
     "category": "film"
   },
   {
+    "title": "Nordic Tone",
+    "year": "2016",
+    "artist": "Wolfgang Käfer",
+    "poster": "2016/r60_Nordic Tone.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273085972ae4a26ee6073eacd06",
+    "spotify_link": "https://open.spotify.com/album/3XBkJ83bqaskgvdTOmaYr4"
+  },
+  {
+    "title": "Pain And Sorrow",
+    "year": "2016",
+    "artist": "The Prague FILMharmonic Orchestra",
+    "poster": "2016/r61_Pain And Sorrow.webp",
+    "category": "album",
+    "source": "audiomack",
+    "source_link": "https://i.audiomack.com/the-prague-filmharmonic-orchestra/0f69c2da31.webp?width=1400"
+  },
+  {
     "title": "Prank",
     "year": "2016",
     "imdb_id": "tt5130424",
     "imdb_link": "https://www.imdb.com/title/tt5130424/",
     "poster": "2016/tt5130424_Prank.webp",
     "category": "film"
+  },
+  {
+    "title": "Sinfónico Desde el Palacio de Bellas Artes (En Vivo)",
+    "year": "2016",
+    "artist": "Mijares",
+    "poster": "2016/r62_Sinfonico Desde el Palacio de Bellas Artes (En Vivo).webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b2730a23311217e0a641294b799e",
+    "spotify_link": "https://open.spotify.com/album/2SyOyd1McFv5i3m58pU1iD"
+  },
+  {
+    "title": "Sleep No More",
+    "year": "2016",
+    "artist": "Jack Savoretti",
+    "discogs_id": 9539749,
+    "discogs_link": "https://www.discogs.com/release/9539749",
+    "poster": "2016/d9539749_Sleep No More.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/7j10saNAUhOolkJWRumxY9"
+  },
+  {
+    "title": "The Astonishing",
+    "year": "2016",
+    "artist": "Dream Theater",
+    "discogs_id": 8043681,
+    "discogs_link": "https://www.discogs.com/release/8043681",
+    "poster": "2016/d8043681_The Astonishing.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/6SRlWxC7lMPu2qlwOMslrk"
   },
   {
     "title": "The Lost City of Z",
@@ -968,12 +1679,42 @@
     "category": "film"
   },
   {
+    "title": "Zarniqa",
+    "year": "2015",
+    "artist": "Asger Baden",
+    "discogs_id": 7824988,
+    "discogs_link": "https://www.discogs.com/release/7824988",
+    "poster": "2015/d7824988_Zarniqa.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/6q3iAlWKTxqgTnPtjdr0JZ"
+  },
+  {
+    "title": "A Tenor's Opera",
+    "year": "2014",
+    "artist": "Amin Jensen",
+    "discogs_id": 14996990,
+    "discogs_link": "https://www.discogs.com/release/14996990",
+    "poster": "2014/d14996990_A Tenor's Opera.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/713DUBYmEQsh77WnJm3Iks"
+  },
+  {
     "title": "Bang Bang Baby",
     "year": "2014",
     "imdb_id": "tt2655734",
     "imdb_link": "https://www.imdb.com/title/tt2655734/",
     "poster": "2014/tt2655734_Bang Bang Baby.webp",
     "category": "film"
+  },
+  {
+    "title": "Bardo",
+    "year": "2014",
+    "artist": "Christopher Bono",
+    "discogs_id": 9945060,
+    "discogs_link": "https://www.discogs.com/release/9945060",
+    "poster": "2014/d9945060_Bardo.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/7uqztU5pVyQNvMsa7q5Ebx"
   },
   {
     "title": "Brothers in Arms 3: Sons of War",
@@ -1008,6 +1749,16 @@
     "category": "tv"
   },
   {
+    "title": "In Conflict",
+    "year": "2014",
+    "artist": "Owen Pallett",
+    "discogs_id": 5738321,
+    "discogs_link": "https://www.discogs.com/release/5738321",
+    "poster": "2014/d5738321_In Conflict.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/2RFBLp1dEypZSWRZislEEx"
+  },
+  {
     "title": "Jinn",
     "year": "2014",
     "imdb_id": "tt1562899",
@@ -1024,12 +1775,61 @@
     "category": "film"
   },
   {
+    "title": "Maxime Goulet: Chocolats Symphoniques",
+    "year": "2014",
+    "artist": "Maxime Goulet",
+    "poster": "2014/r49_Maxime Goulet_ Chocolats Symphoniques.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273b2ebd884665f5bc3556f6318",
+    "spotify_link": "https://open.spotify.com/album/4FXwN3IWjPbQM1l4DoozOo"
+  },
+  {
+    "title": "My Sound of Christmas",
+    "year": "2014",
+    "artist": "Thomas Meilstrup",
+    "discogs_id": 10829675,
+    "discogs_link": "https://www.discogs.com/release/10829675",
+    "poster": "2014/d10829675_My Sound of Christmas.webp",
+    "category": "album"
+  },
+  {
+    "title": "Reflektor",
+    "year": "2014",
+    "artist": "Arcade Fire",
+    "discogs_id": 5041370,
+    "discogs_link": "https://www.discogs.com/release/5041370",
+    "poster": "2014/d5041370_Reflektor.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/4E0m7AIVc2d2QZMrMNXdMZ"
+  },
+  {
+    "title": "Sedunum",
+    "year": "2014",
+    "artist": "Xy / Samael",
+    "poster": "2014/r52_Sedunum.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273e24a9824536e70b836f5533a",
+    "spotify_link": "https://open.spotify.com/album/46IrWt2WMmF0AlpgMAXxGE"
+  },
+  {
     "title": "Some Kind of Beautiful",
     "year": "2014",
     "imdb_id": "tt1725986",
     "imdb_link": "https://www.imdb.com/title/tt1725986/",
     "poster": "2014/tt1725986_Some Kind of Beautiful.webp",
     "category": "film"
+  },
+  {
+    "title": "Symphonik",
+    "year": "2014",
+    "artist": "Thievery Corporation",
+    "discogs_id": 15021756,
+    "discogs_link": "https://www.discogs.com/release/15021756",
+    "poster": "2014/d15021756_Symphonik.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/1XeHTE7xplzeC2hHu0YOFy"
   },
   {
     "title": "The Elder Scrolls Online",
@@ -1064,6 +1864,16 @@
     "category": "game"
   },
   {
+    "title": "Titan",
+    "year": "2014",
+    "artist": "Septicflesh",
+    "discogs_id": 5819746,
+    "discogs_link": "https://www.discogs.com/release/5819746",
+    "poster": "2014/d5819746_Titan.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/7sls8tkIXYZDd6EgtnB4OZ"
+  },
+  {
     "title": "Une Libération",
     "year": "2014",
     "imdb_id": "tt3159618",
@@ -1088,6 +1898,16 @@
     "category": "film"
   },
   {
+    "title": "Duophonique",
+    "year": "2013",
+    "artist": "Roch Voisine",
+    "discogs_id": 4323213,
+    "discogs_link": "https://www.discogs.com/release/4323213",
+    "poster": "2013/d4323213_Duophonique.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/2dFcJmDLvx4mpyh3P2XCUK"
+  },
+  {
     "title": "Enough Said",
     "year": "2013",
     "imdb_id": "tt2390361",
@@ -1096,12 +1916,38 @@
     "category": "film"
   },
   {
+    "title": "I'll Be Seeing You",
+    "year": "2013",
+    "artist": "Simon Morgan",
+    "poster": "2013/r44_I'll Be Seeing You.webp",
+    "category": "album",
+    "source": "spotify",
+    "source_link": "https://i.scdn.co/image/ab67616d0000b273b08251a993739dca67c3b980"
+  },
+  {
     "title": "Little Baby Jesus",
     "year": "2013",
     "imdb_id": "tt2559620",
     "imdb_link": "https://www.imdb.com/title/tt2559620/",
     "poster": "2013/tt2559620_Little Baby Jesus.webp",
     "category": "film"
+  },
+  {
+    "title": "My Sound of Christmas",
+    "year": "2013",
+    "artist": "Thomas Meilstrup",
+    "discogs_id": 10829675,
+    "discogs_link": "https://www.discogs.com/release/10829675",
+    "poster": "2013/d10829675_My Sound of Christmas.webp",
+    "category": "album"
+  },
+  {
+    "title": "Phantasy Star Online 2",
+    "year": "2013",
+    "imdb_id": "tt2791406",
+    "imdb_link": "https://www.imdb.com/title/tt2791406/",
+    "poster": "2013/tt2791406_Phantasy Star Online 2.webp",
+    "category": "game"
   },
   {
     "title": "Reaching for the Moon",
@@ -1125,6 +1971,14 @@
     "imdb_id": "tt1839642",
     "imdb_link": "https://www.imdb.com/title/tt1839642/",
     "poster": "2013/tt1839642_The Face of Love.webp",
+    "category": "film"
+  },
+  {
+    "title": "The Grounded",
+    "year": "2013",
+    "imdb_id": "tt3765684",
+    "imdb_link": "https://www.imdb.com/title/tt3765684/",
+    "poster": "2013/tt3765684_The Grounded.webp",
     "category": "film"
   },
   {
@@ -1152,12 +2006,52 @@
     "category": "film"
   },
   {
+    "title": "Adagio",
+    "year": "2012",
+    "artist": "Ann-Mette Elten",
+    "discogs_id": 12664720,
+    "discogs_link": "https://www.discogs.com/release/12664720",
+    "poster": "2012/d12664720_Adagio.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/1MG5vs2Qk3v0qYdAHCNPwA"
+  },
+  {
     "title": "Associés contre le crime",
     "year": "2012",
     "imdb_id": "tt2175565",
     "imdb_link": "https://www.imdb.com/title/tt2175565/",
     "poster": "2012/tt2175565_Associés contre le crime.webp",
     "category": "film"
+  },
+  {
+    "title": "Barcelona",
+    "year": "2012",
+    "artist": "Freddie Mercury",
+    "discogs_id": 2390220,
+    "discogs_link": "https://www.discogs.com/release/2390220",
+    "poster": "2012/d2390220_Barcelona.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/0BhrvMM69zIbkFbmpqoaXi"
+  },
+  {
+    "title": "Bela História",
+    "year": "2012",
+    "artist": "Vocal Livre / Lineu Soares",
+    "poster": "2012/r37_Bela Historia.webp",
+    "category": "album",
+    "source": "applemusic",
+    "source_link": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/09/f8/37/09f837b7-b785-a71b-5283-23b42ae2f706/0.jpg/3000x3000bb.jpg",
+    "spotify_link": "https://open.spotify.com/album/5vk71hty6HtDgDT4IO0Fz5"
+  },
+  {
+    "title": "Cd e Dvd Jovem 2014 – A Única Esperança",
+    "year": "2012",
+    "artist": "Jader Santos / Lineu Soares",
+    "poster": "2012/r38_Cd e Dvd Jovem 2014 - A Unica Esperanca.webp",
+    "category": "album",
+    "source": "deezer",
+    "source_link": "https://cdn-images.dzcdn.net/images/cover/bd30546a499a5e2f8fa04c17fd412105/1000x1000-000000-80-0-0.jpg",
+    "spotify_link": "https://open.spotify.com/album/5sQAH7ox0jyXsIkfmqL67k"
   },
   {
     "title": "Evim Sensin",
@@ -1184,11 +2078,47 @@
     "category": "game"
   },
   {
+    "title": "Love Songs",
+    "year": "2012",
+    "artist": "The Four Freshmen",
+    "discogs_id": 15670411,
+    "discogs_link": "https://www.discogs.com/release/15670411",
+    "poster": "2012/d15670411_Love Songs.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/3VHa9jUPMsECj6wXki8cUl"
+  },
+  {
     "title": "Money Fight",
     "year": "2012",
     "imdb_id": "tt1121986",
     "imdb_link": "https://www.imdb.com/title/tt1121986/",
     "poster": "2012/tt1121986_Money Fight.webp",
+    "category": "film"
+  },
+  {
+    "title": "Princípio e Fim",
+    "year": "2012",
+    "artist": "Leonardo Gonçalves",
+    "discogs_id": 11046472,
+    "discogs_link": "https://www.discogs.com/release/11046472",
+    "poster": "2012/d11046472_Principio e Fim.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/6QCOvHjbucPv4FNlPywxdW"
+  },
+  {
+    "title": "Red Tails",
+    "year": "2012",
+    "imdb_id": "tt0485985",
+    "imdb_link": "https://www.imdb.com/title/tt0485985/",
+    "poster": "2012/tt0485985_Red Tails.webp",
+    "category": "film"
+  },
+  {
+    "title": "The Blue Tiger",
+    "year": "2012",
+    "imdb_id": "tt2251519",
+    "imdb_link": "https://www.imdb.com/title/tt2251519/",
+    "poster": "2012/tt2251519_The Blue Tiger.webp",
     "category": "film"
   },
   {
@@ -1216,6 +2146,16 @@
     "category": "film"
   },
   {
+    "title": "The Soul Sessions Vol. 2",
+    "year": "2012",
+    "artist": "Joss Stone",
+    "discogs_id": 3771610,
+    "discogs_link": "https://www.discogs.com/release/3771610",
+    "poster": "2012/d3771610_The Soul Sessions Vol. 2.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/7BapbBLImdlFBQdWI8kMo7"
+  },
+  {
     "title": "The Words",
     "year": "2012",
     "imdb_id": "tt1840417",
@@ -1224,12 +2164,38 @@
     "category": "film"
   },
   {
+    "title": "Through the Night",
+    "year": "2012",
+    "artist": "Ren Harvieu",
+    "discogs_id": 4218773,
+    "discogs_link": "https://www.discogs.com/release/4218773",
+    "poster": "2012/d4218773_Through the Night.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/25dvoJlu4S6LorjSARgxTq"
+  },
+  {
     "title": "To the Woods",
     "year": "2012",
     "imdb_id": "tt2409754",
     "imdb_link": "https://www.imdb.com/title/tt2409754/",
     "poster": "2012/tt2409754_To the Woods.webp",
     "category": "film"
+  },
+  {
+    "title": "Camelot",
+    "year": "2011",
+    "imdb_id": "tt1672189",
+    "imdb_link": "https://www.imdb.com/title/tt1672189/",
+    "poster": "2011/tt1672189_Camelot.webp",
+    "category": "film"
+  },
+  {
+    "title": "Combat of Giants: Dinosaurs 3D",
+    "year": "2011",
+    "imdb_id": "tt2243213",
+    "imdb_link": "https://www.imdb.com/title/tt2243213/",
+    "poster": "2011/tt2243213_Combat of Giants_ Dinosaurs 3D.webp",
+    "category": "game"
   },
   {
     "title": "Dissidia 012: Final Fantasy",
@@ -1272,6 +2238,25 @@
     "category": "film"
   },
   {
+    "title": "La Stella",
+    "year": "2011",
+    "artist": "Marshall & Alexander",
+    "discogs_id": 10579538,
+    "discogs_link": "https://www.discogs.com/release/10579538",
+    "poster": "2011/d10579538_La Stella.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/6X1KFoR9hC8ImYkwThjYMo"
+  },
+  {
+    "title": "La Stella - Weihnachtsedition",
+    "year": "2011",
+    "artist": "Marshall & Alexander",
+    "discogs_id": 25847617,
+    "discogs_link": "https://www.discogs.com/release/25847617",
+    "poster": "2011/d25847617_La Stella - Weihnachtsedition.webp",
+    "category": "album"
+  },
+  {
     "title": "Leaving",
     "year": "2011",
     "imdb_id": "tt1464251",
@@ -1280,11 +2265,45 @@
     "category": "film"
   },
   {
+    "title": "Love",
+    "year": "2011",
+    "imdb_id": "tt1541874",
+    "imdb_link": "https://www.imdb.com/title/tt1541874/",
+    "poster": "2011/tt1541874_Love.webp",
+    "category": "film"
+  },
+  {
+    "title": "Love to Love",
+    "year": "2011",
+    "artist": "Marti Pellow",
+    "discogs_id": 3704348,
+    "discogs_link": "https://www.discogs.com/release/3704348",
+    "poster": "2011/d3704348_Love to Love.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/3i5V6jKZEn0h3HktLTlb7Z"
+  },
+  {
     "title": "Lóve",
     "year": "2011",
     "imdb_id": "tt2165959",
     "imdb_link": "https://www.imdb.com/title/tt2165959/",
     "poster": "2011/tt2165959_Lóve.webp",
+    "category": "film"
+  },
+  {
+    "title": "Men in Hope",
+    "year": "2011",
+    "imdb_id": "tt2051941",
+    "imdb_link": "https://www.imdb.com/title/tt2051941/",
+    "poster": "2011/tt2051941_Men in Hope.webp",
+    "category": "film"
+  },
+  {
+    "title": "Merlin The Darkest Hour",
+    "year": "2011",
+    "imdb_id": "tt1952776",
+    "imdb_link": "https://www.imdb.com/title/tt1952776/",
+    "poster": "2011/tt1952776_Merlin The Darkest Hour.webp",
     "category": "film"
   },
   {
@@ -1296,11 +2315,29 @@
     "category": "film"
   },
   {
+    "title": "The Great Mass",
+    "year": "2011",
+    "artist": "Septicflesh",
+    "discogs_id": 2879601,
+    "discogs_link": "https://www.discogs.com/release/2879601",
+    "poster": "2011/d2879601_The Great Mass.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/3qZLD1Ncrt09h9lEvj3qC7"
+  },
+  {
     "title": "The Mechanic",
     "year": "2011",
     "imdb_id": "tt0472399",
     "imdb_link": "https://www.imdb.com/title/tt0472399/",
     "poster": "2011/tt0472399_The Mechanic.webp",
+    "category": "film"
+  },
+  {
+    "title": "The War at Home",
+    "year": "2011",
+    "imdb_id": "tt0460692",
+    "imdb_link": "https://www.imdb.com/title/tt0460692/",
+    "poster": "2011/tt0460692_The War at Home.webp",
     "category": "film"
   },
   {
@@ -1328,6 +2365,16 @@
     "category": "film"
   },
   {
+    "title": "At the Edge of Time",
+    "year": "2010",
+    "artist": "Blind Guardian",
+    "discogs_id": 2536651,
+    "discogs_link": "https://www.discogs.com/release/2536651",
+    "poster": "2010/d2536651_At the Edge of Time.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/1KpuPdS4ea7uaBdP0Ywryz"
+  },
+  {
     "title": "Civilization V",
     "year": "2010",
     "imdb_id": "tt1964595",
@@ -1344,6 +2391,16 @@
     "category": "film"
   },
   {
+    "title": "Courage Can Cry",
+    "year": "2010",
+    "artist": "Liam Lawton / The Vard Sisters",
+    "poster": "2010/r25_Courage Can Cry.webp",
+    "category": "album",
+    "source": "discogs",
+    "source_link": "https://i.discogs.com/woSKCa3zJz8KErdPMJ_BlX6oT6oJzObyoQ4OABuXN84/rs:fit/g:sm/q:90/h:539/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI0MDgy/NTUwLTE2ODgyODEz/ODEtODI1Ny5qcGVn.jpeg",
+    "spotify_link": "https://open.spotify.com/album/2qov3vm1o01IenxlHClu0E"
+  },
+  {
     "title": "Ensemble, nous allons vivre une très, très grande histoire d'amour...",
     "year": "2010",
     "imdb_id": "tt1466569",
@@ -1358,6 +2415,36 @@
     "imdb_link": "https://www.imdb.com/title/tt1380799/",
     "poster": "2010/tt1380799_Habermann.webp",
     "category": "film"
+  },
+  {
+    "title": "Hallelujah Broadway",
+    "year": "2010",
+    "artist": "Various artists",
+    "poster": "2010/r26_Hallelujah Broadway.webp",
+    "category": "album",
+    "source": "discogs",
+    "source_link": "https://i.discogs.com/x-NpDHdpUWyXmSVRQLtGD98Yc69pKEq1bt62hYlAzOw/rs:fit/g:sm/q:90/h:591/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYzMDY4/NjgtMTU1MTg5OTQy/MS0xMTA1LmpwZWc.jpeg",
+    "spotify_link": "https://open.spotify.com/album/3OeAeH8jR1ONe0fRH0JQwn"
+  },
+  {
+    "title": "Heartland",
+    "year": "2010",
+    "artist": "Owen Pallett",
+    "discogs_id": 2151957,
+    "discogs_link": "https://www.discogs.com/release/2151957",
+    "poster": "2010/d2151957_Heartland.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/3pWe8tdmIR4MfE5C4v5vg9"
+  },
+  {
+    "title": "Ireland",
+    "year": "2010",
+    "artist": "The Irish Tenors",
+    "discogs_id": 6300226,
+    "discogs_link": "https://www.discogs.com/release/6300226",
+    "poster": "2010/d6300226_Ireland.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/79iLYrtSJpU5CL7ioAxfYR"
   },
   {
     "title": "Kinectimals",
@@ -1440,6 +2527,16 @@
     "category": "film"
   },
   {
+    "title": "Voice of an Angel",
+    "year": "2010",
+    "artist": "Mary Duff",
+    "discogs_id": 10615411,
+    "discogs_link": "https://www.discogs.com/release/10615411",
+    "poster": "2010/d10615411_Voice of an Angel.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/2DtUfWqOfVjYzE0kBfqXPv"
+  },
+  {
     "title": "Women in Temptation",
     "year": "2010",
     "imdb_id": "tt1627942",
@@ -1448,11 +2545,71 @@
     "category": "film"
   },
   {
+    "title": "2081",
+    "year": "2009",
+    "imdb_id": "tt1282015",
+    "imdb_link": "https://www.imdb.com/title/tt1282015/",
+    "poster": "2009/tt1282015_2081.webp",
+    "category": "film"
+  },
+  {
+    "title": "All Good Things",
+    "year": "2009",
+    "imdb_id": "tt1175709",
+    "imdb_link": "https://www.imdb.com/title/tt1175709/",
+    "poster": "2009/tt1175709_All Good Things.webp",
+    "category": "film"
+  },
+  {
     "title": "Bad Lieutenant: Port of Call New Orleans",
     "year": "2009",
     "imdb_id": "tt1095217",
     "imdb_link": "https://www.imdb.com/title/tt1095217/",
     "poster": "2009/tt1095217_Bad Lieutenant_ Port of Call New Orleans.webp",
+    "category": "film"
+  },
+  {
+    "title": "Barbie in 'A Christmas Carol'",
+    "year": "2009",
+    "imdb_id": "tt1314715",
+    "imdb_link": "https://www.imdb.com/title/tt1314715/",
+    "poster": "2009/tt1314715_Barbie in _A Christmas Carol.webp",
+    "category": "film"
+  },
+  {
+    "title": "Brooklyn's Finest",
+    "year": "2009",
+    "imdb_id": "tt1210042",
+    "imdb_link": "https://www.imdb.com/title/tt1210042/",
+    "poster": "2009/tt1210042_Brooklyn_s Finest.webp",
+    "category": "film"
+  },
+  {
+    "title": "Call Me a Dreamer",
+    "year": "2009",
+    "artist": "Nilsen & Aalberg",
+    "discogs_id": 3136719,
+    "discogs_link": "https://www.discogs.com/release/3136719",
+    "poster": "2009/d3136719_Call Me a Dreamer.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/6QMZ61pqWJlJQXYYuPszsE"
+  },
+  {
+    "title": "Children First",
+    "year": "2009",
+    "artist": "Children First / Sissel Mørch",
+    "poster": "2009/r18_Children First.webp",
+    "category": "album",
+    "source": "ebay",
+    "source_link": "https://i.ebayimg.com/images/g/640AAOSwm7Jh~tJW/s-l1600.jpg",
+    "spotify_link": "https://open.spotify.com/album/5du6xTz0GXkgjVJoFqdfrY"
+  },
+  {
+    "title": "Couples Retreat",
+    "year": "2009",
+    "imdb_id": "tt1078940",
+    "imdb_link": "https://www.imdb.com/title/tt1078940/",
+    "poster": "2009/tt1078940_Couples Retreat.webp",
     "category": "film"
   },
   {
@@ -1472,12 +2629,41 @@
     "category": "film"
   },
   {
+    "title": "Im Mondrausch",
+    "year": "2009",
+    "artist": "Pe Werner",
+    "discogs_id": 2018172,
+    "discogs_link": "https://www.discogs.com/release/2018172",
+    "poster": "2009/d2018172_Im Mondrausch.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/5S2nsjtOjBSRsUvuxhO3xU"
+  },
+  {
+    "title": "Inspirational",
+    "year": "2009",
+    "artist": "Liam Lawton",
+    "poster": "2009/r20_Inspirational.webp",
+    "category": "album",
+    "source": "amazon",
+    "source_link": "https://m.media-amazon.com/images/I/51VtKV6tDVL.jpg"
+  },
+  {
     "title": "Life",
     "year": "2009",
     "imdb_id": "tt1533395",
     "imdb_link": "https://www.imdb.com/title/tt1533395/",
     "poster": "2009/tt1533395_Life.webp",
     "category": "tv"
+  },
+  {
+    "title": "Nefsy Ahebak",
+    "year": "2009",
+    "artist": "Angham",
+    "discogs_id": 13167043,
+    "discogs_link": "https://www.discogs.com/release/13167043",
+    "poster": "2009/d13167043_Nefsy Ahebak.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/2rafdDumGAVhZpj9Os8tYP"
   },
   {
     "title": "Normal",
@@ -1488,12 +2674,40 @@
     "category": "film"
   },
   {
+    "title": "Only Trust Your Heart",
+    "year": "2009",
+    "artist": "Dionne Warwick",
+    "discogs_id": 5617942,
+    "discogs_link": "https://www.discogs.com/release/5617942",
+    "poster": "2009/d5617942_Only Trust Your Heart.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/7sE86fJxBEa4a6PtKHpTdA"
+  },
+  {
     "title": "Pour toujours, les Canadiens!",
     "year": "2009",
     "imdb_id": "tt1295912",
     "imdb_link": "https://www.imdb.com/title/tt1295912/",
     "poster": "2009/tt1295912_Pour toujours_ les Canadiens.webp",
     "category": "film"
+  },
+  {
+    "title": "The Last Templar Episode #1.1",
+    "year": "2009",
+    "imdb_id": "tt5725706",
+    "imdb_link": "https://www.imdb.com/title/tt5725706/",
+    "poster": "2009/tt5725706_The Last Templar Episode 1_1.webp",
+    "category": "film"
+  },
+  {
+    "title": "Unarmed: Best of 25th Anniversary",
+    "year": "2009",
+    "artist": "Helloween",
+    "discogs_id": 2952669,
+    "discogs_link": "https://www.discogs.com/release/2952669",
+    "poster": "2009/d2952669_Unarmed_ Best of 25th Anniversary.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/5p5uswynhHcnTE7q7fC0DH"
   },
   {
     "title": "Wings of the Night",
@@ -1520,6 +2734,16 @@
     "category": "film"
   },
   {
+    "title": "Communion",
+    "year": "2008",
+    "artist": "Septic Flesh / Septicflesh",
+    "discogs_id": 11109721,
+    "discogs_link": "https://www.discogs.com/release/11109721",
+    "poster": "2008/d11109721_Communion.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/3akaVUNkh1appQhWYkqoAn"
+  },
+  {
     "title": "Crime Is Our Business",
     "year": "2008",
     "imdb_id": "tt1206478",
@@ -1536,6 +2760,16 @@
     "category": "film"
   },
   {
+    "title": "Everything Is Borrowed",
+    "year": "2008",
+    "artist": "The Streets",
+    "discogs_id": 1464947,
+    "discogs_link": "https://www.discogs.com/release/1464947",
+    "poster": "2008/d1464947_Everything Is Borrowed.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/15C7dUUwvhcO6MkQjxZTvW"
+  },
+  {
     "title": "Kdopak by se vlka bál",
     "year": "2008",
     "imdb_id": "tt1342392",
@@ -1550,6 +2784,35 @@
     "imdb_link": "https://www.imdb.com/title/tt1046947/",
     "poster": "2008/tt1046947_Last Chance Harvey.webp",
     "category": "film"
+  },
+  {
+    "title": "Legepladsen",
+    "year": "2008",
+    "artist": "Gnags",
+    "discogs_id": 10686515,
+    "discogs_link": "https://www.discogs.com/release/10686515",
+    "poster": "2008/d10686515_Legepladsen.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/1kXdX9z083btUNQuzNfgr8"
+  },
+  {
+    "title": "Love Songs",
+    "year": "2008",
+    "artist": "Mary Duff",
+    "discogs_id": 14675213,
+    "discogs_link": "https://www.discogs.com/release/14675213",
+    "poster": "2008/d14675213_Love Songs.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/2fxyR57B6tj1SbtKzUQhkG"
+  },
+  {
+    "title": "Mary Duff",
+    "year": "2008",
+    "artist": "Mary Duff",
+    "discogs_id": 7843243,
+    "discogs_link": "https://www.discogs.com/release/7843243",
+    "poster": "2008/d7843243_Mary Duff.webp",
+    "category": "album"
   },
   {
     "title": "Meerkat Manor: The Story Begins",
@@ -1632,6 +2895,23 @@
     "category": "tv"
   },
   {
+    "title": "Terre de lumière La terre des secrets",
+    "year": "2008",
+    "imdb_id": "tt1284565",
+    "imdb_link": "https://www.imdb.com/title/tt1284565/",
+    "poster": "2008/tt1284565_Terre de lumière La terre des secrets.webp",
+    "category": "film"
+  },
+  {
+    "title": "The Continents",
+    "year": "2008",
+    "artist": "Mark J. Saliba",
+    "poster": "2008/r15_The Continents.webp",
+    "category": "album",
+    "source": "allmusic",
+    "source_link": "https://fastly-s3.allmusic.com/release/mr0001549850/front/400/T8P_iPUA8Zr33JjKh4CdxhyhM-OFI8zG4l-qVpXXB1I=.jpg"
+  },
+  {
     "title": "The Deserter",
     "year": "2008",
     "imdb_id": "tt1302558",
@@ -1672,12 +2952,32 @@
     "category": "game"
   },
   {
+    "title": "Welcome to the Walk Alone",
+    "year": "2008",
+    "artist": "The Rumble Strips",
+    "discogs_id": 2760262,
+    "discogs_link": "https://www.discogs.com/release/2760262",
+    "poster": "2008/d2760262_Welcome to the Walk Alone.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/6MTFV8vTQMWg1jNcbuEtjk"
+  },
+  {
     "title": "Beyaz Melek",
     "year": "2007",
     "imdb_id": "tt1064931",
     "imdb_link": "https://www.imdb.com/title/tt1064931/",
     "poster": "2007/tt1064931_Beyaz Melek.webp",
     "category": "film"
+  },
+  {
+    "title": "Blue Star",
+    "year": "2007",
+    "artist": "Astrella Celeste",
+    "discogs_id": 5117203,
+    "discogs_link": "https://www.discogs.com/release/5117203",
+    "poster": "2007/d5117203_Blue Star.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/6VIN6Skw5tVRFG7jUjo5cH"
   },
   {
     "title": "Bone Dry",
@@ -1696,12 +2996,32 @@
     "category": "game"
   },
   {
+    "title": "D'elles",
+    "year": "2007",
+    "artist": "Céline Dion",
+    "discogs_id": 3089089,
+    "discogs_link": "https://www.discogs.com/release/3089089",
+    "poster": "2007/d3089089_D'elles.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/5Ynap0f3PJfy2S7eDA2c6t"
+  },
+  {
     "title": "Dinosaurs Alive",
     "year": "2007",
     "imdb_id": "tt1018886",
     "imdb_link": "https://www.imdb.com/title/tt1018886/",
     "poster": "2007/tt1018886_Dinosaurs Alive.webp",
     "category": "film"
+  },
+  {
+    "title": "Forever",
+    "year": "2007",
+    "artist": "Jonathan Ansell",
+    "discogs_id": 4955337,
+    "discogs_link": "https://www.discogs.com/release/4955337",
+    "poster": "2007/d4955337_Forever.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/4DoeLUGfwJDjprawIjZxkj"
   },
   {
     "title": "Hostel: Part II",
@@ -1725,6 +3045,14 @@
     "imdb_id": "tt0906326",
     "imdb_link": "https://www.imdb.com/title/tt0906326/",
     "poster": "2007/tt0906326_Just Buried.webp",
+    "category": "film"
+  },
+  {
+    "title": "Pusinky",
+    "year": "2007",
+    "imdb_id": "tt0422981",
+    "imdb_link": "https://www.imdb.com/title/tt0422981/",
+    "poster": "2007/tt0422981_Pusinky.webp",
     "category": "film"
   },
   {
@@ -1760,6 +3088,14 @@
     "category": "film"
   },
   {
+    "title": "The Company",
+    "year": "2007",
+    "imdb_id": "tt0488352",
+    "imdb_link": "https://www.imdb.com/title/tt0488352/",
+    "poster": "2007/tt0488352_The Company.webp",
+    "category": "film"
+  },
+  {
     "title": "The Last Gang",
     "year": "2007",
     "imdb_id": "tt0871509",
@@ -1784,6 +3120,16 @@
     "category": "film"
   },
   {
+    "title": "When I Fall in Love",
+    "year": "2007",
+    "artist": "Lesley Garrett",
+    "discogs_id": 6707725,
+    "discogs_link": "https://www.discogs.com/release/6707725",
+    "poster": "2007/d6707725_When I Fall in Love.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/5g9pAIL64ESN98IN3Y6TqT"
+  },
+  {
     "title": "Fido",
     "year": "2006",
     "imdb_id": "tt0457572",
@@ -1798,6 +3144,16 @@
     "imdb_link": "https://www.imdb.com/title/tt0494231/",
     "poster": "2006/tt0494231_Grandhotel.webp",
     "category": "film"
+  },
+  {
+    "title": "Hossanas from the Basements of Hell",
+    "year": "2006",
+    "artist": "Killing Joke",
+    "poster": "2006/r3_Hossanas from the Basements of Hell.webp",
+    "category": "album",
+    "source": "bandcamp",
+    "source_link": "https://f4.bcbits.com/img/a0222990439_0.jpg",
+    "spotify_link": "https://open.spotify.com/album/0qhXTeYwwPsg4XFUgmDeb5"
   },
   {
     "title": "Lady Chatterley",
@@ -1816,12 +3172,40 @@
     "category": "film"
   },
   {
+    "title": "Michelle Tumes",
+    "year": "2006",
+    "artist": "Michelle Tumes",
+    "discogs_id": 3059293,
+    "discogs_link": "https://www.discogs.com/release/3059293",
+    "poster": "2006/d3059293_Michelle Tumes.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/06kJw6x9zx7PBGk736TZ9r"
+  },
+  {
+    "title": "Rendezvous with Death: Why John F. Kennedy Had to Die",
+    "year": "2006",
+    "imdb_id": "tt0498709",
+    "imdb_link": "https://www.imdb.com/title/tt0498709/",
+    "poster": "2006/tt0498709_Rendezvous with Death_ Why John F_ Kennedy Had to Die.webp",
+    "category": "film"
+  },
+  {
     "title": "Serko",
     "year": "2006",
     "imdb_id": "tt0478732",
     "imdb_link": "https://www.imdb.com/title/tt0478732/",
     "poster": "2006/tt0478732_Serko.webp",
     "category": "film"
+  },
+  {
+    "title": "Sound of China: Dance in the Moon",
+    "year": "2006",
+    "artist": "Zhao Cong",
+    "discogs_id": 23509121,
+    "discogs_link": "https://www.discogs.com/release/23509121",
+    "poster": "2006/d23509121_Sound of China_ Dance in the Moon.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/24Zpe3GYIKHvQ2GLKNL7RL"
   },
   {
     "title": "Tempelriddernes skat",
@@ -1888,6 +3272,24 @@
     "category": "tv"
   },
   {
+    "title": "If I Had You",
+    "year": "2005",
+    "imdb_id": "tt0789779",
+    "imdb_link": "https://www.imdb.com/title/tt0789779/",
+    "poster": "2005/tt0789779_If I Had You.webp",
+    "category": "film"
+  },
+  {
+    "title": "so secretly...",
+    "year": "2005",
+    "artist": "Karina Kappel",
+    "discogs_id": 6401712,
+    "discogs_link": "https://www.discogs.com/release/6401712",
+    "poster": "2005/d6401712_so secretly....webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/0qvaXodicK2t7Vb5VpG8OR"
+  },
+  {
     "title": "EverQuest II",
     "year": "2004",
     "imdb_id": "tt0428505",
@@ -1896,11 +3298,31 @@
     "category": "game"
   },
   {
-    "title": "Born in the Jungle",
-    "year": "unknown",
-    "imdb_id": "tt29344898",
-    "imdb_link": "https://www.imdb.com/title/tt29344898/",
-    "poster": "unknown_year/tt29344898_Born in the Jungle.webp",
+    "title": "Finally Woken",
+    "year": "2004",
+    "artist": "Jem",
+    "discogs_id": 680675,
+    "discogs_link": "https://www.discogs.com/release/680675",
+    "poster": "2004/d680675_Finally Woken.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/5Jq9bg317AJWWyxwnE1B7q"
+  },
+  {
+    "title": "Something Dangerous",
+    "year": "2003",
+    "artist": "Natacha Atlas",
+    "discogs_id": 170922,
+    "discogs_link": "https://www.discogs.com/release/170922",
+    "poster": "2003/d170922_Something Dangerous.webp",
+    "category": "album",
+    "spotify_link": "https://open.spotify.com/album/6xnV0yzAuequyaRHezxuCV"
+  },
+  {
+    "title": "The Bunker",
+    "year": "2001",
+    "imdb_id": "tt0252963",
+    "imdb_link": "https://www.imdb.com/title/tt0252963/",
+    "poster": "2001/tt0252963_The Bunker.webp",
     "category": "film"
   },
   {
