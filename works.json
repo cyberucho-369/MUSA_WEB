@@ -488,7 +488,7 @@
     "year": "2021",
     "imdb_id": "tt10293932",
     "imdb_link": "https://www.imdb.com/title/tt10293932/",
-    "poster": "",
+    "poster": "2021/tt10293932_Cinema of Sleep.webp",
     "category": "film"
   },
   {
@@ -1305,7 +1305,7 @@
     "year": "2017",
     "imdb_id": "tt6158630",
     "imdb_link": "https://www.imdb.com/title/tt6158630/",
-    "poster": "",
+    "poster": "2017/tt6158630_My Enemy, My Brother.webp",
     "category": "film"
   },
   {
@@ -1547,7 +1547,7 @@
     "year": "2015",
     "imdb_id": "tt3856042",
     "imdb_link": "https://www.imdb.com/title/tt3856042/",
-    "poster": "",
+    "poster": "2015/tt3856042_Bad Hair Day.webp",
     "category": "film"
   },
   {
@@ -2405,7 +2405,7 @@
     "year": "2010",
     "imdb_id": "tt1466569",
     "imdb_link": "https://www.imdb.com/title/tt1466569/",
-    "poster": "",
+    "poster": "2010/tt1466569_Ensemble.webp",
     "category": "film"
   },
   {
@@ -3323,14 +3323,6 @@
     "imdb_id": "tt0252963",
     "imdb_link": "https://www.imdb.com/title/tt0252963/",
     "poster": "2001/tt0252963_The Bunker.webp",
-    "category": "film"
-  },
-  {
-    "title": "Daisy",
-    "year": "unknown",
-    "imdb_id": "tt32205875",
-    "imdb_link": "https://www.imdb.com/title/tt32205875/",
-    "poster": "",
     "category": "film"
   },
   {
