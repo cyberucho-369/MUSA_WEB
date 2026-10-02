@@ -243,8 +243,11 @@
         <video id="hero-vid-2" class="absolute inset-0 w-full h-full object-cover hidden" muted playsinline>
             <source src="assets/videos/Musa_Webloop_02_4K_ProRess_16_9_VP9_1080_1920.webm" type="video/webm">
         </video>
-        <video class="absolute inset-0 w-full h-full object-cover md:hidden" autoplay muted loop playsinline>
+        <video id="hero-mob-1" class="absolute inset-0 w-full h-full object-cover md:hidden" autoplay muted playsinline>
             <source src="assets/videos/Musa_Web_loop1_HD_9_16_ProRess_VP9_1080_1920.webm" type="video/webm">
+        </video>
+        <video id="hero-mob-2" class="absolute inset-0 w-full h-full object-cover hidden" muted playsinline>
+            <source src="assets/videos/Musa_Web_loop2_HD_9_16_ProRess_VP9_1080_1920.webm" type="video/webm">
         </video>
         <div class="absolute inset-0 bg-gradient-to-b from-dark-900/40 via-dark-900/60 to-dark-900/90"></div>
 
@@ -1162,21 +1165,27 @@
         (function () {
             var vid1 = document.getElementById('hero-vid-1');
             var vid2 = document.getElementById('hero-vid-2');
+            function alternate(a, b) {
+                a.addEventListener('ended', function () {
+                    a.classList.add('hidden');
+                    b.classList.remove('hidden');
+                    b.currentTime = 0;
+                    b.play();
+                });
+                b.addEventListener('ended', function () {
+                    b.classList.add('hidden');
+                    a.classList.remove('hidden');
+                    a.currentTime = 0;
+                    a.play();
+                });
+            }
             if (vid1 && vid2 && window.innerWidth >= 768) {
-                vid1.addEventListener('ended', function () {
-                    vid1.classList.add('hidden');
-                    vid2.classList.remove('hidden');
-                    vid2.classList.add('md:block');
-                    vid2.currentTime = 0;
-                    vid2.play();
-                });
-                vid2.addEventListener('ended', function () {
-                    vid2.classList.add('hidden');
-                    vid2.classList.remove('md:block');
-                    vid1.classList.remove('hidden');
-                    vid1.currentTime = 0;
-                    vid1.play();
-                });
+                alternate(vid1, vid2);
+            }
+            var mob1 = document.getElementById('hero-mob-1');
+            var mob2 = document.getElementById('hero-mob-2');
+            if (mob1 && mob2 && window.innerWidth < 768) {
+                alternate(mob1, mob2);
             }
         })();
 
