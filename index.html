@@ -237,8 +237,11 @@
 
     <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
     <section class="relative min-h-screen flex flex-col justify-center bg-dark-900 pt-24 pb-24 md:pb-0">
-        <video class="absolute inset-0 w-full h-full object-cover hidden md:block" autoplay muted loop playsinline>
+        <video id="hero-vid-1" class="absolute inset-0 w-full h-full object-cover hidden md:block" autoplay muted playsinline>
             <source src="assets/videos/Musa_Webloop_01_4K_ProRess_16_9_VP9_1080_1920.webm" type="video/webm">
+        </video>
+        <video id="hero-vid-2" class="absolute inset-0 w-full h-full object-cover hidden" muted playsinline>
+            <source src="assets/videos/Musa_Webloop_02_4K_ProRess_16_9_VP9_1080_1920.webm" type="video/webm">
         </video>
         <video class="absolute inset-0 w-full h-full object-cover md:hidden" autoplay muted loop playsinline>
             <source src="assets/videos/Musa_Web_loop1_HD_9_16_ProRess_VP9_1080_1920.webm" type="video/webm">
@@ -1154,6 +1157,27 @@
             }
             prev.addEventListener('click', function () { carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' }); });
             next.addEventListener('click', function () { carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' }); });
+        })();
+
+        (function () {
+            var vid1 = document.getElementById('hero-vid-1');
+            var vid2 = document.getElementById('hero-vid-2');
+            if (vid1 && vid2 && window.innerWidth >= 768) {
+                vid1.addEventListener('ended', function () {
+                    vid1.classList.add('hidden');
+                    vid2.classList.remove('hidden');
+                    vid2.classList.add('md:block');
+                    vid2.currentTime = 0;
+                    vid2.play();
+                });
+                vid2.addEventListener('ended', function () {
+                    vid2.classList.add('hidden');
+                    vid2.classList.remove('md:block');
+                    vid1.classList.remove('hidden');
+                    vid1.currentTime = 0;
+                    vid1.play();
+                });
+            }
         })();
 
         (function () {
